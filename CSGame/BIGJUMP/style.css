@@ -1,0 +1,229 @@
+#load{
+position:fixed;
+display:flex;
+background:linear-gradient(#666,#bbb);
+color:white;
+font-weight:900;
+justify-content: center;
+align-items: center;
+font-size:15px;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:21;
+}
+*{
+font-family: 'Noto Sans JP', sans-serif;
+}
+html{
+min-height:100%;
+}
+body{
+background:linear-gradient(#bbff00,#00ffbb);
+background-size:cover;
+-webkit-user-select:none;
+}
+.display{
+background-image:url(images/background.png);
+border:2px solid gold;
+border-radius:5px;
+width:300px;
+height:210px;
+margin-left:auto;
+margin-right:auto;
+position:relative;
+}
+#player{
+height:30px;
+width:30px;
+position:relative;
+top:150px;
+}
+#floor{
+background-image:url(images/floor.png);
+width:300px;
+height:30px;
+position:absolute;
+bottom:0;
+left:0;
+}
+#right,#left,#jump{
+font-size:60px;
+}
+.po{
+position:absolute;
+top:0;
+left:0;
+width:30px;
+height:30px;
+background:radial-gradient(yellow,#00dd00);
+border-radius:15px;
+box-shadow:0 0 10px #00ff00;
+}
+.enemy{
+position:absolute;
+top:0;
+left:0;
+width:30px;
+height:30px;
+}
+.controller{
+position:relative;
+background:linear-gradient(#00ccff,#00eeff);
+padding:15px;
+border-radius:10px;
+border:2px solid black;
+}
+#cover{
+width:100%;
+height:100%;
+position:absolute;
+top:0;
+left:0;
+background-color:black;
+opacity:0.7;
+border-radius:5px;
+display:flex;
+align-items: center;
+justify-content:center;
+}
+#startbt{
+width:180px;
+background-color:white;
+box-shadow:0 7px gray;
+border:1px solid gray;
+text-align:center;
+border-radius:7px;
+position:relative;
+font-size:30px;
+font-weight:900;
+}
+#startbt:active{
+box-shadow:none;
+top:7px;
+}
+#gameover{
+width:100%;
+height:100%;
+position:absolute;
+top:0;
+left:0;
+background-color:black;
+opacity:0.8;
+border-radius:5px;
+display:none;
+text-align:center;
+}
+#gomess{
+color:white;
+font-weight:900;
+font-size:30px;
+margin:50px 0 0 0;
+}
+#restart{
+width:190px;
+background-color:white;
+box-shadow:0 7px gray;
+border:1px solid gray;
+border-radius:7px;
+position:relative;
+font-size:30px;
+font-weight:900;
+margin:0 auto;
+}
+#restart:active{
+box-shadow:none;
+top:7px;
+}
+#left,#right{
+-webkit-text-stroke:4px #bb0000;
+text-shadow:0 0 7px red;
+color:#bb0000;
+}
+#left:active,#right:active{
+text-shadow:none;
+-webkit-text-stroke:2px red;
+color:red;
+}
+#jump{
+font-size:20px;
+background-color:#bb0000;
+border-radius:50%;
+display:flex;
+width:90px;
+height:90px;
+align-items: center;
+justify-content:center;
+position:absolute;
+right:10px;
+top:10px;
+font-weight:900;
+color:white;
+border:3px solid #bb0000;
+box-shadow:0 0 5px red;
+}
+#jump:active{
+box-shadow:none;
+border:2px solid red;
+background-color:red;
+}
+.info{
+background:black;
+color:black;
+-webkit-text-stroke:0.5px yellow;
+border-radius:5px;
+border:2px double yellow;
+font-weight:900;
+padding:3px 10px;
+}
+.title{
+text-align:center;
+font-weight:900;
+font-size:40px;
+color:white;
+-webkit-text-stroke:2px black;
+background:radial-gradient(#00ffff,#00bbff);
+border-radius:10px;
+}
+#highscore{
+float:right;
+}
+#pop{
+display:none;
+width:100%;
+height:100%;
+position:fixed;
+top:0;
+left:0;
+}
+#pm{
+background:black;
+color:black;
+-webkit-text-stroke:0.5px yellow;
+border-radius:10px;
+border:2px double yellow;
+font-weight:900;
+width:250px;
+height:200px;
+margin:45% auto;
+text-align:center;
+}
+#pom{
+margin-top:70px;
+}
+#okbt{
+background-color:#00bbff;
+color:#0088ff;
+width:50px;
+border-bottom:1px solid #0088ff;
+border-radius:5px;
+box-shadow:0 3px 0 #0088ff;
+position:relative;
+margin:50px auto;
+-webkit-text-stroke:1px blue;
+}
+#okbt:active{
+top:3px;
+box-shadow:none;
+}
