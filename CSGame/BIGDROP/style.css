@@ -1,0 +1,181 @@
+*{
+font-family: 'Noto Sans JP', sans-serif;
+}
+#load{
+position:fixed;
+display:flex;
+background:linear-gradient(#666,#bbb);
+color:white;
+font-weight:900;
+justify-content: center;
+align-items: center;
+font-size:15px;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:21;
+}
+html{
+min-height:100%;
+}
+body{
+background:linear-gradient(#b60,#c30);
+background-size:cover;
+-webkit-user-select:none;
+}
+#display{
+width:240px;
+height:340px;
+margin:0 auto;
+background:url(images/background1.png);
+border:2px solid #fff;
+border-radius:5px;
+position:relative;
+}
+#title{
+font-size:50px;
+text-align:center;
+font-weight:900;
+-webkit-text-stroke:2px #0e0;
+color:#38c;
+text-shadow:0 0 10px #0ff;
+}
+#controller{
+background:#999;
+border-radius:10px;
+padding:10px 0;
+border:1px solid #666;
+font-size:70px;
+text-align:center;
+position:fixed;
+bottom:1%;
+left:5%;
+width:90%;
+opacity:0.7;
+box-shadow:1px 1px 1px #000;
+}
+#left{
+padding-right:50px;
+text-shadow:0 2px 0 #066;
+color:#0bb;
+}
+#left:active{
+text-shadow:none;
+position:relative;
+top:2px;
+color:#0ee;
+}
+#right{
+padding-left:50px;
+text-shadow:0 2px 0 #066;
+color:#0bb;
+}
+#right:active{
+text-shadow:none;
+position:relative;
+top:2px;
+color:#0ee;
+}
+#information{
+height:30px;
+width:300px;
+background:#000;
+border-radius:5px;
+border:2px double #ff0;
+margin:10px auto 0 auto;
+color:#ff0;
+padding-top:5px;
+font-weight:900;
+}
+#floor{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:20px;
+background:url(images/floor.png);
+}
+#player{
+width:20px;
+position:absolute;
+bottom:20px;
+left:100px;
+}
+#cover{
+width:100%;
+height:100%;
+background:#000;
+position:absolute;
+top:0;
+left:0;
+opacity:0.5;
+text-align:center;
+font-size:30px;
+font-weight:900;
+color:white;
+z-index:2;
+}
+.button{
+width:160px;
+height:45px;
+background:#777;
+border-radius:10px;
+box-shadow:0 5px 0 #333;
+margin:0 auto;
+border-bottom:1px #333;
+}
+.button:active{
+position:relative;
+top:5px;
+box-shadow:none;
+}
+#start,#gameover{
+margin-top:140px;
+}
+#gameover{
+display:none;
+}
+.obstacle{
+width:20px;
+position:absolute;
+}
+#obstacles{
+width:100%;
+height:100%;
+position:absolute;
+top:0;
+left:0;
+}
+#highscore{
+float:right;
+}
+#popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:10;
+display:none;
+}
+#popBody{
+width:250px;
+height:150px;
+border-radius:10px;
+margin:200px auto 0 auto;
+border:2px double #ff0;
+background:radial-gradient(#0f0,#4c4);
+color:#fff;
+font-size:30px;
+font-weight:900;
+text-align:center;
+box-shadow:0 0 10px #0ff;
+}
+#popMessage{
+-webkit-text-stroke:1px #000;
+margin-top:10px;
+}
+#popOk{
+margin-top:15px;
+}
