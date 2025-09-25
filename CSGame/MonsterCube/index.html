@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>Monster Cube</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="images/favicon.ico">
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="script.js" type="text/javascript"></script>
+</head>
+<body id="body" onload ="loading()">
+<div class="popup" id="pop">
+<div class="popup1">
+　You are a Red Cube!　
+<div class="okbt" onclick="ok()">
+OK
+</div>
+</div>
+</div>
+<center>
+<div class="title">
+M<span class="oc">o</span>nster C<span class="uc">u</span>be
+</div>
+<table id="level">
+<tr>
+<td>
+<div class="easy" onclick="eas()" id="easid">
+EASY
+</div>
+</td>
+<td>
+<div class="normal" onclick="nor()" id="norid">
+NORMAL
+</div>
+</td>
+<td>
+<div class="hard" onclick="har()" id="harid">
+HARD
+</div>
+</td>
+</tr>
+</table>
+<div class="display" id="dis">
+<div class="go">
+LEVEL SELECT
+</div>
+</div>
+</center>
+<div id="key">
+<table cellspacing=0>
+<tr>
+<td colspan=3 class=u>
+<span class=ten onclick=k()>▲</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class=ten onclick=k()>&#9664;</span>
+</td>
+<td width=90px>
+<center>
+<div id="startcount" onclick="startShowing();" class="st">
+Play
+</div>
+</center>
+</td>
+<td>
+<span class=ten onclick=k()>&#9654;</span>
+</td>
+</tr>
+<tr>
+<td colspan=3 class=d>
+<span class=ten onclick=k()>▼</span>
+</td>
+</tr>
+</table>
+</div>
+<div id="score" class="sco">
+SCORE:0
+</div>
+<div id="hisc" class="sco">
+HI-SCORE:0
+</div>
+<footer>
+<hr>
+<center>
+<font size=1 color=white>&#169;CSGame</font>
+</center>
+</footer>
+<div class="mu" id="mut" onclick="muted()"></div>
+<div id=load><img src="images/load.gif" width="100px"></div>
+</body>
+</html> 
