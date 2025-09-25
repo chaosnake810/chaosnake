@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
+<title>ChaoSnake</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="script.js"></script>
+<meta charset="UTF-8">
+</head>
+<body>
+<div class="header"><img src="images/icon.png" class="icon">ChaoSnake</div>
+<div class="clock"><div id="clockDate"></div><div id="sn"></div><div id="mn"></div><div id="hn"></div><div class="ns1"><span class="num12">12</span><span class="num6">6</span></div>
+<div class="ns2"><span class="num1">1</span><span class="num7">7</span></div>
+<div class="ns3"><span class="num2">2</span><span class="num8">8</span></div>
+<div class="ns4"><span class="num9">9</span><span class="num3">3</span></div>
+<div class="ns5"><span class="num10">10</span><span class="num4">4</span></div>
+<div class="ns6"><span class="num11">11</span><span class="num5">5</span></div></div><div id="adback"></div><div id="ad"><span class="adimg"><img src="images/adclose.png" width="35px" class="closebt" onclick="closead()">
+<a href="https://xria.biz/" width="300px"><img src="images/ad.jpg" width="300px" ></a></span></div><div id="pop"><div id="pop_box"><div id="pop_message"></div><div id="okbt" onclick="ok()">OK</div></div></div>
+<div class="space"></div>
+<div class ="content">
+<a id="contentSNS"></a>
+<div class="hl">SNS<span id="pulldownSNS" onclick="pulldown(pulldownSNS,SNS)">&#9654;</span></div>
+<div id="SNS">
+<a href="https://twitter.com/chaosnake810"><div class="x">&#120143;</div></a>
+<a href="https://m.youtube.com/channel/UCmETSytmQdGwbM9Vh0or-Jw"><div class="youtube">YouTube</div></a>
+</div>
+<a id="contentPage"></a>
+<div class="hl">ページ<span id="pulldownPage" onclick="pulldown(pulldownPage,Page)">&#9654;</span></div>
+<div id="Page">
+<a href="CSGame"><div class="page"><table><tr><td class="height"></td><td class="pagetitle">自作ゲーム</td><td class="pagego">&#9654;</td></tr></table></div></a>
+<a href="CSTool"><div class="page"><table><tr><td class="height"></td><td class="pagetitle">自作ツール</td><td class="pagego">&#9654;</td></tr></table></div></a>
+</div>
+<a id="contentLottery"></a>
+<div class="hl">カオスネークジ<span id="pulldownLottery" onclick="pulldown(pulldownLottery,Lottery)">&#9654;</span></div>
+<div id="Lottery">
+<div class="cslottery" onclick="lottery()">クジを引く</div>
+</div>
+<a id="contentCSDice"></a>
+<div class="hl">CSDice<span id="pulldownCSDice" onclick="pulldown(pulldownCSDice,CSDice)">&#9654;</span></div>
+<div id="CSDice">
+<div class="dicearea">
+<div id="diceOne"><span class="one">&emsp;&emsp;&emsp;<br>&emsp;●&emsp;<br>&emsp;&emsp;&emsp;</div>
+<div id="diceTwo">●&emsp;&emsp;<br>&emsp;&emsp;&emsp;<br>&emsp;&emsp;●</div>
+</div>
+<div class="hl2">ルール</div>
+<div class="rule">2つのサイコロのうち、どちらか片方の目と予想した目が一致すると、BetしたCSPが2倍、両方の目と一致すると4倍になります。</div>
+<div class="hl2">BetするCSP</div>
+<textarea id="betcsp"></textarea>
+<div id="nowcsp"></div>
+<div class="hl2">予想する目</div>
+<select id="inputDice">
+<option value=1>1</option>
+<option value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+</select>
+<div class="betbt" onclick="dice()">Bet</div>
+</div>
+<a id="contentCSPShop"></a>
+<div class="hl">CSPShop<span id="pulldownCSPShop" onclick="pulldown(pulldownCSPShop,CSPShop)">&#9654;</span></div>
+<div id="CSPShop">
+<label class="items" id="addl"><input type="radio" name="item" value="addl,300">広告削除　300CSP</label>
+<label class="items" id="logbo"><input type="radio" name="item" value="logbo,500">ログインボーナス解放　500CSP</label>
+<label class="items" id="logbo_sold"><input type="radio" name="item" value="logbo_sold,750">ログボグレードアップ　750CSP</label>
+<label class="items" id="logbo_sold_sold"><input type="radio" name="item" value="logbo_sold_sold,1000">ログボグレードアップ　1000CSP</label>
+<label class="items" id="medal50"><input type="radio" name="item" value="medal50,500">SLOT用MEDAL50枚　500CSP</label>
+<div class="items" id="addl_sold">広告削除　購入済</div>
+<div class="items" id="logbo_sold_sold_sold">ログインボーナス　購入済</div>
+<div class="betbt" onclick="buy()">購入
+</div>
+</div>
+<div class="footer">
+
+
+<table class="footer_table"><tr><td class="newsh">News</td><td class="news_td"><marquee scrollamount="5"> 純ハムラン7周年おめでとう！　5/24</marquee></td></tr></table>
+</body>
+</html>
