@@ -1,0 +1,50 @@
+body{
+background:#fff;
+}
+#outputbt{
+background:#999;
+border:2px solid black;
+border-radius:3px;
+width:200px;
+text-align:center;
+margin:40px auto;
+font-weight:900;
+}
+#outputbt:active{
+background:#000;
+color:white;
+}
+.hl{
+width:100%;
+background:#999;
+font-weight:900;
+margin-bottom:10px;
+text-align:center;
+}
+.deco{
+text-align:center;
+}
+.deco textarea{
+height:16px;
+width:100px;
+position:relative;
+top:5px;
+}
+.decohl{
+background:#ffffcc;
+text-align:center;
+margin:20px 0;
+}
+#text{
+width:300px;
+display:block;
+margin:0 auto;
+height:150px;
+}
+#outputarea{
+width:100%;
+height:250px;
+}
+#image{
+padding:20px 0;
+}
