@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>神経衰弱</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="images/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="script.js" type="text/javascript"></script>
+<meta charset="UTF-8">
+</head>
+<body onload ="loading()">
+<div id="gard"></div>
+<div id="pop">
+  <div id="pu">
+    <table>
+      <tr>
+        <td>
+          <div id="message"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id="okbtn" onclick="ok()">OK</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div id="mode">
+  <div class="title">神<span class="titred">経</span>衰<span class="titred">弱</span></div>
+  <div onclick="scmode()" class="button">スコアアタックモード</div>
+  <div class="button" onclick="btmode()">オフライン対戦モード</div>
+</div>
+<div id="re" class="ret">
+  <div class="rebt" onclick="retry()">Retry</div>
+</div>
+<div id="info"></div>
+<table align=center id="tb">
+  <tr>
+    <td>
+      <div id="c1" class="card" onclick="ca1()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c2" class="card" onclick="ca2()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c3" class="card" onclick="ca3()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c4" class="card" onclick="ca4()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c13" class="card" onclick="ca13()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c14" class="card" onclick="ca14()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id="c5" class="card" onclick="ca5()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c6" class="card" onclick="ca6()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c7" class="card" onclick="ca7()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c8" class="card" onclick="ca8()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c15" class="card" onclick="ca15()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c16" class="card" onclick="ca16()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id="c9" class="card" onclick="ca9()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c10" class="card" onclick="ca10()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c11" class="card" onclick="ca11()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c12" class="card" onclick="ca12()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c17" class="card" onclick="ca17()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c18" class="card" onclick="ca18()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id="c19" class="card" onclick="ca19()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c20" class="card" onclick="ca20()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c21" class="card" onclick="ca21()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c22" class="card" onclick="ca22()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c23" class="card" onclick="ca23()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c24" class="card" onclick="ca24()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id="c25" class="card" onclick="ca25()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c26" class="card" onclick="ca26()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c27" class="card" onclick="ca27()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c28" class="card" onclick="ca28()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c29" class="card" onclick="ca29()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c30" class="card" onclick="ca30()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id="c31" class="card" onclick="ca31()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c32" class="card" onclick="ca32()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c33" class="card" onclick="ca33()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c34" class="card" onclick="ca34()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c35" class="card" onclick="ca35()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c36" class="card" onclick="ca36()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id="c37" class="card" onclick="ca37()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c38" class="card" onclick="ca38()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c39" class="card" onclick="ca39()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c40" class="card" onclick="ca40()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c41" class="card" onclick="ca41()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c42" class="card" onclick="ca42()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id="c43" class="card" onclick="ca43()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c44" class="card" onclick="ca44()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c45" class="card" onclick="ca45()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c46" class="card" onclick="ca46()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c47" class="card" onclick="ca47()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c48" class="card" onclick="ca48()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div id="c49" class="card" onclick="ca49()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c50" class="card" onclick="ca50()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c51" class="card" onclick="ca51()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c52" class="card" onclick="ca52()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c53" class="card" onclick="ca53()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+    <td>
+      <div id="c54" class="card" onclick="ca54()"><img class="cardimg" width=25px height=45px src="images/card_back.png"></div>
+    </td>
+  </tr>
+</table>
+<hr>
+<center>
+  <font color=white size=1px>&#169;CSGame</font>
+</center>
+<div id=load><img src="images/load.gif" width="100px"></div>
+</body>
+</html>
