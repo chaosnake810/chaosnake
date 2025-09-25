@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>Cube Puzzle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="images/favicon.ico">
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+<table>
+<tr>
+<td colspan = 2 onclick="zd()" class="button" id="z1">
+&#9664;z'
+</td>
+<td colspan = 3 onclick="x()" class="button" id="x1">
+▲
+<br>
+x
+</td>
+<td colspan = 2 onclick="z()" class="button" id="z2">
+z&#9654;
+</td>
+</tr>
+<tr>
+<td rowspan = 5 onclick="y()" class="button" id="y1">
+&#9664;y
+</td>
+<td onclick="Fd()" class="button">
+&#9664;F'
+</td>
+<td onclick="Ld()" class="button">
+▲
+<br>
+L'
+</td>
+<td onclick="Md()" class="button">
+▲
+<br>
+M'
+</td>
+<td onclick="R()" class="button">
+▲
+<br>
+R
+</td>
+<td onclick="F()" class="button">
+F&#9654;
+</td>
+<td rowspan = 5 onclick="yd()" class="button" id="y2">
+y'&#9654;
+</td>
+</tr>
+<tr>
+<td onclick="U()" class="button">
+&#9664;U
+</td>
+<td colspan = 3 rowspan = 3 class="cubetd">
+<div id=cube></div>
+</td>
+<td onclick="Ud()" class="button">
+U'&#9654;
+</td>
+</tr>
+<tr>
+<td onclick="Ed()" class="button">
+&#9664;E'
+</td>
+<td onclick="E()" class="button">
+E&#9654;
+</td>
+</tr>
+<tr>
+<td onclick="Dd()" class="button">
+&#9664;D'
+</td>
+<td onclick="D()" class="button">
+D&#9654;
+</td>
+</tr>
+<tr>
+<td onclick="B()" class="button">
+&#9664;B
+</td>
+<td onclick="L()" class="button">
+L
+<br>
+▼
+</td>
+<td onclick="M()" class="button">
+M
+<br>
+▼
+</td>
+<td onclick="Rd()" class="button">
+R'
+<br>
+▼
+</td>
+<td onclick="Bd()" class="button">
+B'&#9654;
+</td>
+</tr>
+<tr>
+<td colspan = 2 onclick="Sd()" class="button">
+&#9664;S'
+</td>
+<td colspan = 3 onclick="xd()" class="button" id="x2">
+x'
+<br>
+▼
+</td>
+<td colspan = 2 onclick="S()" class="button">
+S&#9654;
+</td>
+</tr>
+</table>
+<br>
+<div onclick="shuffle()" class="button" id="shufflebt">Shuffle</div>
+<div onclick="setTimer()" class="button" id="startbt">Start</div>
+<div id="time"></div><br>
+<hr><center><font size=1>&#169;CSGame</font></center>
+<div id="popup">
+<div id="popWindow">
+<div id="popTitle">
+Finish!
+</div>
+<div id="popMessage"></div>
+<div id="popButton" onclick="closePop()">OK</div>
+</div>
+</div>
+<div id=load><img src="images/load.gif" width="100px"></div>
+</body>
+</html>
