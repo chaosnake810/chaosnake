@@ -1,0 +1,29 @@
+body{
+background:#eee;
+}
+.sample {
+background:#ffc;
+border:solid 1px #aaa;
+}
+h3{
+text-align:center;
+background:#bbb;
+}
+h4{
+text-align:center;
+background:#bbf;
+}
+textarea{
+width:100%;
+height:100px;
+}
+.attention{
+color:#f00;
+}
+.colorSample{
+display:inline-block;
+border:solid 0.5px black;
+width:15px;
+height:15px;
+margin-left:5px;
+}

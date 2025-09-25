@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
+<title>自作タグ集</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="https://chaosnake.web.fc2.com/CSTool/Tags/Files/rainbow.js"></script>
+<meta charset="UTF-8">
+</head>
+<body>
+<h2>自作タグ集</h2>
+<center><a href="https://chaosnake.web.fc2.com/CSTool/Tags/Demo/">タグを試す</a></center>
+<h3>虹色文字</h3>
+<h4>サンプル</h4>
+<p>通常</p>
+<div class="sample">
+<rainbow>レインボーーー！</rainbow>
+</div>
+<p>速度指定</p>
+<div class="sample">
+<rainbow speed="50">レインボーーー！</rainbow>
+</div>
+<p>色指定</p>
+<div class="sample">
+<rainbow c1="#000000" c2="#ffffff" c3="#000000" c4="#ffffff" c5="#000000" c6="#ffffff" c7="#000000">レインボーーー！</rainbow>
+</div>
+<p>背景を虹色</p>
+<div class="sample">
+<rainbow type="bg">レインボーーー！</rainbow>
+</div>
+<p>方向指定+グラデーション強化</p>
+<div class="sample">
+<rainbow direction="top">レインボーーー！</rainbow>
+<br>
+<rainbow direction="left" type="bg">レインボーーー！</rainbow>
+</div>
+<h4>ソース</h4>
+<p>共通タグ(&lt;head&gt;-&lt;/head&gt;間に1個だけ貼り付け)</p>
+<textarea><script src="https://chaosnake.web.fc2.com/CSTool/Tags/Files/rainbow.js"></script></textarea>
+<p>虹色タグ(複数使用可)</p>
+<textarea>
+ <rainbow>ここに文字</rainbow>
+</textarea>
+<h4>オプション指定</h4>
+<p>速度指定</p>
+<ul>
+<li>speedプロパティで指定</li>
+<li>ミリ秒で指定</li>
+<li>デフォルト：100ミリ秒</li>
+</ul>
+<div class="sample">
+&lt;rainbow speed="50"&gt;文字&lt;/rainbow&gt;
+</div>
+<p>色指定</p>
+<ul>
+<li>c1〜c7プロパティで指定</li>
+<li>
+デフォルト：
+<ul>
+<li>c1：#ff0000<div class="colorSample" style="background:#ff0000;"/></li>
+<li>c2：#ffa500<div class="colorSample" style="background:#ffa500;"/></li>
+<li>c3：#ffff00<div class="colorSample" style="background:#ffff00;"/></li>
+<li>c4：#008000<div class="colorSample" style="background:#008000;"/></li>
+<li>c5：#00ffff<div class="colorSample" style="background:#00ffff;"/></li>
+<li>c6：#0000ff<div class="colorSample" style="background:#0000ff;"/></li>
+<li>c7：#800080<div class="colorSample" style="background:#800080;"/></li>
+</ul>
+</li>
+</ul>
+<div class="sample">
+&lt;rainbow c1="#000000" c2="#ffffff" c3="#000000" c4="#ffffff" c5="#000000" c6="#ffffff" c7="#000000"&gt;文字&lt;/rainbow&gt;
+</div>
+<p>背景を虹色</p>
+<ul>
+<li>typeプロパティで指定</li>
+<li>"bg"で虹色にする対象を背景色に変更</li>
+<li>デフォルト：なし(文字を虹色)</li>
+</ul>
+<div class="sample">
+&lt;rainbow type="bg"&gt;文字&lt;/rainbow&gt;
+</div>
+<p>方向指定</p>
+<ul>
+<li>directionプロパティで指定</li>
+<li>方向を指定すると共に、グラデーションも強化される。</li>
+<li>type="bg"と併用で、背景も線形グラデーションに変更可能。</li>
+<li>設定値：
+<ul>
+<li>top：上方向</li>
+<li>bottom：下方向</li>
+<li>left：左方向</li>
+<li>right：右方向</li>
+</ul>
+</li>
+<li>デフォルト：なし</li>
+</ul>
+<div class="sample">
+&lt;rainbow direction="top"&gt;文字&lt;/rainbow&gt;
+</div>
+<h4 class="attention">注意事項</h4>
+<ul>
+<li><s>入れ子不可(※)</s> → <span style="color:red">2025/07/17:入れ子対応</span></li>
+<li>JavaScriptを使用するため、ハムラン(HP含む)での使用は不可。</li>
+</ul>
+</body>
+</html>
