@@ -1,0 +1,262 @@
+#pop{
+display:none;
+justify-content: center;
+align-items: center;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:9;
+}
+.po{
+background:radial-gradient(#ccc,#eee);
+width:250px;
+height:150px;
+border:3px solid gold;
+border-radius:5px;
+display:flex;
+justify-content: center;
+align-items: center;
+color:#000055;
+font-weight:900;
+}
+.okb{
+color:white;
+background:linear-gradient(#000055,#000099);
+width:60px;
+height:30px;
+border:1px solid gold;
+box-shadow:0 3px gold;
+border-radius:5px;
+display:flex;
+justify-content: center;
+align-items: center;
+margin-left:auto;
+margin-right:auto;
+}
+.okb:active{
+box-shadow:none;
+position:relative;
+top:3px;
+}
+.tips{
+border-radius:5px;
+border:3px solid gold;
+}
+#load{
+position:fixed;
+display:flex;
+background:linear-gradient(#666,#bbb);
+color:white;
+font-weight:900;
+justify-content: center;
+align-items: center;
+font-size:15px;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:10;
+}
+*{
+font-family: 'Noto Sans JP', sans-serif;
+}
+img{
+position:relative;
+top:3.7px;
+}
+.bt{
+width:75px;
+height:75px;
+background:linear-gradient(45deg,gray,#ddd);
+border-radius:37.5px;
+display:flex;
+justify-content: center;
+align-items: center;
+margin-left:auto;
+margin-right:auto;
+border:1px solid black;
+}
+.info{
+background-color:black;
+color:yellow;
+border:3px solid gold;
+border-radius:5px;
+font-weight:900;
+font-size:15px;
+margin-bottom:5px;
+}
+#medals{
+float:left;
+}
+#bets{
+float:right;
+}
+#maxbet{
+width:60px;
+height:45px;
+border-radius:30px/22.5px;
+background-color:white;
+line-height:0.8;
+display:flex;
+justify-content: center;
+align-items: center;
+border:1px solid gray;
+font-weight:900;
+box-shadow:0 1px #ccc;
+}
+#maxbet:active{
+position:relative;
+top:1px;
+box-shadow:none;
+}
+#bet{
+width:40px;
+height:40px;
+border-radius:20px;
+background-color:white;
+display:flex;
+justify-content: center;
+align-items: center;
+border:1px solid gray;
+font-weight:900;
+float:right;
+box-shadow:0 1px #ccc;
+}
+#bet:active{
+position:relative;
+top:1px;
+box-shadow:none;
+}
+.reela{
+background-color:black;
+border:5px solid gold;
+border-radius:10px;
+}
+.reels{
+background:linear-gradient(#ccc,#eee,#ccc);
+width:50px;
+height:150px;
+font-size:30px;
+border-radius:30px;
+display:inline-block;
+line-height:1.7;
+}
+.slot{
+margin-left:auto;
+margin-right:auto;
+padding:40px 10px 15px 10px;
+background:radial-gradient(#000099,#000055);
+border-radius:10px;
+text-align:center;
+width:340px;
+}
+.button{
+width:60px;
+height:60px;
+background:radial-gradient(#aa0000,#dd0000);
+border-radius:30px;
+border:1px solid #aa0000;
+box-shadow:0 1px #aa0000;
+}
+.button:active{
+position:relative;
+top:1px;
+box-shadow:none;
+}
+#lever{
+width:30px;
+height:30px;
+background:radial-gradient(#555555,black);
+border-radius:15px;
+}
+#lever:active{
+position:relative;
+top:10px;
+background:radial-gradient(circle at 50% 30%,#555555,black);
+}
+.lev{
+width:60px;
+height:60px;
+background:radial-gradient(#222222,#cccccc);
+border-radius:30px;
+display:flex;
+justify-content: center;
+align-items: center;
+border:1px solid black;
+}
+#one{
+border-top:3px solid black;
+border-bottom:3px solid black;
+border-left:3px solid black;
+border-right:15px solid black;
+position:relative;
+left:2px;
+}
+#two{
+border-top:3px solid black;
+border-bottom:3px solid black;
+border-left:15px solid black;
+border-right:15px solid black;
+}
+#three{
+border-top:3px solid black;
+border-bottom:3px solid black;
+border-left:15px solid black;
+border-right:3px solid black;
+position:relative;
+right:2px;
+}
+#leftt,#leftt2,#leftc,#leftb2,#leftb,#rightt,#rightt2,#rightc,#rightb2,#rightb{
+color:#333333;
+-webkit-text-stroke:1px white;
+}
+#leftt{
+position:relative;
+bottom:45px;
+left:3px;
+display:inline-block;
+transform:rotate(45deg);
+}
+#leftt2{
+position:relative;
+bottom:30px;
+}
+#leftb2{
+position:relative;
+top:30px;
+}
+#leftb{
+position:relative;
+top:45px;
+left:3px;
+display:inline-block;
+transform:rotate(-45deg);
+}
+#rightt{
+position:relative;
+bottom:45px;
+right:3px;
+display:inline-block;
+transform:rotate(-45deg);
+}
+#rightt2{
+position:relative;
+bottom:30px;
+}
+#rightb2{
+position:relative;
+top:30px;
+}
+#rightb{
+position:relative;
+top:45px;
+right:3px;
+display:inline-block;
+transform:rotate(45deg);
+}
+body{
+background-color:#00aaff;
+-webkit-user-select:none;
+}
