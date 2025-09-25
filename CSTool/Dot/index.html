@@ -1,1 +1,295 @@
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
+<title>ドット絵タグ作成ツール</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="script.js" type="text/javascript"></script>
+<meta charset="UTF-8">
+</head>
+<body>
+<div class=hl>ドット絵タグ作成</div>
+<div id="dots">
+<span id="dotA1" onclick=popup(dotA1,"A1")>□</span>
+<span id="dotA2" onclick=popup(dotA2,"A2")>□</span>
+<span id="dotA3" onclick=popup(dotA3,"A3")>□</span>
+<span id="dotA4" onclick=popup(dotA4,"A4")>□</span>
+<span id="dotA5" onclick=popup(dotA5,"A5")>□</span>
+<span id="dotA6" onclick=popup(dotA6,"A6")>□</span>
+<span id="dotA7" onclick=popup(dotA7,"A7")>□</span>
+<span id="dotA8" onclick=popup(dotA8,"A8")>□</span>
+<span id="dotA9" onclick=popup(dotA9,"A9")>□</span>
+<span id="dotA10" onclick=popup(dotA10,"A10")>□</span>
+<span id="dotA11" onclick=popup(dotA11,"A11")>□</span>
+<span id="dotA12" onclick=popup(dotA12,"A12")>□</span>
+<span id="dotA13" onclick=popup(dotA13,"A13")>□</span>
+<span id="dotA14" onclick=popup(dotA14,"A14")>□</span>
+<span id="dotA15" onclick=popup(dotA15,"A15")>□</span>
+<span id="dotA16" onclick=popup(dotA16,"A16")>□</span>
+<br>
+<span id="dotB1" onclick=popup(dotB1,"B1")>□</span>
+<span id="dotB2" onclick=popup(dotB2,"B2")>□</span>
+<span id="dotB3" onclick=popup(dotB3,"B3")>□</span>
+<span id="dotB4" onclick=popup(dotB4,"B4")>□</span>
+<span id="dotB5" onclick=popup(dotB5,"B5")>□</span>
+<span id="dotB6" onclick=popup(dotB6,"B6")>□</span>
+<span id="dotB7" onclick=popup(dotB7,"B7")>□</span>
+<span id="dotB8" onclick=popup(dotB8,"B8")>□</span>
+<span id="dotB9" onclick=popup(dotB9,"B9")>□</span>
+<span id="dotB10" onclick=popup(dotB10,"B10")>□</span>
+<span id="dotB11" onclick=popup(dotB11,"B11")>□</span>
+<span id="dotB12" onclick=popup(dotB12,"B12")>□</span>
+<span id="dotB13" onclick=popup(dotB13,"B13")>□</span>
+<span id="dotB14" onclick=popup(dotB14,"B14")>□</span>
+<span id="dotB15" onclick=popup(dotB15,"B15")>□</span>
+<span id="dotB16" onclick=popup(dotB16,"B16")>□</span>
+<br>
+<span id="dotC1" onclick=popup(dotC1,"C1")>□</span>
+<span id="dotC2" onclick=popup(dotC2,"C2")>□</span>
+<span id="dotC3" onclick=popup(dotC3,"C3")>□</span>
+<span id="dotC4" onclick=popup(dotC4,"C4")>□</span>
+<span id="dotC5" onclick=popup(dotC5,"C5")>□</span>
+<span id="dotC6" onclick=popup(dotC6,"C6")>□</span>
+<span id="dotC7" onclick=popup(dotC7,"C7")>□</span>
+<span id="dotC8" onclick=popup(dotC8,"C8")>□</span>
+<span id="dotC9" onclick=popup(dotC9,"C9")>□</span>
+<span id="dotC10" onclick=popup(dotC10,"C10")>□</span>
+<span id="dotC11" onclick=popup(dotC11,"C11")>□</span>
+<span id="dotC12" onclick=popup(dotC12,"C12")>□</span>
+<span id="dotC13" onclick=popup(dotC13,"C13")>□</span>
+<span id="dotC14" onclick=popup(dotC14,"C14")>□</span>
+<span id="dotC15" onclick=popup(dotC15,"C15")>□</span>
+<span id="dotC16" onclick=popup(dotC16,"C16")>□</span>
+<br>
+<span id="dotD1" onclick=popup(dotD1,"D1")>□</span>
+<span id="dotD2" onclick=popup(dotD2,"D2")>□</span>
+<span id="dotD3" onclick=popup(dotD3,"D3")>□</span>
+<span id="dotD4" onclick=popup(dotD4,"D4")>□</span>
+<span id="dotD5" onclick=popup(dotD5,"D5")>□</span>
+<span id="dotD6" onclick=popup(dotD6,"D6")>□</span>
+<span id="dotD7" onclick=popup(dotD7,"D7")>□</span>
+<span id="dotD8" onclick=popup(dotD8,"D8")>□</span>
+<span id="dotD9" onclick=popup(dotD9,"D9")>□</span>
+<span id="dotD10" onclick=popup(dotD10,"D10")>□</span>
+<span id="dotD11" onclick=popup(dotD11,"D11")>□</span>
+<span id="dotD12" onclick=popup(dotD12,"D12")>□</span>
+<span id="dotD13" onclick=popup(dotD13,"D13")>□</span>
+<span id="dotD14" onclick=popup(dotD14,"D14")>□</span>
+<span id="dotD15" onclick=popup(dotD15,"D15")>□</span>
+<span id="dotD16" onclick=popup(dotD16,"D16")>□</span>
+<br>
+<span id="dotE1" onclick=popup(dotE1,"E1")>□</span>
+<span id="dotE2" onclick=popup(dotE2,"E2")>□</span>
+<span id="dotE3" onclick=popup(dotE3,"E3")>□</span>
+<span id="dotE4" onclick=popup(dotE4,"E4")>□</span>
+<span id="dotE5" onclick=popup(dotE5,"E5")>□</span>
+<span id="dotE6" onclick=popup(dotE6,"E6")>□</span>
+<span id="dotE7" onclick=popup(dotE7,"E7")>□</span>
+<span id="dotE8" onclick=popup(dotE8,"E8")>□</span>
+<span id="dotE9" onclick=popup(dotE9,"E9")>□</span>
+<span id="dotE10" onclick=popup(dotE10,"E10")>□</span>
+<span id="dotE11" onclick=popup(dotE11,"E11")>□</span>
+<span id="dotE12" onclick=popup(dotE12,"E12")>□</span>
+<span id="dotE13" onclick=popup(dotE13,"E13")>□</span>
+<span id="dotE14" onclick=popup(dotE14,"E14")>□</span>
+<span id="dotE15" onclick=popup(dotE15,"E15")>□</span>
+<span id="dotE16" onclick=popup(dotE16,"E16")>□</span>
+<br>
+<span id="dotF1" onclick=popup(dotF1,"F1")>□</span>
+<span id="dotF2" onclick=popup(dotF2,"F2")>□</span>
+<span id="dotF3" onclick=popup(dotF3,"F3")>□</span>
+<span id="dotF4" onclick=popup(dotF4,"F4")>□</span>
+<span id="dotF5" onclick=popup(dotF5,"F5")>□</span>
+<span id="dotF6" onclick=popup(dotF6,"F6")>□</span>
+<span id="dotF7" onclick=popup(dotF7,"F7")>□</span>
+<span id="dotF8" onclick=popup(dotF8,"F8")>□</span>
+<span id="dotF9" onclick=popup(dotF9,"F9")>□</span>
+<span id="dotF10" onclick=popup(dotF10,"F10")>□</span>
+<span id="dotF11" onclick=popup(dotF11,"F11")>□</span>
+<span id="dotF12" onclick=popup(dotF12,"F12")>□</span>
+<span id="dotF13" onclick=popup(dotF13,"F13")>□</span>
+<span id="dotF14" onclick=popup(dotF14,"F14")>□</span>
+<span id="dotF15" onclick=popup(dotF15,"F15")>□</span>
+<span id="dotF16" onclick=popup(dotF16,"F16")>□</span>
+<br>
+<span id="dotG1" onclick=popup(dotG1,"G1")>□</span>
+<span id="dotG2" onclick=popup(dotG2,"G2")>□</span>
+<span id="dotG3" onclick=popup(dotG3,"G3")>□</span>
+<span id="dotG4" onclick=popup(dotG4,"G4")>□</span>
+<span id="dotG5" onclick=popup(dotG5,"G5")>□</span>
+<span id="dotG6" onclick=popup(dotG6,"G6")>□</span>
+<span id="dotG7" onclick=popup(dotG7,"G7")>□</span>
+<span id="dotG8" onclick=popup(dotG8,"G8")>□</span>
+<span id="dotG9" onclick=popup(dotG9,"G9")>□</span>
+<span id="dotG10" onclick=popup(dotG10,"G10")>□</span>
+<span id="dotG11" onclick=popup(dotG11,"G11")>□</span>
+<span id="dotG12" onclick=popup(dotG12,"G12")>□</span>
+<span id="dotG13" onclick=popup(dotG13,"G13")>□</span>
+<span id="dotG14" onclick=popup(dotG14,"G14")>□</span>
+<span id="dotG15" onclick=popup(dotG15,"G15")>□</span>
+<span id="dotG16" onclick=popup(dotG16,"G16")>□</span>
+<br>
+<span id="dotH1" onclick=popup(dotH1,"H1")>□</span>
+<span id="dotH2" onclick=popup(dotH2,"H2")>□</span>
+<span id="dotH3" onclick=popup(dotH3,"H3")>□</span>
+<span id="dotH4" onclick=popup(dotH4,"H4")>□</span>
+<span id="dotH5" onclick=popup(dotH5,"H5")>□</span>
+<span id="dotH6" onclick=popup(dotH6,"H6")>□</span>
+<span id="dotH7" onclick=popup(dotH7,"H7")>□</span>
+<span id="dotH8" onclick=popup(dotH8,"H8")>□</span>
+<span id="dotH9" onclick=popup(dotH9,"H9")>□</span>
+<span id="dotH10" onclick=popup(dotH10,"H10")>□</span>
+<span id="dotH11" onclick=popup(dotH11,"H11")>□</span>
+<span id="dotH12" onclick=popup(dotH12,"H12")>□</span>
+<span id="dotH13" onclick=popup(dotH13,"H13")>□</span>
+<span id="dotH14" onclick=popup(dotH14,"H14")>□</span>
+<span id="dotH15" onclick=popup(dotH15,"H15")>□</span>
+<span id="dotH16" onclick=popup(dotH16,"H16")>□</span>
+<br>
+<span id="dotI1" onclick=popup(dotI1,"I1")>□</span>
+<span id="dotI2" onclick=popup(dotI2,"I2")>□</span>
+<span id="dotI3" onclick=popup(dotI3,"I3")>□</span>
+<span id="dotI4" onclick=popup(dotI4,"I4")>□</span>
+<span id="dotI5" onclick=popup(dotI5,"I5")>□</span>
+<span id="dotI6" onclick=popup(dotI6,"I6")>□</span>
+<span id="dotI7" onclick=popup(dotI7,"I7")>□</span>
+<span id="dotI8" onclick=popup(dotI8,"I8")>□</span>
+<span id="dotI9" onclick=popup(dotI9,"I9")>□</span>
+<span id="dotI10" onclick=popup(dotI10,"I10")>□</span>
+<span id="dotI11" onclick=popup(dotI11,"I11")>□</span>
+<span id="dotI12" onclick=popup(dotI12,"I12")>□</span>
+<span id="dotI13" onclick=popup(dotI13,"I13")>□</span>
+<span id="dotI14" onclick=popup(dotI14,"I14")>□</span>
+<span id="dotI15" onclick=popup(dotI15,"I15")>□</span>
+<span id="dotI16" onclick=popup(dotI16,"I16")>□</span>
+<br>
+<span id="dotJ1" onclick=popup(dotJ1,"J1")>□</span>
+<span id="dotJ2" onclick=popup(dotJ2,"J2")>□</span>
+<span id="dotJ3" onclick=popup(dotJ3,"J3")>□</span>
+<span id="dotJ4" onclick=popup(dotJ4,"J4")>□</span>
+<span id="dotJ5" onclick=popup(dotJ5,"J5")>□</span>
+<span id="dotJ6" onclick=popup(dotJ6,"J6")>□</span>
+<span id="dotJ7" onclick=popup(dotJ7,"J7")>□</span>
+<span id="dotJ8" onclick=popup(dotJ8,"J8")>□</span>
+<span id="dotJ9" onclick=popup(dotJ9,"J9")>□</span>
+<span id="dotJ10" onclick=popup(dotJ10,"J10")>□</span>
+<span id="dotJ11" onclick=popup(dotJ11,"J11")>□</span>
+<span id="dotJ12" onclick=popup(dotJ12,"J12")>□</span>
+<span id="dotJ13" onclick=popup(dotJ13,"J13")>□</span>
+<span id="dotJ14" onclick=popup(dotJ14,"J14")>□</span>
+<span id="dotJ15" onclick=popup(dotJ15,"J15")>□</span>
+<span id="dotJ16" onclick=popup(dotJ16,"J16")>□</span>
+<br>
+<span id="dotK1" onclick=popup(dotK1,"K1")>□</span>
+<span id="dotK2" onclick=popup(dotK2,"K2")>□</span>
+<span id="dotK3" onclick=popup(dotK3,"K3")>□</span>
+<span id="dotK4" onclick=popup(dotK4,"K4")>□</span>
+<span id="dotK5" onclick=popup(dotK5,"K5")>□</span>
+<span id="dotK6" onclick=popup(dotK6,"K6")>□</span>
+<span id="dotK7" onclick=popup(dotK7,"K7")>□</span>
+<span id="dotK8" onclick=popup(dotK8,"K8")>□</span>
+<span id="dotK9" onclick=popup(dotK9,"K9")>□</span>
+<span id="dotK10" onclick=popup(dotK10,"K10")>□</span>
+<span id="dotK11" onclick=popup(dotK11,"K11")>□</span>
+<span id="dotK12" onclick=popup(dotK12,"K12")>□</span>
+<span id="dotK13" onclick=popup(dotK13,"K13")>□</span>
+<span id="dotK14" onclick=popup(dotK14,"K14")>□</span>
+<span id="dotK15" onclick=popup(dotK15,"K15")>□</span>
+<span id="dotK16" onclick=popup(dotK16,"K16")>□</span>
+<br>
+<span id="dotL1" onclick=popup(dotL1,"L1")>□</span>
+<span id="dotL2" onclick=popup(dotL2,"L2")>□</span>
+<span id="dotL3" onclick=popup(dotL3,"L3")>□</span>
+<span id="dotL4" onclick=popup(dotL4,"L4")>□</span>
+<span id="dotL5" onclick=popup(dotL5,"L5")>□</span>
+<span id="dotL6" onclick=popup(dotL6,"L6")>□</span>
+<span id="dotL7" onclick=popup(dotL7,"L7")>□</span>
+<span id="dotL8" onclick=popup(dotL8,"L8")>□</span>
+<span id="dotL9" onclick=popup(dotL9,"L9")>□</span>
+<span id="dotL10" onclick=popup(dotL10,"L10")>□</span>
+<span id="dotL11" onclick=popup(dotL11,"L11")>□</span>
+<span id="dotL12" onclick=popup(dotL12,"L12")>□</span>
+<span id="dotL13" onclick=popup(dotL13,"L13")>□</span>
+<span id="dotL14" onclick=popup(dotL14,"L14")>□</span>
+<span id="dotL15" onclick=popup(dotL15,"L15")>□</span>
+<span id="dotL16" onclick=popup(dotL16,"L16")>□</span>
+<br>
+<span id="dotM1" onclick=popup(dotM1,"M1")>□</span>
+<span id="dotM2" onclick=popup(dotM2,"M2")>□</span>
+<span id="dotM3" onclick=popup(dotM3,"M3")>□</span>
+<span id="dotM4" onclick=popup(dotM4,"M4")>□</span>
+<span id="dotM5" onclick=popup(dotM5,"M5")>□</span>
+<span id="dotM6" onclick=popup(dotM6,"M6")>□</span>
+<span id="dotM7" onclick=popup(dotM7,"M7")>□</span>
+<span id="dotM8" onclick=popup(dotM8,"M8")>□</span>
+<span id="dotM9" onclick=popup(dotM9,"M9")>□</span>
+<span id="dotM10" onclick=popup(dotM10,"M10")>□</span>
+<span id="dotM11" onclick=popup(dotM11,"M11")>□</span>
+<span id="dotM12" onclick=popup(dotM12,"M12")>□</span>
+<span id="dotM13" onclick=popup(dotM13,"M13")>□</span>
+<span id="dotM14" onclick=popup(dotM14,"M14")>□</span>
+<span id="dotM15" onclick=popup(dotM15,"M15")>□</span>
+<span id="dotM16" onclick=popup(dotM16,"M16")>□</span>
+<br>
+<span id="dotN1" onclick=popup(dotN1,"N1")>□</span>
+<span id="dotN2" onclick=popup(dotN2,"N2")>□</span>
+<span id="dotN3" onclick=popup(dotN3,"N3")>□</span>
+<span id="dotN4" onclick=popup(dotN4,"N4")>□</span>
+<span id="dotN5" onclick=popup(dotN5,"N5")>□</span>
+<span id="dotN6" onclick=popup(dotN6,"N6")>□</span>
+<span id="dotN7" onclick=popup(dotN7,"N7")>□</span>
+<span id="dotN8" onclick=popup(dotN8,"N8")>□</span>
+<span id="dotN9" onclick=popup(dotN9,"N9")>□</span>
+<span id="dotN10" onclick=popup(dotN10,"N10")>□</span>
+<span id="dotN11" onclick=popup(dotN11,"N11")>□</span>
+<span id="dotN12" onclick=popup(dotN12,"N12")>□</span>
+<span id="dotN13" onclick=popup(dotN13,"N13")>□</span>
+<span id="dotN14" onclick=popup(dotN14,"N14")>□</span>
+<span id="dotN15" onclick=popup(dotN15,"N15")>□</span>
+<span id="dotN16" onclick=popup(dotN16,"N16")>□</span>
+<br>
+<span id="dotO1" onclick=popup(dotO1,"O1")>□</span>
+<span id="dotO2" onclick=popup(dotO2,"O2")>□</span>
+<span id="dotO3" onclick=popup(dotO3,"O3")>□</span>
+<span id="dotO4" onclick=popup(dotO4,"O4")>□</span>
+<span id="dotO5" onclick=popup(dotO5,"O5")>□</span>
+<span id="dotO6" onclick=popup(dotO6,"O6")>□</span>
+<span id="dotO7" onclick=popup(dotO7,"O7")>□</span>
+<span id="dotO8" onclick=popup(dotO8,"O8")>□</span>
+<span id="dotO9" onclick=popup(dotO9,"O9")>□</span>
+<span id="dotO10" onclick=popup(dotO10,"O10")>□</span>
+<span id="dotO11" onclick=popup(dotO11,"O11")>□</span>
+<span id="dotO12" onclick=popup(dotO12,"O12")>□</span>
+<span id="dotO13" onclick=popup(dotO13,"O13")>□</span>
+<span id="dotO14" onclick=popup(dotO14,"O14")>□</span>
+<span id="dotO15" onclick=popup(dotO15,"O15")>□</span>
+<span id="dotO16" onclick=popup(dotO16,"O16")>□</span>
+<br>
+<span id="dotP1" onclick=popup(dotP1,"P1")>□</span>
+<span id="dotP2" onclick=popup(dotP2,"P2")>□</span>
+<span id="dotP3" onclick=popup(dotP3,"P3")>□</span>
+<span id="dotP4" onclick=popup(dotP4,"P4")>□</span>
+<span id="dotP5" onclick=popup(dotP5,"P5")>□</span>
+<span id="dotP6" onclick=popup(dotP6,"P6")>□</span>
+<span id="dotP7" onclick=popup(dotP7,"P7")>□</span>
+<span id="dotP8" onclick=popup(dotP8,"P8")>□</span>
+<span id="dotP9" onclick=popup(dotP9,"P9")>□</span>
+<span id="dotP10" onclick=popup(dotP10,"P10")>□</span>
+<span id="dotP11" onclick=popup(dotP11,"P11")>□</span>
+<span id="dotP12" onclick=popup(dotP12,"P12")>□</span>
+<span id="dotP13" onclick=popup(dotP13,"P13")>□</span>
+<span id="dotP14" onclick=popup(dotP14,"P14")>□</span>
+<span id="dotP15" onclick=popup(dotP15,"P15")>□</span>
+<span id="dotP16" onclick=popup(dotP16,"P16")>□</span>
+</div>
+<div class="colorarea">カラーコード入力:<textarea id=colorcode onkeyup="sample()"></textarea><span id="colorsample">□</span>
+<div id="outputbt" onclick="output()">出力</div>
+<div class="hl">プレビュー</div>
+<div id="image"></div>
+<div class="hl">HTMLソース</div>
+<textarea id="outputarea"></textarea>
+</body>
+</html>
