@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>Monster Cube 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="https://unpkg.com/three@0.147.0/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
+<script src="script.js" type="text/javascript"></script>
+
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1"/>
+<meta charset="UTF-8">
+</head>
+<body onload ="loading()">
+<div id="titlePage">
+<div id="title">
+M<span class="oColor">o</span>nster C<span class="uColor">u</span>be
+<br>
+<span class="numThreeFont">3</span><span class="dFont">D</span>
+</div>
+<br>
+<div id="startButton" onclick="start()">START</div>
+<br>
+<br>
+<hr>
+<center>
+<font size=1 color=white>&#169;CSGame</font>
+</center>
+</div>
+
+<canvas id="myCanvas"></canvas>
+<canvas id="fixCameraCanvas"></canvas>
+<div id="scoreBoard">
+<div id="nowScore">SCORE:0</div>
+<div id="hiScore">HI-SCORE:0</div>
+</div>
+
+<div id="selectLevel">
+<center>
+<div class="levelSelectTitle">
+LEVEL SELECT
+</div>
+<table id="level">
+<tr>
+<td class="levelTd">
+<div id="levelEasy" onclick="selectEasy()">
+EASY
+</div>
+</td>
+<td class="levelTd">
+<div id="levelNormal" onclick="selectNormal()">
+NORMAL
+</div>
+</td>
+<td class="levelTd">
+<div id="levelHard" onclick="selectHard()">
+HARD
+</div>
+</td>
+</tr>
+</table>
+<table id="levelUltraHardTable">
+<tr>
+<td class="levelUltraHardTd">
+<div id="levelUltraHard">
+ULTRAHARD
+</div>
+</td>
+</tr>
+</table>
+<div id="playButton" onclick="play()">PLAY</div>
+</center>
+</div>
+
+<div id="upAndDownController">
+<span onpointerdown="upInterval(true)" onpointerup="upInterval(false)" oncontextmenu="return false;" class="button">▲</span>
+<br>
+<span onpointerdown="downInterval(true)" onpointerup="downInterval(false)" oncontextmenu="return false;" class="button">▼</span>
+</div>
+
+<div id="moveController">
+<span onclick="turn(2)" class="button">&#9664;</span>
+<span onpointerdown="moveInterval(true)" onpointerup="moveInterval(false)" oncontextmenu="return false;" class="button">●</span>
+<span onclick="turn(1)" class="button">&#9654;</span>
+<br>
+<span onclick="turn(3)" class="button">▼</span>
+</div>
+<div id="gameOverPage">
+<div class="gameOverTitle">
+GAME OVER
+</div>
+<div id="restartButton" onclick="restart()">RESTART</div>
+</div>
+<div id="popUpWindowBack">
+<div id="popUpWindow">
+<div id="popUpWindowMessage">
+</div>
+<div id="popUpWindowOkButton" onclick="popUpClose()">
+OK
+</div>
+</div>
+</div>
+<div id=load><img src="images/load.gif" width="100px"></div>
+</body>
+</html>
