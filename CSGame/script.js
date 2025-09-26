@@ -6,9 +6,10 @@ const bj = "images/icon_bigjump.png;BIGJUMP";
 const bd = "images/icon_bigdrop.png;BIGDROP";
 const ss = "images/icon_shinkeisuijaku.jpg;ShinkeiSuijaku";
 const sl = "images/icon_slot.png;SLOT";
+const db = "images/icon_doublebubble.png;DoubleBubble";
 let games = [];
 window.onload = function() {
-var images=[logo,mc,mc3,bj,bd,sl,cp,ss];
+var images=[logo,mc,mc3,bj,bd,sl,cp,ss,db];
 for (i = 0; i < images.length; i++){
 var img = document.createElement('img');
 img.src = images[i].split(";")[0];
@@ -35,4 +36,5 @@ setTimeout(redirect,500,url);
 }
 function redirect(url){
 window.location.href = url;
+
 }
