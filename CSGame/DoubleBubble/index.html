@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>Double Bubble</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="script.js" type="text/javascript"></script>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1"/>
+<meta charset="utf-8"/>
+</head>
+<body onload="loading()">
+<div id="selectDisplay">
+<div class="title">
+<span class="titleD">D</span>ouble <span class="titleB">B</span>ubble
+</div>
+<div class="levelButton bgEasy" onclick="initDisplay(300,'Easy',1000)">EASY</div>
+<div class="levelButton bgNormal" onclick="initDisplay(300,'Normal',5000)">NORMAL</div>
+<div class="levelButton bgHard" onclick="initDisplay(300,'Hard',10000)">HARD</div>
+<div id="scoreAttack">
+<div class="hl">SCORE ATTACK</div>
+<div class="levelButton bg300" onclick="initDisplay(300,'Hp300')">HP300</div>
+<div class="levelButton bg1" onclick="initDisplay(1,'Hp1')">HP1</div>
+</div>
+<hr><center><font size=1>&#169;CSGame</font></center>
+</div>
+<div id="gameDisplay">
+<div id="scoreDisplay"></div>
+<div id="pointDisplay"></div>
+<div id="highScoreDisplay"></div>
+<div id="infoContainer">
+<div id="pointTankContainer">
+<div id="pointTank"></div>
+<div id="nextNumberDisplay"></div>
+</div>
+<div id="buttonContainer">
+<div class="pointButton buttonNum4" onclick="getPoint(4)">4</div><div class="pointButton buttonNum8" onclick="getPoint(8)">8</div><div class="pointButton buttonNum16" onclick="getPoint(16)">16</div><div class="pointButton buttonNum32" 
+onclick="getPoint(32)">32</div>
+<br>
+<div class="pointButton buttonNum64" 
+onclick="getPoint(64)">64</div><div class="pointButton buttonNum128" onclick="getPoint(128)">128</div><div class="pointButton buttonNum256" onclick="getPoint(256)">256</div><div class="pointButton buttonNum512" onclick="getPoint(512)">512</div>
+</div>
+<div id="playerHPBar">
+<div id="playerNowHP"></div>
+<div id="playerNowHPText"></div>
+</div>
+</div>
+<div id="boardContainer"></div>
+</div>
+<div id="popContainer" onclick="popup('')">
+<div id="pop"></div>
+</div>
+<span id="unsupported"></span>
+<div id=load><img src="images/load.gif" width="100px"></div>
+</body>
+</html>
