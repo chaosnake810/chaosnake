@@ -1,4 +1,4 @@
-window.onload = function () => {
+window.onload = function () {
 alert("onload");
 try{
 let xhr = new XMLHttpRequest();
@@ -9,4 +9,5 @@ alert(xhr.responseText);
 alert(e);
 }
 } 
+
 
