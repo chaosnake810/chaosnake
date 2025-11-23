@@ -8,11 +8,19 @@ xhr.open("POST","https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwY
 xhr.onload = function() {
 bodyElement.innerHTML = xhr.responseText;
 }
+xhr.setRequestHeader('Content-Type', 'application/json');
+let param = {};
 switch(page){
   case "thread":
-    xhr.send("type=getReses");
+    param = {
+      "type":"getReses"
+    }
     break;
   default:
-    xhr.send("type=getThreads");
+    param = {
+      "type":"getThreads"
+    }
 }
+xhr.send(JSON.stringify(param));
 } 
+
