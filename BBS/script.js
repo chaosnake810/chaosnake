@@ -15,8 +15,7 @@ let param = {};
 switch(page){
   case "thread":
     param = {
-      "type":"getReses",
-      "thread":params.get('thread');
+      "type":"getReses"
     }
     break;
   default:
@@ -26,6 +25,7 @@ switch(page){
 }
 xhr.send(JSON.stringify(param));
 } 
+
 
 
 
