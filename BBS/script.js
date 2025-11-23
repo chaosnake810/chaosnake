@@ -11,12 +11,12 @@ bodyElement.innerHTML = xhr.responseText;
 xhr.onerror = function(){
 bodyElement.innerHTML = "エラー:" + xhr.responseText;
 }
-//xhr.setRequestHeader('Content-Type', 'application/json');
 let param = {};
 switch(page){
   case "thread":
     param = {
-      "type":"getReses"
+      "type":"getReses",
+      "thread":params.get("thread");
     }
     break;
   default:
@@ -26,6 +26,7 @@ switch(page){
 }
 xhr.send(JSON.stringify(param));
 } 
+
 
 
 
