@@ -16,7 +16,7 @@ switch(page){
   case "thread":
     param = {
       "type":"getReses",
-      "thread":params.get("thread");
+      "thread":params.get('thread');
     }
     break;
   default:
@@ -26,6 +26,7 @@ switch(page){
 }
 xhr.send(JSON.stringify(param));
 } 
+
 
 
 
