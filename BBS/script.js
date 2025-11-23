@@ -1,5 +1,4 @@
 function loading(){
-alert("開始");
 let url = new URL(window.location.href);
 let params = url.searchParams;
 let page = params.get('page');
@@ -12,7 +11,7 @@ bodyElement.innerHTML = xhr.responseText;
 xhr.onerror = function(){
 bodyElement.innerHTML = "エラー:" + xhr.responseText;
 }
-xhr.setRequestHeader('Content-Type', 'application/json');
+//xhr.setRequestHeader('Content-Type', 'application/json');
 let param = {};
 switch(page){
   case "thread":
@@ -26,7 +25,7 @@ switch(page){
     }
 }
 xhr.send(JSON.stringify(param));
-alert("終了");
 } 
+
 
 
