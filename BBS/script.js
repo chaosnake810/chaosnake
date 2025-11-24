@@ -37,16 +37,18 @@ switch(page){
 
 function createTopPage(res){
 let threads = JSON.parse(res);
-let responseHTML = '<hr>';
+let responseHTML = 'スレッド一覧';
+responseHTML += '<hr>';
 threads.map((thread)=>{
 responseHTML += '<br>'
 responseHTML += '<a href="./?page=thread&num=' + thread.NUM + '">';
 responseHTML += thread.NUM + '.' + thread.TITLE + '(' + thread.COUNT + ')';
 responseHTML += '</a>'
 });
-responseHTML += '<br>';
+responseHTML += '<hr>';
 return responseHTML;
 }
+
 
 
 
