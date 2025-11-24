@@ -40,13 +40,14 @@ let threads = JSON.parse(res);
 let responseHTML = '<hr>';
 threads.map((thread)=>{
 responseHTML += '<br>'
-responseHTML += '<a href="./?page=thread＆num=' + thread.NUM + '">';
+responseHTML += '<a href="./?page=thread&num=' + thread.NUM + '">';
 responseHTML += thread.NUM + '.' + thread.TITLE + '(' + thread.COUNT + ')';
 responseHTML += '</a>'
 });
 responseHTML += '<br>';
 return responseHTML;
 }
+
 
 
 
