@@ -78,11 +78,14 @@ let timeElement = document.createTextNode(response.TIME);
 divElement.appendChild(timeElement);
 let messageElement = document.createElement('div');
 message.innerHTML = response.MESSAGE;
+divElement.appendChild(messageElement);
+responseHTML.appendChild(divElement);
 });
 let hrElement = document.createElement('hr');
-responseHTML.appendChild(hrElement2);
+responseHTML.appendChild(hrElement);
 return responseHTML;
 }
+
 
 
 
