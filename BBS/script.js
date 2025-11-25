@@ -30,7 +30,7 @@ xhr.send(JSON.stringify(param));
 function createPage(page,res){
 switch(page){
   case "thread":
-    return res;
+    return createThreadPage(res);
   default:
     return createTopPage(res);
 }
@@ -55,6 +55,31 @@ let brElement = document.createElement('br');
 responseHTML.appendChild(brElement);
 });
 let hrElement2 = document.createElement('hr');
+responseHTML.appendChild(hrElement2);
+return responseHTML;
+}
+
+function createThreadPage(res){
+let reses = JSON.parse(res);
+let responseHTML = document.createElement('div');
+let h3Element = document.createElement('h3');
+let pageTitle = document.createTextNode('レス一覧');
+h3Element.appendChild(pageTitle);
+responseHTML.appendChild(h3Element)
+reses.map((response)=>{
+let hrElement = document.createElement('hr');
+responseHTML.appendChild(hrElement);
+let divElement = document.createElement('div');
+let nameElement = document.createTextNode(response.NUM + '.' + response.NAME);
+divElement.appendChild(nameElement);
+let brElement = document.createElement('br');
+divElement.appendChild(brElement);
+let timeElement = document.createTextNode(response.TIME);
+divElement.appendChild(timeElement);
+let messageElement = document.createElement('div');
+message.innerHTML = response.MESSAGE;
+});
+let hrElement = document.createElement('hr');
 responseHTML.appendChild(hrElement2);
 return responseHTML;
 }
