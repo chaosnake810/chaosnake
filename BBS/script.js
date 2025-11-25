@@ -63,7 +63,7 @@ function createThreadPage(res){
 let reses = JSON.parse(res);
 let responseHTML = document.createElement('div');
 let h3Element = document.createElement('h3');
-let pageTitle = document.createTextNode('レス一覧');
+let pageTitle = document.createTextNode(res[0].T_NUM);
 h3Element.appendChild(pageTitle);
 responseHTML.appendChild(h3Element)
 reses.map((response)=>{
@@ -85,6 +85,7 @@ let hrElement = document.createElement('hr');
 responseHTML.appendChild(hrElement);
 return responseHTML;
 }
+
 
 
 
