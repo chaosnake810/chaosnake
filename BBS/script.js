@@ -74,7 +74,7 @@ let nameElement = document.createTextNode(response.NUM + '.' + response.NAME);
 divElement.appendChild(nameElement);
 let brElement = document.createElement('br');
 divElement.appendChild(brElement);
-let timeElement = document.createTextNode(response.TIME);
+let timeElement = document.createTextNode(formatTime(response.TIME));
 divElement.appendChild(timeElement);
 let messageElement = document.createElement('div');
 messageElement.innerHTML = response.MESSAGE;
@@ -86,6 +86,17 @@ responseHTML.appendChild(hrElement);
 return responseHTML;
 }
 
+function formatTime(time){
+const date = (time !== undifined) ? new Date(time) : new Date();
+const year = date.getFullYear();
+const month = (date.getMonth() + 1).toString().padStart(2, '0');
+const day = date.getDate().toString().padStart(2, '0');
+const hours = date.getHours().toString().padStart(2, '0');
+const minutes = date.getMinutes().toString().padStart(2, '0');
+const seconds = date.getSeconds().toString().padStart(2, '0');
+
+return (year + "/" + month + "/" + day + " " + hours + ":" + minutes + ":" + seconds);
+}
 
 
 
