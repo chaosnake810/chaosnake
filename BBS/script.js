@@ -16,7 +16,7 @@ switch(page){
   case "thread":
     param = {
       "type":"getReses",
-      "tnum":params.get('tnum')
+      "num":params.get('num')
     }
     break;
   default:
@@ -49,6 +49,7 @@ responseHTML += '</a>'
 responseHTML += '<hr>';
 return responseHTML;
 }
+
 
 
 
