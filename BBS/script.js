@@ -87,7 +87,7 @@ return responseHTML;
 }
 
 function formatTime(time){
-const beforeDate = ((time !== undifined) ? Date(time) : new Date());
+const beforeDate = (time !== undifined ? Date.parse(time) : new Date());
 const year = beforeDate.getFullYear();
 const month = (beforeDate.getMonth() + 1).toString().padStart(2, '0');
 const day = beforeDate.getDate().toString().padStart(2, '0');
@@ -97,6 +97,7 @@ const seconds = beforeDate.getSeconds().toString().padStart(2, '0');
 
 return (year + "/" + month + "/" + day + " " + hours + ":" + minutes + ":" + seconds);
 }
+
 
 
 
