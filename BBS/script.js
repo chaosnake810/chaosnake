@@ -87,9 +87,10 @@ return responseHTML;
 }
 
 function formatTime(time){
-const beforeDate = (time !== undifined ? new Date(time) : new Date());
+const beforeDate = (time !== undefined ? new Date(time) : new Date());
 return beforeDate.toLocaleString();
 }
+
 
 
 
