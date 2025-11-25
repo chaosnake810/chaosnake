@@ -87,16 +87,10 @@ return responseHTML;
 }
 
 function formatTime(time){
-const beforeDate = (time !== undifined ? Date.parse(time) : new Date());
-const year = beforeDate.getFullYear();
-const month = (beforeDate.getMonth() + 1).toString().padStart(2, '0');
-const day = beforeDate.getDate().toString().padStart(2, '0');
-const hours = beforeDate.getHours().toString().padStart(2, '0');
-const minutes = beforeDate.getMinutes().toString().padStart(2, '0');
-const seconds = beforeDate.getSeconds().toString().padStart(2, '0');
-
-return (year + "/" + month + "/" + day + " " + hours + ":" + minutes + ":" + seconds);
+const beforeDate = (time !== undifined ? new Date(time) : new Date());
+return beforeDate.toLocaleString();
 }
+
 
 
 
