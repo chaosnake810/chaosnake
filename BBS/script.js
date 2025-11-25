@@ -62,6 +62,13 @@ return responseHTML;
 function createThreadPage(res){
 let reses = JSON.parse(res);
 let responseHTML = document.createElement('div');
+let topLink = document.createElement('a');
+topLink.href = './';
+let linkText = document.createTextNode('スレ一覧');
+topLink.appendChild(linkText);
+responseHTML.appendChild(topLink);
+let brElement = document.createElement('br');
+responseHTML.appendChild(brElement);
 let h3Element = document.createElement('h3');
 let pageTitle = document.createTextNode(reses[0].T_NUM);
 h3Element.appendChild(pageTitle);
@@ -90,6 +97,7 @@ function formatTime(time){
 const beforeDate = (time !== undefined ? new Date(time) : new Date());
 return beforeDate.toLocaleString();
 }
+
 
 
 
