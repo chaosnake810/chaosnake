@@ -38,25 +38,27 @@ switch(page){
 
 function createTopPage(res){
 let threads = JSON.parse(res);
-let hrElement = document.createElement('hr');
-let brElement = document.createElement('br');
+let hrElement1 = document.createElement('hr');
 let responseHTML = document.createElement('div');
 let h3Element = document.createElement('h3');
 let pageTitle = document.createTextNode('スレ一覧');
 h3Element.appendChild(pageTitle);
 responseHTML.appendChild(h3Element)
-responseHTML.appendChild(hrElement);
+responseHTML.appendChild(hrElement1);
 threads.map((thread)=>{
 let aElement = document.createElement('a');
 aElement.href = './?page=thread&num=' + thread.NUM;
 let aText = document.createTextNode(thread.NUM + '.' + thread.TITLE + '(' + thread.COUNT + ')');
 aElement.appendChild(aText);
 responseHTML.appendChild(aElement);
+let brElement = document.createElement('br');
 responseHTML.appendChild(brElement);
 });
-responseHTML.appendChild(hrElement);
+let hrElement2 = document.createElement('hr');
+responseHTML.appendChild(hrElement2);
 return responseHTML;
 }
+
 
 
 
