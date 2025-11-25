@@ -70,7 +70,7 @@ responseHTML.appendChild(topLink);
 let brElement = document.createElement('br');
 responseHTML.appendChild(brElement);
 let h3Element = document.createElement('h3');
-let pageTitle = document.createTextNode(reses[0].T_NUM);
+let pageTitle = document.createTextNode(url.searchParams.get('num') + '.' + reses[0].T_NUM);
 h3Element.appendChild(pageTitle);
 responseHTML.appendChild(h3Element)
 reses.map((response)=>{
@@ -97,6 +97,7 @@ function formatTime(time){
 const beforeDate = (time !== undefined ? new Date(time) : new Date());
 return beforeDate.toLocaleString();
 }
+
 
 
 
