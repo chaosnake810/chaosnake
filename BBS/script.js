@@ -159,8 +159,11 @@ fetch('https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjza
 }).then(response => {
   // このブロックの中ではPromiseではなくて、通常の値として扱える
   alert('yeah');// returnしてもPromiseに包まれる
+}).catch(error => {
+  alert('error:' + error);
 })
 }
+
 
 
 
