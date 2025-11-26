@@ -156,10 +156,10 @@ return fetch('https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOr
 method: 'POST',
 body: JSON.stringify(param)
 }).then((responseText) => {
-alert(responseText.text());
 return responseText.text();
 })
 }
+
 
 
 
