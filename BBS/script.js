@@ -46,7 +46,9 @@ let pageTitle = document.createTextNode('スレ一覧');
 h3Element.appendChild(pageTitle);
 responseHTML.appendChild(h3Element);
 let newThreadButton = document.createElement('button');
-newThreadButton.onclick = popUp('newThread');
+newThreadButton.addEventListener("click", (() => {
+  popUp('newThread');
+}));
 newThreadButton.innerText = "新スレ";
 responseHTML.appendChild(newThreadButton);
 responseHTML.appendChild(hrElement1);
@@ -135,7 +137,9 @@ switch(type){
   let brElement3 = document.createElement('br');
   popContent.appendChild(brElement3);
   let buttonElement = document.createElement('button');
-  buttonElement.onclick = createNewThread();
+  buttonElement.addEventListener("click",(() => {
+    createNewThread();
+  }));
   buttonElement.innerText = "送信";
   popContent.appendChild(buttonElement);
   break;
@@ -150,6 +154,7 @@ pop.style.display = "block";
 function createNewThread(){
 alert('ok');
 }
+
 
 
 
