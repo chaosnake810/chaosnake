@@ -3,14 +3,6 @@ bbs.innerHTML = "";
 let url = new URL(window.location.href);
 let params = url.searchParams;
 let page = params.get('page');
-let xhr = new XMLHttpRequest();
-xhr.open("POST","https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec",true);
-xhr.onload = function() {
-bbs.appendChild(createPage(page,xhr.responseText));
-}
-xhr.onerror = function(){
-bbs.innerHTML = "エラー:" + xhr.responseText;
-}
 let param = {};
 switch(page){
   case "thread":
@@ -24,7 +16,11 @@ switch(page){
       "type":"getThreads"
     }
 }
-xhr.send(JSON.stringify(param));
+requestGAS(param).then((response) => {
+bbs.appendChild(createPage(page,response));
+}).catch((error) => {
+bbs.innerHTML = "エラー:" + xhr.responseText;
+})
 } 
 
 function createPage(page,res){
@@ -155,7 +151,14 @@ pop.style.display = "none";
 loading();
 }
 
-
+function requestGAS(param){
+return fetch('https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec', {
+method: 'POST',
+body: JSON.stringify(param)
+}).then((responseText) => {
+return responseText;
+})
+}
 
 
 
