@@ -147,8 +147,19 @@ pop.style.display = "block";
 }
 
 function createNewThread(){
+let param = {
+  "type":"newThread",
+  "name":name.value,
+  "title":title.value,
+  "message":message.value,
+  "time":formatTime()
+}
+requestGAS(param).then((response) => {
 pop.style.display = "none";
 loading();
+}).catch((error) => {
+  alert(error);
+});
 }
 
 function requestGAS(param){
@@ -159,6 +170,7 @@ body: JSON.stringify(param)
 return responseText.text();
 })
 }
+
 
 
 
