@@ -99,7 +99,7 @@ return responseHTML;
 
 function formatTime(time){
 const beforeDate = (time !== undefined ? new Date(time) : new Date());
-return beforeDate.toLocaleString({ timeZone: 'Asia/Tokyo' });
+return beforeDate.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
 }
 
 function popUp(type){
@@ -170,6 +170,7 @@ body: JSON.stringify(param)
 return responseText.text();
 })
 }
+
 
 
 
