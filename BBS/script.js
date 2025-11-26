@@ -154,6 +154,7 @@ let param = {
   "message":message.value,
   "time":formatTime()
 }
+alert(JSON.stringify(param));
 requestGAS(param).then((response) => {
 pop.style.display = "none";
 loading();
@@ -170,6 +171,7 @@ body: JSON.stringify(param)
 return responseText.text();
 })
 }
+
 
 
 
