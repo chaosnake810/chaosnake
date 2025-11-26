@@ -114,7 +114,7 @@ switch(type){
   let nameArea = document.createElement('input');
   nameArea.type = "text";
   nameArea.placeholder = "名前";
-  nameArea.id = "name";
+  nameArea.id = "nameArea";
   popContent.appendChild(nameArea);
   let brElement1 = document.createElement('br');
   popContent.appendChild(brElement1);
@@ -149,12 +149,12 @@ pop.style.display = "block";
 function createNewThread(){
 let param = {
   "type":"newThread",
-  "name":name.value,
+  "name":nameArea.value,
   "title":title.value,
   "message":message.value,
   "time":formatTime()
 }
-alert(name.value);
+alert("nameArea:" + nameArea.value);
 alert(JSON.stringify(param));
 requestGAS(param).then((response) => {
 pop.style.display = "none";
@@ -172,6 +172,7 @@ body: JSON.stringify(param)
 return responseText.text();
 })
 }
+
 
 
 
