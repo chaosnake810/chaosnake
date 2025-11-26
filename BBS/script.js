@@ -85,10 +85,10 @@ let nameElement = document.createTextNode(response.NUM + '.' + response.NAME);
 divElement.appendChild(nameElement);
 let brElement = document.createElement('br');
 divElement.appendChild(brElement);
-let timeElement = document.createTextNode(formatTime(response.TIME));
+let timeElement = document.createTextNode(response.TIME);
 divElement.appendChild(timeElement);
 let messageElement = document.createElement('div');
-messageElement.innerHTML = response.MESSAGE;
+messageElement.innerHTML = (response.MESSAGE).replaceAll('\n','<br>');
 divElement.appendChild(messageElement);
 responseHTML.appendChild(divElement);
 });
@@ -156,7 +156,6 @@ let param = {
 }
 requestGAS(param).then((response) => {
 pop.style.display = "none";
-alert(response);
 loading();
 }).catch((error) => {
   alert(error);
@@ -171,6 +170,7 @@ body: JSON.stringify(param)
 return responseText.text();
 })
 }
+
 
 
 
