@@ -2,14 +2,15 @@ function loading(){
 let url = new URL(window.location.href);
 let params = url.searchParams;
 let page = params.get('page');
-let bodyElement = document.getElementsByTagName("body")[0];
+let bbsElement = document.getElementById("bbs");
 let xhr = new XMLHttpRequest();
 xhr.open("POST","https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec",true);
 xhr.onload = function() {
-bodyElement.appendChild(createPage(page,xhr.responseText));
+bbsElement.innerHTML = "";
+bbsElement.appendChild(createPage(page,xhr.responseText));
 }
 xhr.onerror = function(){
-bodyElement.innerHTML = "エラー:" + xhr.responseText;
+bbsElement.innerHTML = "エラー:" + xhr.responseText;
 }
 let param = {};
 switch(page){
@@ -100,6 +101,51 @@ const beforeDate = (time !== undefined ? new Date(time) : new Date());
 return beforeDate.toLocaleString();
 }
 
+function popUp(type){
+let popContent = document.createElement('div');
+switch(type){
+  case "newThread":
+  let title = document.createElement('h3');
+  title.innerText = "スレッド作成";
+  popContent.appendChild(title);
+  let hrElement = document.createElement('hr');
+  popContent.appendChild(hrElement);
+  let nameArea = document.createElement('input');
+  nameArea.type = "text";
+  nameArea.placeholder = "名前";
+  nameArea.id = "name";
+  popContent.appendChild(nameArea);
+  let brElement1 = document.createElement('br');
+  popContent.appendChild(brElement1);
+  let titleArea = document.createElement('input');
+  titleArea.type = "text";
+  titleArea.placeholder = "スレタイ";
+  titleArea.id = "title";
+  popContent.appendChild(titleArea);
+  let brElement2 = document.createElement('br');
+  popContent.appendChild(brElement2);
+  let messageArea = document.createElement('textarea');
+  messageArea.placeholder = "本文";
+  messageArea.id = "message";
+  popContent.appendChild(messageArea);
+  let brElement3 = document.createElement('br');
+  popContent.appendChild(brElement3);
+  let buttonElement = document.createElement('button');
+  buttonElement.onclick('createNewThread()');
+  buttonElement.innerText = "送信";
+  popContent.appendChild(buttonElement);
+  break;
+  case "newRes":
+  break;
+}
+pop.innerHTML = "";
+pop.appendChild(popContent);
+pop.style.display = "block";
+}
+
+function createNewThread(){
+alert('ok');
+}
 
 
 
