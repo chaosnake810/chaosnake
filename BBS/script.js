@@ -17,6 +17,7 @@ switch(page){
     }
 }
 requestGAS(param).then((response) => {
+alert(response);
 bbs.appendChild(createPage(page,response));
 }).catch((error) => {
 bbs.innerHTML = "エラー:" + xhr.responseText;
@@ -159,6 +160,7 @@ body: JSON.stringify(param)
 return responseText.text();
 })
 }
+
 
 
 
