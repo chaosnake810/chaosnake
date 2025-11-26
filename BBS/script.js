@@ -85,7 +85,7 @@ let nameElement = document.createTextNode(response.NUM + '.' + response.NAME);
 divElement.appendChild(nameElement);
 let brElement = document.createElement('br');
 divElement.appendChild(brElement);
-let timeElement = document.createTextNode(response.TIME);
+let timeElement = document.createTextNode(formatTime(response.TIME));
 divElement.appendChild(timeElement);
 let messageElement = document.createElement('div');
 messageElement.innerHTML = (response.MESSAGE).replaceAll('\n','<br>');
@@ -99,7 +99,7 @@ return responseHTML;
 
 function formatTime(time){
 const beforeDate = (time !== undefined ? new Date(time) : new Date());
-return beforeDate.toLocaleString();
+return beforeDate.toLocaleString({ timeZone: 'Asia/Tokyo' });
 }
 
 function popUp(type){
@@ -170,6 +170,7 @@ body: JSON.stringify(param)
 return responseText.text();
 })
 }
+
 
 
 
