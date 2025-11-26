@@ -1,16 +1,15 @@
 function loading(){
+bbs.innerHTML = "";
 let url = new URL(window.location.href);
 let params = url.searchParams;
 let page = params.get('page');
-let bbsElement = document.getElementById("bbs");
 let xhr = new XMLHttpRequest();
 xhr.open("POST","https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec",true);
 xhr.onload = function() {
-bbsElement.innerHTML = "";
-bbsElement.appendChild(createPage(page,xhr.responseText));
+bbs.appendChild(createPage(page,xhr.responseText));
 }
 xhr.onerror = function(){
-bbsElement.innerHTML = "エラー:" + xhr.responseText;
+bbs.innerHTML = "エラー:" + xhr.responseText;
 }
 let param = {};
 switch(page){
@@ -155,6 +154,7 @@ function createNewThread(){
 pop.style.display = "none";
 loading();
 }
+
 
 
 
