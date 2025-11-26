@@ -152,8 +152,10 @@ pop.style.display = "block";
 }
 
 function createNewThread(){
-alert('ok');
+pop.style.display = "none";
+loading();
 }
+
 
 
 
