@@ -152,8 +152,16 @@ pop.style.display = "block";
 
 function createNewThread(){
 pop.style.display = "none";
-loading();
+bbs.innerHTML = "fetchTest...";
+//loading();
+fetch('https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec',{
+  method: "POST"
+}).then(response => {
+  // このブロックの中ではPromiseではなくて、通常の値として扱える
+  alert('yeah');// returnしてもPromiseに包まれる
+})
 }
+
 
 
 
