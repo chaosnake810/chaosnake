@@ -44,7 +44,11 @@ let responseHTML = document.createElement('div');
 let h3Element = document.createElement('h3');
 let pageTitle = document.createTextNode('スレ一覧');
 h3Element.appendChild(pageTitle);
-responseHTML.appendChild(h3Element)
+responseHTML.appendChild(h3Element);
+let newThreadButton = document.createElement('button');
+newThreadButton.onclick("popUp('newThread')");
+newThreadButton.innerText = "新スレ";
+responseHTML.appendChild(newThreadButton);
 responseHTML.appendChild(hrElement1);
 threads.map((thread)=>{
 let aElement = document.createElement('a');
@@ -146,6 +150,7 @@ pop.style.display = "block";
 function createNewThread(){
 alert('ok');
 }
+
 
 
 
