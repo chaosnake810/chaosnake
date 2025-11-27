@@ -227,6 +227,7 @@ body: JSON.stringify(param)
 }).then((response) => {
 let res = response.json();
 if(res.error !== undefined){
+  alert(res.error);
   throw new Error(res.error);
 }else {
   return res;
@@ -244,6 +245,7 @@ bbs.appendChild(errorTextElement);
 let hrElement2 = document.createElement('hr');
 bbs.appendChild(hrElement2);
 }
+
 
 
 
