@@ -238,7 +238,6 @@ method: 'POST',
 body: JSON.stringify(param)
 }).then((response) => {
   return response.json();
-}
 })
 }
 
@@ -252,6 +251,7 @@ bbs.appendChild(errorTextElement);
 let hrElement2 = document.createElement('hr');
 bbs.appendChild(hrElement2);
 }
+
 
 
 
