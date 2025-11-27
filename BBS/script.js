@@ -107,7 +107,8 @@ let nameElement = document.createTextNode(response.NUM + '.' + response.NAME);
 divElement.appendChild(nameElement);
 let brElement = document.createElement('br');
 divElement.appendChild(brElement);
-let timeElement = document.createTextNode(formatTime(response.TIME));
+let timeElement = document.createElement('span');
+timeElement.innerText = formatTime(response.TIME);
 timeElement.className = "time";
 divElement.appendChild(timeElement);
 let messageElement = document.createElement('div');
@@ -312,6 +313,7 @@ function defaultFilter(json){
   return ((index + 1) <= 20);
 })
 }
+
 
 
 
