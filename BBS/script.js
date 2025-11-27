@@ -238,11 +238,12 @@ bbs.innerHTML = "";
 let hrElement1 = document.createElement('hr');
 bbs.appendChild(hrElement1);
 let errorTextElement = document.createElement('p');
-errorTextElement.innerText = error;
+errorTextElement.innerText = "エラー:" + error;
 bbs.appendChild(errorTextElement);
 let hrElement2 = document.createElement('hr');
 bbs.appendChild(hrElement2);
 }
+
 
 
 
