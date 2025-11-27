@@ -284,14 +284,22 @@ return error ? defaultFilter(json) : json.filter((data,index) => {
     let splitMinus = num.split("-");
     if(splitMinus.length === 2){
       if(splitMinus[0] === ""){
-        flg = (Number(splitMinus[1]) >= (index + 1));
+        if(Number(splitMinus[1]) >= (index + 1)){
+          flg = true;
+        }
       }else if(splitMinus[1] === ""){
-        flg = (Number(splitMinus[0]) <= (index + 1));
+        if(Number(splitMinus[0]) <= (index + 1)){
+          flg = true;
+        }
       }else{
-        flg = ((Number(splitMinus[1]) >= (index + 1)) && (Number(splitMinus[0]) <= (index + 1)));
+        if((Number(splitMinus[1]) >= (index + 1)) && (Number(splitMinus[0]) <= (index + 1))){
+          flg = true;
+        }
       }
     }else if(splitMinus.length === 1){
-      flg = (Number(splitMinus[0]) === (index + 1));
+      if(Number(splitMinus[0]) === (index + 1)){
+        true;
+      };
     }
   });
   return flg;
@@ -303,6 +311,7 @@ function defaultFilter(json){
   return ((index + 1) <= 20);
 })
 }
+
 
 
 
