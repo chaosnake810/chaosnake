@@ -1,3 +1,4 @@
+let data;
 function loading(){
 bbs.innerHTML = "";
 let url = new URL(window.location.href);
@@ -20,13 +21,24 @@ requestGAS(param).then((response) => {
 if(response.error !== undefined){
   createError(response.error);
 }else{
+data = response;
 bbs.innerHTML = "";
-bbs.appendChild(createPage(page,response));
+bbs.appendChild(createPage(page,hashFilter(response)));
 }
 }).catch((error) => {
 createError(error);
 })
 } 
+
+window.addEventListener('hashchange', (() => {
+if(cover.style.display === "none" && data !== undefined){
+let url = new URL(window.location.href);
+let params = url.searchParams;
+let page = params.get('page');
+bbs.innerHTML = "";
+bbs.appendChild(createPage(page,hashFilter(data)));
+}
+}));
 
 function createPage(page,res){
 switch(page){
@@ -96,8 +108,10 @@ divElement.appendChild(nameElement);
 let brElement = document.createElement('br');
 divElement.appendChild(brElement);
 let timeElement = document.createTextNode(formatTime(response.TIME));
+timeElement.className = "time";
 divElement.appendChild(timeElement);
 let messageElement = document.createElement('div');
+messageElement.className = "message";
 messageElement.innerHTML = (response.MESSAGE).replaceAll('\n','<br>');
 divElement.appendChild(messageElement);
 responseHTML.appendChild(divElement);
@@ -254,9 +268,41 @@ let hrElement2 = document.createElement('hr');
 bbs.appendChild(hrElement2);
 }
 
+function hashFilter(json){
+let error = false;
+let numList = location.hash.substring(1).split(",");
+if(numList.length !== 0){
+numList.map((num) => {
+   error = !(/^(-\d+|\d+(-\d+)?)$/.test(String(num)));
+});
+}else{
+  error = true;
+}
+return error ? defaultFilter(json) : json.filter((data,index) => {
+  let flg =　false;
+  numList.map((num) => {
+    let splitMinus = num.split("-");
+    if(splitMinus.length === 2){
+      if(splitMinus[0] === ""){
+        flg = (Number(splitMinus[1]) >= (index + 1));
+      }else if(splitMinus[1] === ""){
+        flg = (Number(splitMinus[0]) <= (index + 1));
+      }else{
+        flg = ((Number(splitMinus[1]) >= (index + 1)) && (Number(splitMinus[0]) <= (index + 1)));
+      }
+    }else if(splitMinus.length === 1){
+      flg = (Number(splitMinus[0]) === (index + 1));
+    }
+  });
+  return flg;
+})
+}
 
-
-
+function defaultFilter(json){
+  return json.filter((data,index) => {
+  return ((index + 1) <= 20);
+})
+}
 
 
 
