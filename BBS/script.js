@@ -33,8 +33,7 @@ switch(page){
 }
 }
 
-function createTopPage(res){
-let threads = JSON.parse(res);
+function createTopPage(threads){
 let hrElement1 = document.createElement('hr');
 let responseHTML = document.createElement('div');
 let h3Element = document.createElement('h3');
@@ -62,8 +61,7 @@ responseHTML.appendChild(hrElement2);
 return responseHTML;
 }
 
-function createThreadPage(res){
-let reses = JSON.parse(res);
+function createThreadPage(reses){
 let responseHTML = document.createElement('div');
 let topLink = document.createElement('a');
 topLink.href = './';
@@ -224,11 +222,12 @@ function requestGAS(param){
 return fetch('https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec', {
 method: 'POST',
 body: JSON.stringify(param)
-}).then((responseText) => {
-if(responseText.json().error !== undefined){
-  createError(responseText.json().error);
+}).then((response) => {
+let res = response.json();
+if(res.error !== undefined){
+  createError(res.error);
 }else {
-  return responseText.text();
+  return res;
 }
 })
 }
@@ -243,6 +242,7 @@ bbs.appendChild(errorTextElement);
 let hrElement2 = document.createElement('hr');
 bbs.appendChild(hrElement2);
 }
+
 
 
 
