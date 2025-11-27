@@ -299,7 +299,7 @@ return error ? defaultFilter(json) : json.filter((data,index) => {
       }
     }else if(splitMinus.length === 1){
       if(Number(splitMinus[0]) === (index + 1)){
-        true;
+        flg = true;
       };
     }
   });
@@ -312,6 +312,7 @@ function defaultFilter(json){
   return ((index + 1) <= 20);
 })
 }
+
 
 
 
