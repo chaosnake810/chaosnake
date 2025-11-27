@@ -20,7 +20,7 @@ requestGAS(param).then((response) => {
 bbs.innerHTML = "";
 bbs.appendChild(createPage(page,response));
 }).catch((error) => {
-bbs.innerHTML = "エラー:" + xhr.responseText;
+createError(error);
 })
 } 
 
@@ -77,6 +77,7 @@ let url = new URL(window.location.href);
 let params = url.searchParams;
 let pageTitle = document.createTextNode(params.get('num') + '.' + reses[0].T_NUM);
 h3Element.appendChild(pageTitle);
+responseHTML.appendChild(h3Element);
 document.title = reses[0].T_NUM;
 let newResButton = document.createElement('button');
 newResButton.addEventListener("click", (() => {
@@ -84,7 +85,6 @@ newResButton.addEventListener("click", (() => {
 }));
 newResButton.innerText = "新レス";
 responseHTML.appendChild(newResButton);
-responseHTML.appendChild(h3Element)
 reses.map((response)=>{
 let hrElement = document.createElement('hr');
 responseHTML.appendChild(hrElement);
@@ -198,7 +198,7 @@ requestGAS(param).then((response) => {
 pop.style.display = "none";
 loading();
 }).catch((error) => {
-  alert(error);
+  createError(error);
 });
 }
 
@@ -216,7 +216,7 @@ requestGAS(param).then((response) => {
 pop.style.display = "none";
 loading();
 }).catch((error) => {
-  alert(error);
+  createError(error);
 });
 }
 
@@ -225,9 +225,25 @@ return fetch('https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOr
 method: 'POST',
 body: JSON.stringify(param)
 }).then((responseText) => {
-return responseText.text();
+if(response.json().error !== undefined){
+  createError(response.json().error);
+}else {
+  return responseText.text();
+}
 })
 }
+
+function createError(error){
+bbs.innerHTML = "";
+let hrElement1 = document.createElement('hr');
+bbs.appendChild(hrElement1);
+let errorTextElement = document.createElement('p');
+errorTextElement.innerText = error;
+bbs.appendChild(errorTextElement);
+let hrElement2 = document.createElement('hr');
+bbs.appendChild(hrElement2);
+}
+
 
 
 
