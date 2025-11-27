@@ -17,8 +17,12 @@ switch(page){
     }
 }
 requestGAS(param).then((response) => {
+if(response.error !== undefined){
+  createError(response.error);
+}else{
 bbs.innerHTML = "";
 bbs.appendChild(createPage(page,response));
+}
 }).catch((error) => {
 createError(error);
 })
@@ -193,8 +197,12 @@ let param = {
   "time":new Date()
 }
 requestGAS(param).then((response) => {
+if(response.error !== undefined){
+  createError(response.error);
+}else{
 pop.style.display = "none";
 loading();
+}
 }).catch((error) => {
   pop.style.display = "none";
   createError(error);
@@ -212,8 +220,12 @@ let param = {
   "time":new Date()
 }
 requestGAS(param).then((response) => {
+if(response.error !== undefined){
+  createError(response.error);
+}else{
 pop.style.display = "none";
 loading();
+}
 }).catch((error) => {
   pop.style.display = "none";
   createError(error);
@@ -225,12 +237,7 @@ return fetch('https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOr
 method: 'POST',
 body: JSON.stringify(param)
 }).then((response) => {
-let res = response.json();
-if(res.error !== undefined){
-  alert(res.error);
-  throw new Error(res.error);
-}else {
-  return res;
+  return response.json();
 }
 })
 }
@@ -245,6 +252,7 @@ bbs.appendChild(errorTextElement);
 let hrElement2 = document.createElement('hr');
 bbs.appendChild(hrElement2);
 }
+
 
 
 
