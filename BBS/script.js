@@ -114,6 +114,18 @@ function popUp(type){
 let popContent = document.createElement('div');
 switch(type){
   case "newThread":
+  createNewThreadPop(popContent);
+  break;
+  case "newRes":
+  createNewResPop(popContent);
+  break;
+}
+pop.innerHTML = "";
+pop.appendChild(popContent);
+pop.style.display = "block";
+}
+
+function createNewThreadPop(popContent){
   let title = document.createElement('h3');
   title.innerText = "スレッド作成";
   popContent.appendChild(title);
@@ -145,8 +157,9 @@ switch(type){
   }));
   buttonElement.innerText = "送信";
   popContent.appendChild(buttonElement);
-  break;
-  case "newRes":
+}
+
+function createNewResPop(popContent){
   let title = document.createElement('h3');
   title.innerText = "レス";
   popContent.appendChild(title);
@@ -171,11 +184,6 @@ switch(type){
   }));
   buttonElement.innerText = "送信";
   popContent.appendChild(buttonElement);
-  break;
-}
-pop.innerHTML = "";
-pop.appendChild(popContent);
-pop.style.display = "block";
 }
 
 function createNewThread(){
@@ -220,6 +228,7 @@ body: JSON.stringify(param)
 return responseText.text();
 })
 }
+
 
 
 
