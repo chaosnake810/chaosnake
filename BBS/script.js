@@ -233,10 +233,12 @@ loading();
 }
 
 function requestGAS(param){
+cover.style.display = "flex";
 return fetch('https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec', {
 method: 'POST',
 body: JSON.stringify(param)
 }).then((response) => {
+  cover.style.display = "none";
   return response.json();
 })
 }
@@ -251,6 +253,7 @@ bbs.appendChild(errorTextElement);
 let hrElement2 = document.createElement('hr');
 bbs.appendChild(hrElement2);
 }
+
 
 
 
