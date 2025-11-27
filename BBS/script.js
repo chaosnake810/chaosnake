@@ -17,6 +17,7 @@ switch(page){
     }
 }
 requestGAS(param).then((response) => {
+bbs.innerHTML = "";
 bbs.appendChild(createPage(page,response));
 }).catch((error) => {
 bbs.innerHTML = "エラー:" + xhr.responseText;
@@ -76,6 +77,13 @@ let url = new URL(window.location.href);
 let params = url.searchParams;
 let pageTitle = document.createTextNode(params.get('num') + '.' + reses[0].T_NUM);
 h3Element.appendChild(pageTitle);
+document.title = reses[0].T_NUM;
+let newResButton = document.createElement('button');
+newResButton.addEventListener("click", (() => {
+  popUp('newRes');
+}));
+newResButton.innerText = "新レス";
+responseHTML.appendChild(newResButton);
 responseHTML.appendChild(h3Element)
 reses.map((response)=>{
 let hrElement = document.createElement('hr');
@@ -139,6 +147,30 @@ switch(type){
   popContent.appendChild(buttonElement);
   break;
   case "newRes":
+  let title = document.createElement('h3');
+  title.innerText = "レス";
+  popContent.appendChild(title);
+  let hrElement = document.createElement('hr');
+  popContent.appendChild(hrElement);
+  let nameArea = document.createElement('input');
+  nameArea.type = "text";
+  nameArea.placeholder = "名前";
+  nameArea.id = "nameArea";
+  popContent.appendChild(nameArea);
+  let brElement1 = document.createElement('br');
+  popContent.appendChild(brElement1);
+  let messageArea = document.createElement('textarea');
+  messageArea.placeholder = "本文";
+  messageArea.id = "message";
+  popContent.appendChild(messageArea);
+  let brElement2 = document.createElement('br');
+  popContent.appendChild(brElement2);
+  let buttonElement = document.createElement('button');
+  buttonElement.addEventListener("click",(() => {
+    createNewRes();
+  }));
+  buttonElement.innerText = "送信";
+  popContent.appendChild(buttonElement);
   break;
 }
 pop.innerHTML = "";
@@ -162,6 +194,24 @@ loading();
 });
 }
 
+function createNewRes(){
+let url = new URL(window.location.href);
+let params = url.searchParams;
+let param = {
+  "type":"newRes",
+  "num":params.get('num'),
+  "name":nameArea.value,
+  "message":message.value,
+  "time":new Date()
+}
+requestGAS(param).then((response) => {
+pop.style.display = "none";
+loading();
+}).catch((error) => {
+  alert(error);
+});
+}
+
 function requestGAS(param){
 return fetch('https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec', {
 method: 'POST',
@@ -170,6 +220,7 @@ body: JSON.stringify(param)
 return responseText.text();
 })
 }
+
 
 
 
