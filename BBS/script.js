@@ -225,8 +225,8 @@ return fetch('https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOr
 method: 'POST',
 body: JSON.stringify(param)
 }).then((responseText) => {
-if(response.json().error !== undefined){
-  createError(response.json().error);
+if(responseText.json().error !== undefined){
+  createError(responseText.json().error);
 }else {
   return responseText.text();
 }
@@ -243,6 +243,7 @@ bbs.appendChild(errorTextElement);
 let hrElement2 = document.createElement('hr');
 bbs.appendChild(hrElement2);
 }
+
 
 
 
