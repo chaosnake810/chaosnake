@@ -196,6 +196,7 @@ requestGAS(param).then((response) => {
 pop.style.display = "none";
 loading();
 }).catch((error) => {
+  pop.style.display = "none";
   createError(error);
 });
 }
@@ -214,6 +215,7 @@ requestGAS(param).then((response) => {
 pop.style.display = "none";
 loading();
 }).catch((error) => {
+  pop.style.display = "none";
   createError(error);
 });
 }
@@ -225,7 +227,7 @@ body: JSON.stringify(param)
 }).then((response) => {
 let res = response.json();
 if(res.error !== undefined){
-  createError(res.error);
+  throw new Error(res.error);
 }else {
   return res;
 }
@@ -242,6 +244,7 @@ bbs.appendChild(errorTextElement);
 let hrElement2 = document.createElement('hr');
 bbs.appendChild(hrElement2);
 }
+
 
 
 
