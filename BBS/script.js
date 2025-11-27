@@ -273,7 +273,8 @@ let error = false;
 let numList = location.hash.substring(1).split(",");
 if(numList.length !== 0){
 numList.map((num) => {
-   error = !(/^(-\d+|\d+(-\d+)?)$/.test(String(num)));
+  let snum = String(num);
+  error = !(/^-?\d+(-\d*)?$/.test(snum) && snum.split("-").length <= 2 && !snum.startsWith("--"));
 });
 }else{
   error = true;
@@ -311,6 +312,7 @@ function defaultFilter(json){
   return ((index + 1) <= 20);
 })
 }
+
 
 
 
