@@ -119,6 +119,12 @@ messageElement.innerHTML = (response.MESSAGE).replaceAll('\n','<br>').replace(/>
   return convertAnchorLink(match);
 });
 divElement.appendChild(messageElement);
+let resButton = document.createElement('button');
+resButton.addEventListener("click", (() => {
+  popUp('newRes',response.NUM);
+}));
+resButton.innerText = "返信";
+divElement.appendChild(resButton);
 responseHTML.appendChild(divElement);
 });
 let hrElement = document.createElement('hr');
@@ -131,14 +137,14 @@ const beforeDate = (time !== undefined ? new Date(time) : new Date());
 return beforeDate.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
 }
 
-function popUp(type){
+function popUp(type,num){
 let popContent = document.createElement('div');
 switch(type){
   case "newThread":
   createNewThreadPop(popContent);
   break;
   case "newRes":
-  createNewResPop(popContent);
+  createNewResPop(popContent,num);
   break;
 }
 pop.innerHTML = "";
@@ -180,7 +186,7 @@ function createNewThreadPop(popContent){
   popContent.appendChild(buttonElement);
 }
 
-function createNewResPop(popContent){
+function createNewResPop(popContent,num){
   let title = document.createElement('h3');
   title.innerText = "レス";
   popContent.appendChild(title);
@@ -196,6 +202,9 @@ function createNewResPop(popContent){
   let messageArea = document.createElement('textarea');
   messageArea.placeholder = "本文";
   messageArea.id = "message";
+  if(num !== undefined){
+    messageArea.value = ">>" + num + "\n";
+  }
   popContent.appendChild(messageArea);
   let brElement2 = document.createElement('br');
   popContent.appendChild(brElement2);
@@ -331,6 +340,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
