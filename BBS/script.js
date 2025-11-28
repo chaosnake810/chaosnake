@@ -324,12 +324,14 @@ return error;
 }
 
 function convertAnchorLink(str){
-if(checkHash(str) === false){
-  return '<a href="#' + str.split(">>")[1] + '">' + str + '</a>';
+let strNumPart = str.split(">>")[1];
+if(checkHash(strNumPart.split(",")) === false){
+  return '<a href="#' + strNumPart + '">' + str + '</a>';
 }else{
   return str;
 }
 }
+
 
 
 
