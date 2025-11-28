@@ -102,16 +102,20 @@ newResButton.addEventListener("click", (() => {
 newResButton.innerText = "新レス";
 responseHTML.appendChild(newResButton);
 let firstButton = document.createElement('button');
+if(Number(reses[0].NUM) === 1){
+  firstButton.disabled = true;
+}else{
 firstButton.addEventListener("click", (() => {
   location.hash = "#1-20";
 }));
+}
 firstButton.innerText = "<<";
 responseHTML.appendChild(firstButton);
 let prevButton = document.createElement('button');
+if(Number(reses[0].NUM) === 1){
+  prevButton.disabled = true;
+}else{
 prevButton.addEventListener("click", (() => {
-  if(Number(reses[0].NUM) === 1){
-  location.hash = "#1-20";
-  }else{
     let startNum = Number(reses[0].NUM) - 20;
     if(startNum < 1){
       startNum = 1;
@@ -121,10 +125,43 @@ prevButton.addEventListener("click", (() => {
       endNum = 1;
     }
     location.hash = "#" + startNum + "-" + endNum;
-  }
 }));
+}
 prevButton.innerText = "<";
 responseHTML.appendChild(prevButton);
+let nextButton = document.createElement('button');
+if(Number(reses[reses.length -1].NUM) >= Number(allReses[allReses.length - 1].NUM)){
+  nextButton.disabled = true;
+}else{
+nextButton.addEventListener("click", (() => {
+    let startNum = Number(reses[reses.length - 1].NUM) + 1;
+    if(startNum > Number(allReses[allReses.length - 1].NUM)){
+      startNum = Number(allReses[allReses.length - 1].NUM);
+    }
+    let endNum = Number(reses[reses.length - 1].NUM) + 20;
+    if(endNum > Number(allReses[allReses.length - 1].NUM)){
+      endNum = Number(allReses[allReses.length - 1].NUM);
+    }
+    location.hash = "#" + startNum + "-" + endNum;
+}));
+}
+nextButton.innerText = ">";
+responseHTML.appendChild(nextButton);
+let lastButton = document.createElement('button');
+if(Number(reses[reses.length -1].NUM) >= Number(allReses[allReses.length - 1].NUM)){
+  lastButton.disabled = true;
+}else{
+lastButton.addEventListener("click", (() => {
+  let startNum = Number(allReses[allReses.length - 1].NUM) - 19;
+  if(startNum < 1){
+    startNum = 1;
+  }
+  let endNum = allReses[allReses.length].NUM;
+  location.hash = "#" + startNum + "-" + endNum;
+}));
+}
+lastButton.innerText = ">>";
+responseHTML.appendChild(lastButton);
 reses.map((response)=>{
 let hrElement = document.createElement('hr');
 responseHTML.appendChild(hrElement);
@@ -363,6 +400,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
