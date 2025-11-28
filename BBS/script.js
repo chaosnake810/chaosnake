@@ -105,11 +105,10 @@ reses.map((response)=>{
 let hrElement = document.createElement('hr');
 responseHTML.appendChild(hrElement);
 let divElement = document.createElement('div');
-let nameElement = document.createTextNode(response.NUM + '.' + response.NAME);
+let nameElement = document.createElement('div');
+nameElement.innerText = response.NUM + '.' + response.NAME;
 divElement.appendChild(nameElement);
-let brElement = document.createElement('br');
-divElement.appendChild(brElement);
-let timeElement = document.createElement('span');
+let timeElement = document.createElement('div');
 timeElement.innerText = formatTime(response.TIME);
 timeElement.className = "time";
 divElement.appendChild(timeElement);
@@ -340,6 +339,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
