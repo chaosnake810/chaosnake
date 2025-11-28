@@ -24,7 +24,7 @@ if(response.error !== undefined){
 data = response;
 if(page !== "thread"){
   data.map((thread,index) => {
-    data[index]["INDEX"] = index;
+    data[index]["INDEX"] = index + 1;
   });
 }
 bbs.innerHTML = "";
@@ -135,7 +135,7 @@ responseHTML.appendChild(hrElement1);
 threads.map((thread,index)=>{
 let aElement = document.createElement('a');
 aElement.href = './?page=thread&num=' + thread.NUM;
-let aText = document.createTextNode((index + 1) + '.' + thread.TITLE + '(' + thread.COUNT + ')');
+let aText = document.createTextNode(thread.INDEX + '.' + thread.TITLE + '(' + thread.COUNT + ')');
 aElement.appendChild(aText);
 responseHTML.appendChild(aElement);
 let brElement = document.createElement('br');
@@ -484,6 +484,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
