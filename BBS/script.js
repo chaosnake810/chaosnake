@@ -309,7 +309,7 @@ function createNewThreadPop(popContent){
   popContent.appendChild(brElement3);
   let buttonElement = document.createElement('button');
   buttonElement.addEventListener("click",(() => {
-    if(title.value === ""){
+    if(document.getElementById("title").value === ""){
       alert("エラー：スレタイ未入力");
     }else if(message.value === ""){
       alert("エラー：本文未入力");
@@ -479,6 +479,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
