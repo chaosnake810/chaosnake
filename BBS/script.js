@@ -22,8 +22,13 @@ if(response.error !== undefined){
   createError(response.error);
 }else{
 data = response;
+if(page !== "thread"){
+  data.map((thread,index) => {
+    data[index]["INDEX"] = index;
+  });
+}
 bbs.innerHTML = "";
-bbs.appendChild(createPage(page,response));
+bbs.appendChild(createPage(page,data));
 }
 }).catch((error) => {
 createError(error);
@@ -66,7 +71,7 @@ responseHTML.appendChild(newThreadButton);
 let hr = document.createElement('hr');
 responseHTML.appendChild(hr);
 let firstButton = document.createElement('button');
-if(Number(threads[0].NUM) === Number(allThreads[0].NUM)){
+if(threads.length === 0 || Number(threads[0].INDEX) === 1){
   firstButton.disabled = true;
 }else{
 firstButton.addEventListener("click", (() => {
@@ -76,15 +81,15 @@ firstButton.addEventListener("click", (() => {
 firstButton.innerText = "<<";
 responseHTML.appendChild(firstButton);
 let prevButton = document.createElement('button');
-if(Number(threads[0].NUM) === Number(allThreads[0].NUM)){
+if(threads.length === 0 || Number(threads[0].INDEX) === 1){
   prevButton.disabled = true;
 }else{
 prevButton.addEventListener("click", (() => {
-    let startNum = Number(threads[0].NUM) - 20;
+    let startNum = Number(threads[0].INDEX) - 20;
     if(startNum < 1){
       startNum = 1;
     }
-    let endNum = Number(threads[0].NUM) - 1;
+    let endNum = Number(threads[0].INDEX) - 1;
     if(endNum < 1){
       endNum = 1;
     }
@@ -94,17 +99,17 @@ prevButton.addEventListener("click", (() => {
 prevButton.innerText = "<";
 responseHTML.appendChild(prevButton);
 let nextButton = document.createElement('button');
-if(Number(threads[threads.length - 1].NUM) >= Number(allThreads[allThreads.length - 1].NUM)){
+if(threads.length === 0 || Number(threads[threads.length - 1].INDEX) === Number(allThreads[allThreads.length - 1].INDEX)){
   nextButton.disabled = true;
 }else{
 nextButton.addEventListener("click", (() => {
-    let startNum = Number(threads[threads.length - 1].NUM) + 1;
-    if(startNum > Number(allThreads[allThreads.length - 1].NUM)){
-      startNum = Number(allThreads[allThreads.length - 1].NUM);
+    let startNum = Number(threads[threads.length - 1].INDEX) + 1;
+    if(startNum > Number(allThreads[allThreads.length - 1].INDEX)){
+      startNum = Number(allThreads[allThreads.length - 1].INDEX);
     }
-    let endNum = Number(threads[threads.length - 1].NUM) + 20;
-    if(endNum > Number(allThreads[allThreads.length - 1].NUM)){
-      endNum = Number(allThreads[allThreads.length - 1].NUM);
+    let endNum = Number(threads[threads.length - 1].INDEX) + 20;
+    if(endNum > Number(allThreads[allThreads.length - 1].INDEX)){
+      endNum = Number(allThreads[allThreads.length - 1].INDEX);
     }
     location.hash = "#" + startNum + "-" + endNum;
 }));
@@ -112,15 +117,15 @@ nextButton.addEventListener("click", (() => {
 nextButton.innerText = ">";
 responseHTML.appendChild(nextButton);
 let lastButton = document.createElement('button');
-if(Number(threads[threads.length -1].NUM) >= Number(allThreads[allThreads.length - 1].NUM)){
+if(threads.length === 0 || Number(threads[threads.length -1].INDEX) === Number(allThreads[allThreads.length - 1].INDEX)){
   lastButton.disabled = true;
 }else{
 lastButton.addEventListener("click", (() => {
-  let startNum = Number(allThreads[allThreads.length - 1].NUM) - 19;
+  let startNum = Number(allThreads[allThreads.length - 1].INDEX) - 19;
   if(startNum < 1){
     startNum = 1;
   }
-  let endNum = allThreads[allThreads.length - 1].NUM;
+  let endNum = allThreads[allThreads.length - 1].INDEX;
   location.hash = "#" + startNum + "-" + endNum;
 }));
 }
@@ -167,7 +172,7 @@ responseHTML.appendChild(newResButton);
 let hr = document.createElement('hr');
 responseHTML.appendChild(hr);
 let firstButton = document.createElement('button');
-if(Number(reses[0].NUM) === 1){
+if(reses.length === 0 || Number(reses[0].NUM) === 1){
   firstButton.disabled = true;
 }else{
 firstButton.addEventListener("click", (() => {
@@ -177,7 +182,7 @@ firstButton.addEventListener("click", (() => {
 firstButton.innerText = "<<";
 responseHTML.appendChild(firstButton);
 let prevButton = document.createElement('button');
-if(Number(reses[0].NUM) === 1){
+if(reses.length === 0 || Number(reses[0].NUM) === 1){
   prevButton.disabled = true;
 }else{
 prevButton.addEventListener("click", (() => {
@@ -195,7 +200,7 @@ prevButton.addEventListener("click", (() => {
 prevButton.innerText = "<";
 responseHTML.appendChild(prevButton);
 let nextButton = document.createElement('button');
-if(Number(reses[reses.length -1].NUM) >= Number(allReses[allReses.length - 1].NUM)){
+if(reses.length === 0 || Number(reses[reses.length -1].NUM) === Number(allReses[allReses.length - 1].NUM)){
   nextButton.disabled = true;
 }else{
 nextButton.addEventListener("click", (() => {
@@ -213,7 +218,7 @@ nextButton.addEventListener("click", (() => {
 nextButton.innerText = ">";
 responseHTML.appendChild(nextButton);
 let lastButton = document.createElement('button');
-if(Number(reses[reses.length -1].NUM) >= Number(allReses[allReses.length - 1].NUM)){
+if(reses.length === 0 || Number(reses[reses.length -1].NUM) === Number(allReses[allReses.length - 1].NUM)){
   lastButton.disabled = true;
 }else{
 lastButton.addEventListener("click", (() => {
@@ -479,6 +484,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
