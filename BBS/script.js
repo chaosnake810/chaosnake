@@ -101,6 +101,30 @@ newResButton.addEventListener("click", (() => {
 }));
 newResButton.innerText = "新レス";
 responseHTML.appendChild(newResButton);
+let firstButton = document.createElement('button');
+firstButton.addEventListener("click", (() => {
+  location.hash = "#1-20";
+}));
+firstButton.innerText = "<<";
+responseHTML.appendChild(firstButton);
+let prevButton = document.createElement('button');
+prevButton.addEventListener("click", (() => {
+  if(Number(reses[0].NUM) === 1){
+  location.hash = "#1-20";
+  }else{
+    let startNum = Number(reses[0].NUM) - 20;
+    if(startNum < 1){
+      startNum = 1;
+    }
+    let endNum = Number(reses[0].NUM) - 1;
+    if(endNum < 1){
+      endNum = 1;
+    }
+    location.hash = "#" + startNum + "-" + endNum;
+  }
+}));
+prevButton.innerText = "<";
+responseHTML.appendChild(prevButton);
 reses.map((response)=>{
 let hrElement = document.createElement('hr');
 responseHTML.appendChild(hrElement);
@@ -339,6 +363,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
