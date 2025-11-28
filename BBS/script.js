@@ -115,9 +115,9 @@ timeElement.className = "time";
 divElement.appendChild(timeElement);
 let messageElement = document.createElement('div');
 messageElement.className = "message";
-messageElement.innerHTML = (response.MESSAGE).replaceAll('\n','<br>').replaceAll('/>>[0-9,-]*/gu',((match) => {
+messageElement.innerHTML = (response.MESSAGE).replaceAll('\n','<br>').replaceAll('/>>[0-9,-]*/',(match) => {
   return convertAnchorLink(match);
-}));
+});
 divElement.appendChild(messageElement);
 responseHTML.appendChild(divElement);
 });
@@ -330,6 +330,7 @@ if(checkHash(str) === false){
   return str;
 }
 }
+
 
 
 
