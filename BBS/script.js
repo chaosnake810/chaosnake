@@ -23,7 +23,7 @@ if(response.error !== undefined){
 }else{
 data = response;
 bbs.innerHTML = "";
-bbs.appendChild(createPage(page,hashFilter(response)));
+bbs.appendChild(createPage(page,response));
 }
 }).catch((error) => {
 createError(error);
@@ -36,7 +36,7 @@ let url = new URL(window.location.href);
 let params = url.searchParams;
 let page = params.get('page');
 bbs.innerHTML = "";
-bbs.appendChild(createPage(page,hashFilter(data)));
+bbs.appendChild(createPage(page,data));
 }
 }));
 
@@ -49,7 +49,8 @@ switch(page){
 }
 }
 
-function createTopPage(threads){
+function createTopPage(allThreads){
+let threads = hashFilter(allThreads);
 let hrElement1 = document.createElement('hr');
 let responseHTML = document.createElement('div');
 let h3Element = document.createElement('h3');
@@ -77,7 +78,8 @@ responseHTML.appendChild(hrElement2);
 return responseHTML;
 }
 
-function createThreadPage(reses){
+function createThreadPage(allReses){
+let reses = hashFilter(allReses);
 let responseHTML = document.createElement('div');
 let topLink = document.createElement('a');
 topLink.href = './';
@@ -89,10 +91,10 @@ responseHTML.appendChild(brElement);
 let h3Element = document.createElement('h3');
 let url = new URL(window.location.href);
 let params = url.searchParams;
-let pageTitle = document.createTextNode(params.get('num') + '.' + reses[0].T_NUM);
+let pageTitle = document.createTextNode(params.get('num') + '.' + allReses[0].T_NUM);
 h3Element.appendChild(pageTitle);
 responseHTML.appendChild(h3Element);
-document.title = reses[0].T_NUM;
+document.title = allReses[0].T_NUM;
 let newResButton = document.createElement('button');
 newResButton.addEventListener("click", (() => {
   popUp('newRes');
@@ -313,6 +315,7 @@ function defaultFilter(json){
   return ((index + 1) <= 20);
 })
 }
+
 
 
 
