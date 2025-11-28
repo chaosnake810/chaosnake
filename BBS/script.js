@@ -94,7 +94,7 @@ prevButton.addEventListener("click", (() => {
 prevButton.innerText = "<";
 responseHTML.appendChild(prevButton);
 let nextButton = document.createElement('button');
-if(Number(threads[threads.length -1].NUM) >= Number(allThreads[allThreads.length - 1].NUM)){
+if(Number(threads[threads.length - 1].NUM) >= Number(allThreads[allThreads.length - 1].NUM)){
   nextButton.disabled = true;
 }else{
 nextButton.addEventListener("click", (() => {
@@ -112,7 +112,7 @@ nextButton.addEventListener("click", (() => {
 nextButton.innerText = ">";
 responseHTML.appendChild(nextButton);
 let lastButton = document.createElement('button');
-if(Number(threads[threads.length -1].NUM) >= allThreads.length - 1){
+if(Number(threads[threads.length -1].NUM) >= Number(allThreads[allThreads.length - 1].NUM)){
   lastButton.disabled = true;
 }else{
 lastButton.addEventListener("click", (() => {
@@ -479,6 +479,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
