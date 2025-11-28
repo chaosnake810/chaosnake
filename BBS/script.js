@@ -63,6 +63,69 @@ newThreadButton.addEventListener("click", (() => {
 }));
 newThreadButton.innerText = "新スレ";
 responseHTML.appendChild(newThreadButton);
+let hr = document.createElement('hr');
+responseHTML.appendChild(hr);
+let firstButton = document.createElement('button');
+if(Number(threads[0].NUM) === Number(allThreads[0].NUM)){
+  firstButton.disabled = true;
+}else{
+firstButton.addEventListener("click", (() => {
+  location.hash = "#1-20";
+}));
+}
+firstButton.innerText = "<<";
+responseHTML.appendChild(firstButton);
+let prevButton = document.createElement('button');
+if(Number(threads[0].NUM) === Number(allThreads[0].NUM)){
+  prevButton.disabled = true;
+}else{
+prevButton.addEventListener("click", (() => {
+    let startNum = Number(threads[0].NUM) - 20;
+    if(startNum < 1){
+      startNum = 1;
+    }
+    let endNum = Number(threads[0].NUM) - 1;
+    if(endNum < 1){
+      endNum = 1;
+    }
+    location.hash = "#" + startNum + "-" + endNum;
+}));
+}
+prevButton.innerText = "<";
+responseHTML.appendChild(prevButton);
+let nextButton = document.createElement('button');
+if(Number(threads[threads.length -1].NUM) >= Number(allThreads[allThreads.length - 1].NUM)){
+  nextButton.disabled = true;
+}else{
+nextButton.addEventListener("click", (() => {
+    let startNum = Number(threads[threads.length - 1].NUM) + 1;
+    if(startNum > Number(allThreads[allThreads.length - 1].NUM)){
+      startNum = Number(allThreads[allThreads.length - 1].NUM);
+    }
+    let endNum = Number(threads[threads.length - 1].NUM) + 20;
+    if(endNum > Number(allThreads[allThreads.length - 1].NUM)){
+      endNum = Number(allThreads[allThreads.length - 1].NUM);
+    }
+    location.hash = "#" + startNum + "-" + endNum;
+}));
+}
+nextButton.innerText = ">";
+responseHTML.appendChild(nextButton);
+let lastButton = document.createElement('button');
+if(Number(threads[threads.length -1].NUM) >= allThreads.length - 1){
+  lastButton.disabled = true;
+}else{
+lastButton.addEventListener("click", (() => {
+  let startNum = Number(allThreads[allThreads.length - 1].NUM) - 19;
+  if(startNum < 1){
+    startNum = 1;
+  }
+  let endNum = allThreads[allThreads.length - 1].NUM;
+  location.hash = "#" + startNum + "-" + endNum;
+}));
+}
+lastButton.innerText = ">>";
+responseHTML.appendChild(lastButton);
 responseHTML.appendChild(hrElement1);
 threads.map((thread,index)=>{
 let aElement = document.createElement('a');
@@ -416,6 +479,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
