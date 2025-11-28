@@ -67,7 +67,7 @@ responseHTML.appendChild(hrElement1);
 threads.map((thread,index)=>{
 let aElement = document.createElement('a');
 aElement.href = './?page=thread&num=' + thread.NUM;
-let aText = document.createTextNode(index + '.' + thread.TITLE + '(' + thread.COUNT + ')');
+let aText = document.createTextNode((index + 1) + '.' + thread.TITLE + '(' + thread.COUNT + ')');
 aElement.appendChild(aText);
 responseHTML.appendChild(aElement);
 let brElement = document.createElement('br');
@@ -169,7 +169,11 @@ let hrElement = document.createElement('hr');
 responseHTML.appendChild(hrElement);
 let divElement = document.createElement('div');
 let nameElement = document.createElement('div');
-nameElement.innerText = response.NUM + '.' + response.NAME;
+let uname = response.NAME;
+if(uname === ""){
+  uname = "さすらいの名無し";
+}
+nameElement.innerText = response.NUM + '.' + uname;
 divElement.appendChild(nameElement);
 let timeElement = document.createElement('div');
 timeElement.innerText = formatTime(response.TIME);
@@ -242,7 +246,13 @@ function createNewThreadPop(popContent){
   popContent.appendChild(brElement3);
   let buttonElement = document.createElement('button');
   buttonElement.addEventListener("click",(() => {
+    if(title.value === ""){
+      alert("エラー：スレタイ未入力");
+    }else if(message.value === ""){
+      alert("エラー：本文未入力");
+    }else{
     createNewThread();
+    }
   }));
   buttonElement.innerText = "送信";
   popContent.appendChild(buttonElement);
@@ -272,7 +282,11 @@ function createNewResPop(popContent,num){
   popContent.appendChild(brElement2);
   let buttonElement = document.createElement('button');
   buttonElement.addEventListener("click",(() => {
+    if(message.value === ""){
+      alert("エラー：本文未入力");
+    }else{
     createNewRes();
+    }
   }));
   buttonElement.innerText = "送信";
   popContent.appendChild(buttonElement);
@@ -402,6 +416,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
