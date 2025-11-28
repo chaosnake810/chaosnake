@@ -64,10 +64,10 @@ newThreadButton.addEventListener("click", (() => {
 newThreadButton.innerText = "新スレ";
 responseHTML.appendChild(newThreadButton);
 responseHTML.appendChild(hrElement1);
-threads.map((thread)=>{
+threads.map((thread,index)=>{
 let aElement = document.createElement('a');
 aElement.href = './?page=thread&num=' + thread.NUM;
-let aText = document.createTextNode(thread.NUM + '.' + thread.TITLE + '(' + thread.COUNT + ')');
+let aText = document.createTextNode(index + '.' + thread.TITLE + '(' + thread.COUNT + ')');
 aElement.appendChild(aText);
 responseHTML.appendChild(aElement);
 let brElement = document.createElement('br');
@@ -402,6 +402,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
