@@ -101,6 +101,8 @@ newResButton.addEventListener("click", (() => {
 }));
 newResButton.innerText = "新レス";
 responseHTML.appendChild(newResButton);
+let hr = document.createElement('hr');
+responseHTML.appendChild(hr);
 let firstButton = document.createElement('button');
 if(Number(reses[0].NUM) === 1){
   firstButton.disabled = true;
@@ -400,6 +402,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
