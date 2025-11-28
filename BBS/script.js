@@ -272,16 +272,8 @@ bbs.appendChild(hrElement2);
 }
 
 function hashFilter(json){
-let error = false;
 let numList = location.hash.substring(1).split(",");
-if(numList.length !== 0){
-numList.map((num) => {
-  let snum = String(num);
-  error = !(/^-?\d+(-(\d+)?)?$/.test(snum) && snum.split("-").length <= 2 && !snum.startsWith("--"));
-});
-}else{
-  error = true;
-}
+let error = checkHash(numList);
 return error ? defaultFilter(json) : json.filter((data,index) => {
   let flg =　false;
   numList.map((num) => {
@@ -316,6 +308,26 @@ function defaultFilter(json){
 })
 }
 
+function checkHash(numList){
+let error = false;
+if(numList.length !== 0){
+numList.map((num) => {
+  let snum = String(num);
+  error = !(/^-?\d+(-(\d+)?)?$/.test(snum) && snum.split("-").length <= 2 && !snum.startsWith("--"));
+});
+}else{
+error = true;
+}
+return error;
+}
+
+function convertAnchorLink(str){
+if(checkHash(str) === false){
+  return '<a href="#' + str.split(">>")[1] + '">' + str + '</a>';
+}else{
+  return str;
+}
+}
 
 
 
