@@ -156,7 +156,7 @@ lastButton.addEventListener("click", (() => {
   if(startNum < 1){
     startNum = 1;
   }
-  let endNum = allReses[allReses.length].NUM;
+  let endNum = allReses[allReses.length - 1].NUM;
   location.hash = "#" + startNum + "-" + endNum;
 }));
 }
@@ -400,6 +400,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
