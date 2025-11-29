@@ -1,6 +1,5 @@
 let data;
 function loading(){
-bbs.innerHTML = "";
 let url = new URL(window.location.href);
 let params = url.searchParams;
 let page = params.get('page');
@@ -496,6 +495,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
