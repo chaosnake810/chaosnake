@@ -68,6 +68,12 @@ newThreadButton.addEventListener("click", (() => {
 }));
 newThreadButton.innerText = "新スレ";
 responseHTML.appendChild(newThreadButton);
+let reloadButton = document.createElement('button');
+reloadButton.addEventListener("click", (() => {
+  loading();
+}));
+reloadButton.innerText = "更新";
+responseHTML.appendChild(reloadButton);
 let hr = document.createElement('hr');
 responseHTML.appendChild(hr);
 let firstButton = document.createElement('button');
@@ -169,6 +175,12 @@ newResButton.addEventListener("click", (() => {
 }));
 newResButton.innerText = "新レス";
 responseHTML.appendChild(newResButton);
+let reloadButton = document.createElement('button');
+reloadButton.addEventListener("click", (() => {
+  loading();
+}));
+reloadButton.innerText = "更新";
+responseHTML.appendChild(reloadButton);
 let hr = document.createElement('hr');
 responseHTML.appendChild(hr);
 let firstButton = document.createElement('button');
@@ -484,6 +496,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
