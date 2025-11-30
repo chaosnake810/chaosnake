@@ -301,7 +301,7 @@ switch(type){
   case "newRes":
   createNewResPop(popContent,num);
   break;
-  case "deleteRes";
+  case "deleteRes":
   createDeleteResPop(popContent,num);
   break;
 }
@@ -568,6 +568,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
