@@ -277,6 +277,12 @@ deleteButton.addEventListener("click", (() => {
 }));
 deleteButton.innerText = "削除";
 divElement.appendChild(deleteButton);
+let editButton = document.createElement('button');
+editButton.addEventListener("click", (() => {
+  popUp('editRes',response.NUM);
+}));
+editButton.innerText = "編集";
+divElement.appendChild(editButton);
 }else{
   divElement.innerText = "削除済み";
 }
@@ -303,6 +309,9 @@ switch(type){
   break;
   case "deleteRes":
   createDeleteResPop(popContent,num);
+  break;
+  case "editRes":
+  createEditResPop(popContent,num);
   break;
 }
 pop.innerHTML = "";
@@ -419,6 +428,58 @@ function createDeleteResPop(popContent,num){
   popContent.appendChild(buttonElement);
 }
 
+function createEditResPop(popContent,num){
+  let title = document.createElement('h3');
+  title.innerText = "編集";
+  popContent.appendChild(title);
+  let hrElement = document.createElement('hr');
+  popContent.appendChild(hrElement);
+  let nameArea = document.createElement('input');
+  nameArea.type = "text";
+  nameArea.placeholder = "名前";
+  nameArea.id = "nameArea";
+  nameArea.value = data[Number(num) - 1].NAME;
+  popContent.appendChild(nameArea);
+  if(Number(num) === 1){
+  let brElement = document.createElement('br');
+  popContent.appendChild(brElement);
+  let titleArea = document.createElement('input');
+  titleArea.type = "text";
+  titleArea.placeholder = "スレタイ";
+  titleArea.id = "title";
+  titleArea.value = data[0].T_NUM;
+  popContent.appendChild(titleArea);
+  }
+  let brElement1 = document.createElement('br');
+  popContent.appendChild(brElement1);
+  let messageArea = document.createElement('textarea');
+  messageArea.placeholder = "本文";
+  messageArea.id = "message";
+  messageArea.value = data[Number(num) - 1].MESSAGE;
+  popContent.appendChild(messageArea);
+  let brElement2 = document.createElement('br');
+  popContent.appendChild(brElement2);
+  let passwordArea = document.createElement('input');
+  passwordArea.type = "password";
+  passwordArea.placeholder = "パスワード";
+  passwordArea.id = "passwordArea";
+  popContent.appendChild(passwordArea);
+  let brElement3 = document.createElement('br');
+  popContent.appendChild(brElement3);
+  let buttonElement = document.createElement('button');
+  buttonElement.addEventListener("click",(() => {
+    if(Number(num) === 1 && title.value === ""){
+      alert("エラー:タイトル未入力");
+    }else if(message.value === ""){
+      alert("エラー：本文未入力");
+    }else{
+    editRes(num);
+    }
+  }));
+  buttonElement.innerText = "編集";
+  popContent.appendChild(buttonElement);
+}
+
 function createNewThread(){
 let param = {
   "type":"newThread",
@@ -494,6 +555,43 @@ loading();
 });
 }
 
+function editRes(num){
+let url = new URL(window.location.href);
+let params = url.searchParams;
+let editTitle = undefined;
+if(Number(num) === 1 && data[0].T_NUM !== titleArea.value){
+  editTitle = titleArea.value;
+}
+let editName = undefined;
+if(data[Number(num) - 1].NAME !== nameArea.value){
+  editName = nameArea.value;
+}
+let editMessage = undefined;
+if(data[Number(num) - 1].MESSAGE !== message.value){
+  editMessage = message.value;
+}
+let param = {
+  "type":"newRes",
+  "tnum":params.get('num'),
+  "num":num,
+  "title":editTitle,
+  "name":editName,
+  "message":editMessage,
+  "password":passwordArea.value
+}
+requestGAS(param).then((response) => {
+if(response.error !== undefined){
+  pop.style.display = "none";
+  createError(response.error);
+}else{
+pop.style.display = "none";
+loading();
+}
+}).catch((error) => {
+  pop.style.display = "none";
+  createError(error);
+});
+}
 
 function requestGAS(param){
 cover.style.display = "flex";
@@ -575,6 +673,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
