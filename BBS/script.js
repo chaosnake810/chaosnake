@@ -571,7 +571,7 @@ if(data[Number(num) - 1].MESSAGE !== message.value){
   editMessage = message.value;
 }
 let param = {
-  "type":"newRes",
+  "type":"editRes",
   "tnum":params.get('num'),
   "num":num,
   "title":editTitle,
@@ -673,6 +673,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
