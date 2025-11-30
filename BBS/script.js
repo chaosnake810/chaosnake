@@ -559,8 +559,8 @@ function editRes(num){
 let url = new URL(window.location.href);
 let params = url.searchParams;
 let editTitle = undefined;
-if(Number(num) === 1 && data[0].T_NUM !== titleArea.value){
-  editTitle = titleArea.value;
+if(Number(num) === 1 && data[0].T_NUM !== title.value){
+  editTitle = title.value;
 }
 let editName = undefined;
 if(data[Number(num) - 1].NAME !== nameArea.value){
@@ -673,6 +673,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
