@@ -388,7 +388,7 @@ function createNewResPop(popContent,num){
   popContent.appendChild(brElement3);
   let buttonElement = document.createElement('button');
   buttonElement.addEventListener("click",(() => {
-    if(.value === ""){
+    if(message.value === ""){
       alert("エラー：本文未入力");
     }else{
     createNewRes();
@@ -568,6 +568,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
