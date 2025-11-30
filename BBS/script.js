@@ -430,6 +430,7 @@ let param = {
 }
 requestGAS(param).then((response) => {
 if(response.error !== undefined){
+  pop.style.display = "none";
   createError(response.error);
 }else{
 pop.style.display = "none";
@@ -454,6 +455,7 @@ let param = {
 }
 requestGAS(param).then((response) => {
 if(response.error !== undefined){
+  pop.style.display = "none";
   createError(response.error);
 }else{
 pop.style.display = "none";
@@ -477,6 +479,7 @@ let param = {
 requestGAS(param).then((response) => {
 alert("param:" + JSON.stringify(param) + "\nresponse:" + JSON.stringify(response));
 if(response.error !== undefined){
+  pop.style.display = "none";
   createError(response.error);
 }else{
 pop.style.display = "none";
@@ -569,6 +572,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
