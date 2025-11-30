@@ -482,7 +482,11 @@ if(response.error !== undefined){
   createError(response.error);
 }else{
 pop.style.display = "none";
+if(Number(param.tnum) === 1){
+window.location.href('./');
+}else{
 loading();
+}
 }
 }).catch((error) => {
   pop.style.display = "none";
@@ -571,6 +575,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
