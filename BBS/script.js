@@ -483,7 +483,7 @@ if(response.error !== undefined){
 }else{
 pop.style.display = "none";
 if(Number(num) === 1){
-window.location.href('./');
+window.location.href = './';
 }else{
 loading();
 }
@@ -575,6 +575,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
