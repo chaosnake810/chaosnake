@@ -247,6 +247,7 @@ reses.map((response)=>{
 let hrElement = document.createElement('hr');
 responseHTML.appendChild(hrElement);
 let divElement = document.createElement('div');
+if(Number(response.DELETED) !== 1){
 let nameElement = document.createElement('div');
 let uname = response.NAME;
 if(uname === ""){
@@ -270,6 +271,15 @@ resButton.addEventListener("click", (() => {
 }));
 resButton.innerText = "返信";
 divElement.appendChild(resButton);
+let deleteButton = document.createElement('button');
+deleteButton.addEventListener("click", (() => {
+  popUp('deleteRes',response.NUM);
+}));
+deleteButton.innerText = "削除";
+divElement.appendChild(deleteButton);
+}else{
+  divElement.innerText = "削除済み";
+}
 responseHTML.appendChild(divElement);
 });
 let hrElement = document.createElement('hr');
@@ -290,6 +300,9 @@ switch(type){
   break;
   case "newRes":
   createNewResPop(popContent,num);
+  break;
+  case "deleteRes";
+  createDeleteResPop(popContent,num);
   break;
 }
 pop.innerHTML = "";
@@ -323,6 +336,13 @@ function createNewThreadPop(popContent){
   popContent.appendChild(messageArea);
   let brElement3 = document.createElement('br');
   popContent.appendChild(brElement3);
+  let passwordArea = document.createElement('input');
+  passwordArea.type = "password";
+  passwordArea.placeholder = "パスワード";
+  passwordArea.id = "passwordArea";
+  popContent.appendChild(passwordArea);
+  let brElement4 = document.createElement('br');
+  popContent.appendChild(brElement4);
   let buttonElement = document.createElement('button');
   buttonElement.addEventListener("click",(() => {
     if(document.getElementById("title").value === ""){
@@ -359,9 +379,16 @@ function createNewResPop(popContent,num){
   popContent.appendChild(messageArea);
   let brElement2 = document.createElement('br');
   popContent.appendChild(brElement2);
+  let passwordArea = document.createElement('input');
+  passwordArea.type = "password";
+  passwordArea.placeholder = "パスワード";
+  passwordArea.id = "passwordArea";
+  popContent.appendChild(passwordArea);
+  let brElement3 = document.createElement('br');
+  popContent.appendChild(brElement3);
   let buttonElement = document.createElement('button');
   buttonElement.addEventListener("click",(() => {
-    if(message.value === ""){
+    if(.value === ""){
       alert("エラー：本文未入力");
     }else{
     createNewRes();
@@ -371,12 +398,34 @@ function createNewResPop(popContent,num){
   popContent.appendChild(buttonElement);
 }
 
+function createDeleteResPop(popContent,num){
+  let title = document.createElement('h3');
+  title.innerText = "削除";
+  popContent.appendChild(title);
+  let hrElement = document.createElement('hr');
+  popContent.appendChild(hrElement);
+  let passwordArea = document.createElement('input');
+  passwordArea.type = "password";
+  passwordArea.placeholder = "パスワード";
+  passwordArea.id = "passwordArea";
+  popContent.appendChild(passwordArea);
+  let brElement = document.createElement('br');
+  popContent.appendChild(brElement);
+  let buttonElement = document.createElement('button');
+  buttonElement.addEventListener("click",(() => {
+    deleteRes(num);
+  }));
+  buttonElement.innerText = "削除";
+  popContent.appendChild(buttonElement);
+}
+
 function createNewThread(){
 let param = {
   "type":"newThread",
   "name":nameArea.value,
   "title":title.value,
   "message":message.value,
+  "password":passwordArea.value,
   "time":new Date()
 }
 requestGAS(param).then((response) => {
@@ -400,6 +449,7 @@ let param = {
   "num":params.get('num'),
   "name":nameArea.value,
   "message":message.value,
+  "password":passwordArea.value,
   "time":new Date()
 }
 requestGAS(param).then((response) => {
@@ -414,6 +464,29 @@ loading();
   createError(error);
 });
 }
+
+function deleteRes(num){
+let url = new URL(window.location.href);
+let params = url.searchParams;
+let param = {
+  "type":"deleteRes",
+  "tnum":params.get('num'),
+  "num":num,
+  "password":passwordArea.value,
+}
+requestGAS(param).then((response) => {
+if(response.error !== undefined){
+  createError(response.error);
+}else{
+pop.style.display = "none";
+loading();
+}
+}).catch((error) => {
+  pop.style.display = "none";
+  createError(error);
+});
+}
+
 
 function requestGAS(param){
 cover.style.display = "flex";
@@ -495,6 +568,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
