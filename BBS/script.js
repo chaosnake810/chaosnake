@@ -472,7 +472,7 @@ let param = {
   "type":"deleteRes",
   "tnum":params.get('num'),
   "num":num,
-  "password":passwordArea.value,
+  "password":passwordArea.value
 }
 requestGAS(param).then((response) => {
 if(response.error !== undefined){
@@ -568,6 +568,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
