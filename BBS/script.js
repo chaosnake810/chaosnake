@@ -475,6 +475,7 @@ let param = {
   "password":passwordArea.value
 }
 requestGAS(param).then((response) => {
+alert("param:" + JSON.stringify(param) + "\nresponse:" + JSON.stringify(response));
 if(response.error !== undefined){
   createError(response.error);
 }else{
@@ -568,6 +569,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
