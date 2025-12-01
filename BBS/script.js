@@ -1,7 +1,11 @@
 let data;
 let info;
 function loading(){
-requestGAS({},'https://ipinfo.io?callback=callback').then((ipResponse) => {
+cover.style.display = "flex";
+fetch('https://ipinfo.io?callback').then((ipRes) => {
+  return ipRes.json();
+}).then((ipResponse) => {
+cover.style.display = "none";
 let url = new URL(window.location.href);
 let params = url.searchParams;
 let page = params.get('page');
@@ -601,9 +605,9 @@ loading();
 });
 }
 
-function requestGAS(param,url){
+function requestGAS(param){
 cover.style.display = "flex";
-let fetchUrl = (url === undefined) ? 'https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec' : url;
+let fetchUrl = 'https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec';
 return fetch(fetchUrl, {
 method: 'POST',
 body: JSON.stringify(param)
@@ -682,6 +686,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
