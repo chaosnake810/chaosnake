@@ -1,5 +1,7 @@
 let data;
+let info;
 function loading(){
+requestGAS({},'https://ipinfo.io?callback=callback').then((ipResponse) => {
 let url = new URL(window.location.href);
 let params = url.searchParams;
 let page = params.get('page');
@@ -8,19 +10,22 @@ switch(page){
   case "thread":
     param = {
       "type":"getReses",
-      "num":params.get('num')
+      "num":params.get('num'),
+      "ip":ipResponse.ip
     }
     break;
   default:
     param = {
-      "type":"getThreads"
+      "type":"getThreads",
+      "ip":ipResponse.ip
     }
 }
 requestGAS(param).then((response) => {
 if(response.error !== undefined){
   createError(response.error);
 }else{
-data = response;
+data = response.data;
+info = response.info;
 if(page !== "thread"){
   data.map((thread,index) => {
     data[index]["INDEX"] = index + 1;
@@ -31,7 +36,10 @@ bbs.appendChild(createPage(page,data));
 }
 }).catch((error) => {
 createError(error);
-})
+});
+}).catch((error) => {
+createError(error);
+});
 } 
 
 window.addEventListener('hashchange', (() => {
@@ -593,9 +601,10 @@ loading();
 });
 }
 
-function requestGAS(param){
+function requestGAS(param,url){
 cover.style.display = "flex";
-return fetch('https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec', {
+let fetchUrl = (url === undefined) ? 'https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec' : url;
+return fetch(fetchUrl, {
 method: 'POST',
 body: JSON.stringify(param)
 }).then((response) => {
@@ -673,6 +682,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
