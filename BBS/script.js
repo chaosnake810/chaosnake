@@ -615,7 +615,7 @@ function requestGAS(param){
 cover.style.display = "flex";
 let fetchUrl = 'https://script.google.com/macros/s/AKfycbwCqQ9AVZEBsCsCr_WpfNwYmOrB_7mjzaA64rR7FrlS48PSJ86c_tN_IKTJVo1fYSa7MA/exec';
 return fetch(fetchUrl, {
-method: 'GET',
+method: 'POST',
 body: JSON.stringify(param)
 }).then((response) => {
   cover.style.display = "none";
@@ -692,6 +692,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
