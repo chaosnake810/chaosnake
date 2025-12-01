@@ -28,6 +28,7 @@ requestGAS(param).then((response) => {
 if(response.error !== undefined){
   createError(response.error);
 }else{
+alert(JSON.stringify(response));
 data = response.data;
 info = response.info;
 if(page !== "thread"){
@@ -692,6 +693,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
