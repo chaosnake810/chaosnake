@@ -73,6 +73,9 @@ let h3Element = document.createElement('h3');
 let pageTitle = document.createTextNode('スレ一覧');
 h3Element.appendChild(pageTitle);
 responseHTML.appendChild(h3Element);
+let romElement = document.createElement('div');
+romElement.innerText = "ROM:" + info.rom;
+responseHTML.appendChild(romElement);
 let newThreadButton = document.createElement('button');
 newThreadButton.addEventListener("click", (() => {
   popUp('newThread');
@@ -180,6 +183,9 @@ let pageTitle = document.createTextNode(params.get('num') + '.' + allReses[0].T_
 h3Element.appendChild(pageTitle);
 responseHTML.appendChild(h3Element);
 document.title = allReses[0].T_NUM;
+let romElement = document.createElement('div');
+romElement.innerText = "ROM:" + info.rom;
+responseHTML.appendChild(romElement);
 let newResButton = document.createElement('button');
 newResButton.addEventListener("click", (() => {
   popUp('newRes');
@@ -686,6 +692,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
