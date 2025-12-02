@@ -15,13 +15,15 @@ switch(page){
     param = {
       "type":"getReses",
       "num":params.get('num'),
-      "ip":ipResponse.ip
+      "ip":ipResponse.ip,
+      "oldIp":localStorage.oldIp
     }
     break;
   default:
     param = {
       "type":"getThreads",
-      "ip":ipResponse.ip
+      "ip":ipResponse.ip,
+      "oldIp":localStorage.oldIp
     }
 }
 requestGAS(param).then((response) => {
@@ -34,6 +36,9 @@ if(page !== "thread"){
   data.map((thread,index) => {
     data[index]["INDEX"] = index + 1;
   });
+}
+if(info.newIp !== undefined){
+  localStorage.oldIp = info.newIp;
 }
 bbs.innerHTML = "";
 bbs.appendChild(createPage(page,data));
@@ -692,6 +697,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
