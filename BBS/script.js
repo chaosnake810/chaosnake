@@ -306,6 +306,18 @@ editButton.addEventListener("click", (() => {
 }));
 editButton.innerText = "編集";
 divElement.appendChild(editButton);
+let positiveButton = document.createElement('button');
+positiveButton.addEventListener("click", (() => {
+  alert("未実装");
+}));
+positiveButton.innerText = "👍" + getCount(response.NUM,info.positives);
+divElement.appendChild(positiveButton);
+let negativeButton = document.createElement('button');
+negativeButton.addEventListener("click", (() => {
+  alert("未実装");
+}));
+negativeButton.innerText = "🖕" + getCount(response.NUM,info.negatives);
+divElement.appendChild(negativeButton);
 }else{
   divElement.innerText = "削除済み";
 }
@@ -314,6 +326,16 @@ responseHTML.appendChild(divElement);
 let hrElement = document.createElement('hr');
 responseHTML.appendChild(hrElement);
 return responseHTML;
+}
+
+function getCount(search,array){
+  let count = 0;
+  array.map((value) => {
+    if(String(search) === String(value)){
+      count++;
+    }
+  })
+  return count;
 }
 
 function formatTime(time){
@@ -697,6 +719,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
