@@ -32,7 +32,7 @@ if(response.error !== undefined){
 }else{
 data = response.data;
 info = response.info;
-alert(info);
+alert(JSON.stringify(info));
 if(page !== "thread"){
   data.map((thread,index) => {
     data[index]["INDEX"] = index + 1;
@@ -720,6 +720,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
