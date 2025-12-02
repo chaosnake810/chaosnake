@@ -32,6 +32,7 @@ if(response.error !== undefined){
 }else{
 data = response.data;
 info = response.info;
+alert(info);
 if(page !== "thread"){
   data.map((thread,index) => {
     data[index]["INDEX"] = index + 1;
@@ -310,13 +311,13 @@ let positiveButton = document.createElement('button');
 positiveButton.addEventListener("click", (() => {
   alert("未実装");
 }));
-positiveButton.innerText = "👍" + getCount(response.NUM,Array.from(info.positives));
+positiveButton.innerText = "👍" + getCount(response.NUM,info.positives);
 divElement.appendChild(positiveButton);
 let negativeButton = document.createElement('button');
 negativeButton.addEventListener("click", (() => {
   alert("未実装");
 }));
-negativeButton.innerText = "🖕" + getCount(response.NUM,Array.from(info.negatives));
+negativeButton.innerText = "🖕" + getCount(response.NUM,info.negatives);
 divElement.appendChild(negativeButton);
 }else{
   divElement.innerText = "削除済み";
@@ -719,6 +720,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
