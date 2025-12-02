@@ -310,13 +310,13 @@ let positiveButton = document.createElement('button');
 positiveButton.addEventListener("click", (() => {
   alert("未実装");
 }));
-positiveButton.innerText = "👍" + getCount(response.NUM,info.positives);
+positiveButton.innerText = "👍" + getCount(response.NUM,Array.from(info.positives));
 divElement.appendChild(positiveButton);
 let negativeButton = document.createElement('button');
 negativeButton.addEventListener("click", (() => {
   alert("未実装");
 }));
-negativeButton.innerText = "🖕" + getCount(response.NUM,info.negatives);
+negativeButton.innerText = "🖕" + getCount(response.NUM,Array.from(info.negatives));
 divElement.appendChild(negativeButton);
 }else{
   divElement.innerText = "削除済み";
@@ -719,6 +719,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
