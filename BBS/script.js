@@ -308,13 +308,13 @@ editButton.innerText = "編集";
 divElement.appendChild(editButton);
 let positiveButton = document.createElement('button');
 positiveButton.addEventListener("click", (() => {
-  alert("未実装");
+  pushReview("positive",response.NUM);
 }));
 positiveButton.innerText = "👍" + getCount(response.NUM,info.positives);
 divElement.appendChild(positiveButton);
 let negativeButton = document.createElement('button');
 negativeButton.addEventListener("click", (() => {
-  alert("未実装");
+  pushReview("negative",response.NUM);
 }));
 negativeButton.innerText = "🖕" + getCount(response.NUM,info.negatives);
 divElement.appendChild(negativeButton);
@@ -326,6 +326,27 @@ responseHTML.appendChild(divElement);
 let hrElement = document.createElement('hr');
 responseHTML.appendChild(hrElement);
 return responseHTML;
+}
+
+function pushReview(type,num){
+let url = new URL(window.location.href);
+let params = url.searchParams;
+let param = {
+  "type":"pushReview",
+  "reviewType":type,
+  "num":num,
+  "tnum":params.get('num'),
+  "userNum":info.userNum,
+}
+requestGAS(param).then((response) => {
+if(response.error !== undefined){
+  createError(response.error);
+}else{
+loading();
+}
+}).catch((error) => {
+  createError(error);
+});
 }
 
 function getCount(search,array){
@@ -719,6 +740,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
