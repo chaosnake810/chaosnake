@@ -682,7 +682,8 @@ body: JSON.stringify(param)
 }
 
 function createError(error){
-if(pop.style.display === "none"){
+try{
+if(pop.style.display === "none" || pop.style.display === undefined){
 bbs.innerHTML = "";
 let hrElement1 = document.createElement('hr');
 bbs.appendChild(hrElement1);
@@ -699,6 +700,9 @@ if(popError === undefined){
   popc.appendChild(errorTextElement);
 }
 popError.innerText = "Error:" + error;
+}
+}catch(e){
+  alert(e);
 }
 }
 
@@ -760,6 +764,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
