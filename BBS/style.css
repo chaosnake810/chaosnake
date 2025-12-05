@@ -77,8 +77,9 @@ color:#955;
   color:#f00;
 }
 .bt{
+  height:25px;
   margin:3px;
-  background:linear-gradient(#bbb,#ddd);
+  background:linear-gradient(#ccc,#ddd);
   border:none;
   border-radius:5px;
   box-shadow:0 1px 1px #333;
@@ -92,7 +93,12 @@ color:#955;
 }
 .bt:disabled{
   box-shadow:none;
-  background:linear-gradient(#ccc,#eee);
-  border:solid 1px #bbb;
+  background:linear-gradient(#ddd,#eee);
+  border:solid 1px #ccc;
   pointer-events: none;
+}
+.reviewedBt{
+  color:#58f;
+  border:solid 1px #58f;
+  box-shadow:0 1px 1px #7af;
 }
