@@ -195,7 +195,14 @@ h3Element.appendChild(pageTitle);
 responseHTML.appendChild(h3Element);
 document.title = allReses[0].T_NUM;
 let romElement = document.createElement('div');
-romElement.innerText = "ROM:" + info.rom;
+romElement.style.textAlign = "center";
+let romText = document.createElement('span');
+romText.innerText = "ROM";
+romText.id = "rom";
+romElement.appendChild(romText);
+let romNumber = document.createElement('span');
+romNumber.innerText = info.rom;
+romElement.appendChild(romNumber);
 responseHTML.appendChild(romElement);
 let newResButton = document.createElement('button');
 newResButton.addEventListener("click", (() => {
@@ -791,6 +798,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
