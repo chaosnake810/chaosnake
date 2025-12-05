@@ -325,15 +325,21 @@ let positiveButton = document.createElement('button');
 positiveButton.addEventListener("click", (() => {
   pushReview("positive",response.NUM);
 }));
-positiveButton.innerText = "👍" + getCount(response.NUM,info.positives);
+positiveButton.innerText = "👍 " + getCount(response.NUM,info.positives);
 positiveButton.className = "bt";
+if(info.myPositive.includes(Number(response.NUM))){
+  positiveButton.className = "bt reviewedBt";
+}
 divElement.appendChild(positiveButton);
 let negativeButton = document.createElement('button');
 negativeButton.addEventListener("click", (() => {
   pushReview("negative",response.NUM);
 }));
-negativeButton.innerText = "🖕" + getCount(response.NUM,info.negatives);
+negativeButton.innerText = "🖕 " + getCount(response.NUM,info.negatives);
 negativeButton.className = "bt";
+if(info.myNegative.includes(Number(response.NUM))){
+  negativeButton.className = "bt reviewedBt";
+}
 divElement.appendChild(negativeButton);
 }else{
   divElement.innerText = "削除済み";
@@ -784,6 +790,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
