@@ -367,6 +367,9 @@ return beforeDate.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
 function popUp(type,num){
 let popContent = document.createElement('div');
 popContent.id = "popc";
+popContent.addEventListener("click", (() => {
+  return false;
+}));
 switch(type){
   case "newThread":
   createNewThreadPop(popContent);
@@ -741,6 +744,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
