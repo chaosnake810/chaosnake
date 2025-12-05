@@ -62,12 +62,14 @@ color:#955;
   margin:5px 0;
   box-shadow:1px 1px 1px #333;
   border-radius:5px;
-  width:50%;
+  width:70%;
+  border:solid 1px #888;
 }
 #message{
   margin:6px 0;
   box-shadow:1px 1px 1px #333;
   border-radius:5px;
-  width:75%;
+  width:85%;
   height:35%;
+  border:solid 1px #888;
 }
