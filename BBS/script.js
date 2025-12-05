@@ -86,12 +86,14 @@ newThreadButton.addEventListener("click", (() => {
   popUp('newThread');
 }));
 newThreadButton.innerText = "新スレ";
+newThreadButton.className = "bt";
 responseHTML.appendChild(newThreadButton);
 let reloadButton = document.createElement('button');
 reloadButton.addEventListener("click", (() => {
   loading();
 }));
 reloadButton.innerText = "更新";
+reloadButton.className = "bt";
 responseHTML.appendChild(reloadButton);
 let hr = document.createElement('hr');
 responseHTML.appendChild(hr);
@@ -104,6 +106,7 @@ firstButton.addEventListener("click", (() => {
 }));
 }
 firstButton.innerText = "<<";
+firstButton.className = "bt";
 responseHTML.appendChild(firstButton);
 let prevButton = document.createElement('button');
 if(threads.length === 0 || Number(threads[0].INDEX) === 1){
@@ -122,6 +125,7 @@ prevButton.addEventListener("click", (() => {
 }));
 }
 prevButton.innerText = "<";
+prevButton.className = "bt";
 responseHTML.appendChild(prevButton);
 let nextButton = document.createElement('button');
 if(threads.length === 0 || Number(threads[threads.length - 1].INDEX) === Number(allThreads[allThreads.length - 1].INDEX)){
@@ -140,6 +144,7 @@ nextButton.addEventListener("click", (() => {
 }));
 }
 nextButton.innerText = ">";
+nextButton.className = "bt";
 responseHTML.appendChild(nextButton);
 let lastButton = document.createElement('button');
 if(threads.length === 0 || Number(threads[threads.length -1].INDEX) === Number(allThreads[allThreads.length - 1].INDEX)){
@@ -155,6 +160,7 @@ lastButton.addEventListener("click", (() => {
 }));
 }
 lastButton.innerText = ">>";
+lastButton.className = "bt";
 responseHTML.appendChild(lastButton);
 responseHTML.appendChild(hrElement1);
 threads.map((thread,index)=>{
@@ -196,12 +202,14 @@ newResButton.addEventListener("click", (() => {
   popUp('newRes');
 }));
 newResButton.innerText = "新レス";
+newResButton.className = "bt";
 responseHTML.appendChild(newResButton);
 let reloadButton = document.createElement('button');
 reloadButton.addEventListener("click", (() => {
   loading();
 }));
 reloadButton.innerText = "更新";
+reloadButton.className = "bt";
 responseHTML.appendChild(reloadButton);
 let hr = document.createElement('hr');
 responseHTML.appendChild(hr);
@@ -214,6 +222,7 @@ firstButton.addEventListener("click", (() => {
 }));
 }
 firstButton.innerText = "<<";
+firstButton.className = "bt";
 responseHTML.appendChild(firstButton);
 let prevButton = document.createElement('button');
 if(reses.length === 0 || Number(reses[0].NUM) === 1){
@@ -232,6 +241,7 @@ prevButton.addEventListener("click", (() => {
 }));
 }
 prevButton.innerText = "<";
+prevButton.className = "bt";
 responseHTML.appendChild(prevButton);
 let nextButton = document.createElement('button');
 if(reses.length === 0 || Number(reses[reses.length -1].NUM) === Number(allReses[allReses.length - 1].NUM)){
@@ -250,6 +260,7 @@ nextButton.addEventListener("click", (() => {
 }));
 }
 nextButton.innerText = ">";
+nextButton.className = "bt";
 responseHTML.appendChild(nextButton);
 let lastButton = document.createElement('button');
 if(reses.length === 0 || Number(reses[reses.length -1].NUM) === Number(allReses[allReses.length - 1].NUM)){
@@ -265,6 +276,7 @@ lastButton.addEventListener("click", (() => {
 }));
 }
 lastButton.innerText = ">>";
+lastButton.className = "bt";
 responseHTML.appendChild(lastButton);
 reses.map((response)=>{
 let hrElement = document.createElement('hr');
@@ -293,30 +305,35 @@ resButton.addEventListener("click", (() => {
   popUp('newRes',response.NUM);
 }));
 resButton.innerText = "返信";
+resButton.className = "bt";
 divElement.appendChild(resButton);
 let deleteButton = document.createElement('button');
 deleteButton.addEventListener("click", (() => {
   popUp('deleteRes',response.NUM);
 }));
 deleteButton.innerText = "削除";
+deleteButton.className = "bt";
 divElement.appendChild(deleteButton);
 let editButton = document.createElement('button');
 editButton.addEventListener("click", (() => {
   popUp('editRes',response.NUM);
 }));
 editButton.innerText = "編集";
+editButton.className = "bt";
 divElement.appendChild(editButton);
 let positiveButton = document.createElement('button');
 positiveButton.addEventListener("click", (() => {
   pushReview("positive",response.NUM);
 }));
 positiveButton.innerText = "👍" + getCount(response.NUM,info.positives);
+positiveButton.className = "bt";
 divElement.appendChild(positiveButton);
 let negativeButton = document.createElement('button');
 negativeButton.addEventListener("click", (() => {
   pushReview("negative",response.NUM);
 }));
 negativeButton.innerText = "🖕" + getCount(response.NUM,info.negatives);
+negativeButton.className = "bt";
 divElement.appendChild(negativeButton);
 }else{
   divElement.innerText = "削除済み";
@@ -439,6 +456,7 @@ function createNewThreadPop(popContent){
     }
   }));
   buttonElement.innerText = "送信";
+  buttonElement.className = "bt";
   popContent.appendChild(buttonElement);
 }
 
@@ -480,6 +498,7 @@ function createNewResPop(popContent,num){
     }
   }));
   buttonElement.innerText = "送信";
+  buttonElement.className = "bt";
   popContent.appendChild(buttonElement);
 }
 
@@ -501,6 +520,7 @@ function createDeleteResPop(popContent,num){
     deleteRes(num);
   }));
   buttonElement.innerText = "削除";
+  buttonElement.className = "bt";
   popContent.appendChild(buttonElement);
 }
 
@@ -553,6 +573,7 @@ function createEditResPop(popContent,num){
     }
   }));
   buttonElement.innerText = "編集";
+  buttonElement.className = "bt";
   popContent.appendChild(buttonElement);
 }
 
@@ -700,6 +721,9 @@ if(document.getElementById('popError') === null){
 }
 popError.innerText = "Error:" + error;
 }
+if(cover.style.display === "flex"){
+  cover.style.display = "none";
+}
 }
 
 function hashFilter(json){
@@ -760,6 +784,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
