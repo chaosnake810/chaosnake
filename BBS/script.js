@@ -382,7 +382,7 @@ switch(type){
 }
 pop.innerHTML = "";
 pop.appendChild(popContent);
-pop.style.display = "block";
+pop.style.display = "flex";
 }
 
 function createNewThreadPop(popContent){
@@ -740,6 +740,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
