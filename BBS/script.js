@@ -431,9 +431,9 @@ function createNewThreadPop(popContent){
   let buttonElement = document.createElement('button');
   buttonElement.addEventListener("click",(() => {
     if(document.getElementById("title").value === ""){
-      alert("エラー：スレタイ未入力");
+      createError("スレタイ未入力");
     }else if(message.value === ""){
-      alert("エラー：本文未入力");
+      createError("本文未入力");
     }else{
     createNewThread();
     }
@@ -474,7 +474,7 @@ function createNewResPop(popContent,num){
   let buttonElement = document.createElement('button');
   buttonElement.addEventListener("click",(() => {
     if(message.value === ""){
-      alert("エラー：本文未入力");
+      createError("本文未入力");
     }else{
     createNewRes();
     }
@@ -545,9 +545,9 @@ function createEditResPop(popContent,num){
   let buttonElement = document.createElement('button');
   buttonElement.addEventListener("click",(() => {
     if(Number(num) === 1 && title.value === ""){
-      alert("エラー:タイトル未入力");
+      createError("タイトル未入力");
     }else if(message.value === ""){
-      alert("エラー：本文未入力");
+      createError("本文未入力");
     }else{
     editRes(num);
     }
@@ -682,14 +682,24 @@ body: JSON.stringify(param)
 }
 
 function createError(error){
+if(pop.style.display === "none"){
 bbs.innerHTML = "";
 let hrElement1 = document.createElement('hr');
 bbs.appendChild(hrElement1);
 let errorTextElement = document.createElement('p');
-errorTextElement.innerText = "エラー:" + error;
+errorTextElement.id = "errorText";
+errorTextElement.innerText = "Error:" + error;
 bbs.appendChild(errorTextElement);
 let hrElement2 = document.createElement('hr');
 bbs.appendChild(hrElement2);
+}else{
+if(popError === undefined){
+  let errorTextElement = document.createElement('p');
+  errorTextElement.id = "popError";
+  popc.appendChild(errorTextElement);
+}
+popError.innerText = "Error:" + error;
+}
 }
 
 function hashFilter(json){
@@ -750,6 +760,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
