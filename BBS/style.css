@@ -73,3 +73,6 @@ color:#955;
   height:35%;
   border:solid 1px #888;
 }
+#errorText,#popError{
+  color:#f00;
+}
