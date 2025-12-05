@@ -110,3 +110,11 @@ color:#955;
   box-shadow:1px 1px 1px #999;
   border:solid 0.5px #bbb;
 }
+#rom{
+  margin-right:2px;
+  padding:2px 5px;
+  color:#fff;
+  background:#333;
+  border-radius:100px;
+  font-weight:900;
+}
