@@ -27,8 +27,10 @@ background:rgba(51,51,51,0.5);
   right:0;
   width:35px;
   height:35px;
-  background:url(../images/adclose.png);
+  background-color:#333;
+  background-image:url(../images/adclose.png);
   background-size:cover;
+  opacity:0.8;
 }
 #cover{
 display:none;
