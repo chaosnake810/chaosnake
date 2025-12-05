@@ -682,7 +682,7 @@ body: JSON.stringify(param)
 }
 
 function createError(error){
-//if(pop.style.display === "none" || pop.style.display === undefined){
+if(pop.style.display === "none" || pop.style.display === ""){
 bbs.innerHTML = "";
 let hrElement1 = document.createElement('hr');
 bbs.appendChild(hrElement1);
@@ -692,14 +692,14 @@ errorTextElement.innerText = "Error:" + error;
 bbs.appendChild(errorTextElement);
 let hrElement2 = document.createElement('hr');
 bbs.appendChild(hrElement2);
-//}else{
-//if(document.getElementById('popError') === undefined){
-  //let errorTextElement = document.createElement('p');
-  //errorTextElement.id = "popError";
-  //popc.appendChild(errorTextElement);
-//}
-//popError.innerText = "Error:" + error;
-//}
+}else{
+if(document.getElementById('popError') === null){
+  let errorTextElement = document.createElement('p');
+  errorTextElement.id = "popError";
+  popc.appendChild(errorTextElement);
+}
+popError.innerText = "Error:" + error;
+}
 }
 
 function hashFilter(json){
@@ -760,6 +760,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
