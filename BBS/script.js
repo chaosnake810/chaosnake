@@ -278,10 +278,11 @@ lastButton.addEventListener("click", (() => {
 lastButton.innerText = ">>";
 lastButton.className = "bt";
 responseHTML.appendChild(lastButton);
-reses.map((response)=>{
 let hrElement = document.createElement('hr');
 responseHTML.appendChild(hrElement);
+reses.map((response)=>{
 let divElement = document.createElement('div');
+divElement.className = "res";
 if(Number(response.DELETED) !== 1){
 let nameElement = document.createElement('div');
 let uname = response.NAME;
@@ -346,8 +347,8 @@ divElement.appendChild(negativeButton);
 }
 responseHTML.appendChild(divElement);
 });
-let hrElement = document.createElement('hr');
-responseHTML.appendChild(hrElement);
+let hrElement2 = document.createElement('hr');
+responseHTML.appendChild(hrElement2);
 return responseHTML;
 }
 
@@ -790,6 +791,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
