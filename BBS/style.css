@@ -22,6 +22,14 @@ background:rgba(51,51,51,0.5);
   padding:10px;
   box-shadow:2px 2px 2px #000;
 }
+#closebt{
+  position:absolute;
+  right:0;
+  width:35px;
+  height:35px;
+  background:url(../images/adclose.png);
+  background-size:cover;
+}
 #cover{
 display:none;
 justify-content:center;
