@@ -86,6 +86,7 @@ romText.id = "rom";
 romElement.appendChild(romText);
 let romNumber = document.createElement('span');
 romNumber.innerText = info.rom;
+romNumber.style.fontWeight = "900";
 romElement.appendChild(romNumber);
 responseHTML.appendChild(romElement);
 let newThreadButton = document.createElement('button');
@@ -209,6 +210,7 @@ romText.id = "rom";
 romElement.appendChild(romText);
 let romNumber = document.createElement('span');
 romNumber.innerText = info.rom;
+romNumber.style.fontWeight = "900";
 romElement.appendChild(romNumber);
 responseHTML.appendChild(romElement);
 let newResButton = document.createElement('button');
@@ -805,6 +807,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
