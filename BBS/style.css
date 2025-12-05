@@ -58,3 +58,16 @@ padding:15px 0;
 font-size:10px;
 color:#955;
 }
+#nameArea,#title,#passwordArea{
+  margin:5px 0;
+  box-shadow:1px 1px 1px #333;
+  border-radius:5px;
+  width:50%;
+}
+#message{
+  margin:6px 0;
+  box-shadow:1px 1px 1px #333;
+  border-radius:5px;
+  width:75%;
+  height:35%;
+}
