@@ -367,9 +367,15 @@ return beforeDate.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
 function popUp(type,num){
 let popContent = document.createElement('div');
 popContent.id = "popc";
-popContent.addEventListener("click", (() => {
-  return false;
+let closeButton = document.createElement('div');
+closeButton.style.position = "relative";
+let buttonElement = document.createElement('div');
+buttonElement.id = "closebt";
+buttonElement.addEventListener("click", (() => {
+  pop.style.display = "none";
 }));
+closeButton.appendChild(buttonElement);
+popContent.appendChild(closeButton);
 switch(type){
   case "newThread":
   createNewThreadPop(popContent);
@@ -744,6 +750,7 @@ if(checkHash(strNumPart.split(",")) === false){
   return str;
 }
 }
+
 
 
 
