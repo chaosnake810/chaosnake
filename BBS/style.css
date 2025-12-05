@@ -77,7 +77,7 @@ color:#955;
   color:#f00;
 }
 .bt{
-  height:30px;
+  height:25px;
   margin:3px;
   background:linear-gradient(#bbb,#ddd);
   border:none;
@@ -89,4 +89,9 @@ color:#955;
   position:relative;
   top:1px;
   box-shadow:none;
+}
+.bt:disabled{
+  box-shadow:none;
+  background:linear-gradient(#ccc,#eee);
+  border:solid 1px #bbb;
 }
