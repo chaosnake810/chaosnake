@@ -81,6 +81,7 @@ color:#955;
   margin:3px;
   background:linear-gradient(#888,#bbb);
   border:none;
+  border-radius:5px;
   box-shadow:0 1px 1px #333;
   font-weight:900;
 }
