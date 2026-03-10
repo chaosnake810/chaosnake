@@ -5,3 +5,12 @@ body {
   background:linear-gradient(#faa,#afa);
   background-size:cover;
 }
+#hamlan,#mibaNeo{
+  font-weight:900;
+  text-shadow:0 0 1px #fff;
+  width:80vw;
+  padding:5px;
+  margin: 5px 20vw;
+  box-sizing:border-box;
+  box-shadow:0 0 1px 1px #000;
+}
