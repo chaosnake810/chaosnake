@@ -21,7 +21,7 @@ function formatTime(baseTime){
   let monthDiff = now.getMonth() - baseTime.getMonth();
   if(monthDiff < 0){
     yearDiff -= 1;
-    monthDiff = Math.abs(monthDiff);
+    monthDiff = monthDiff + 12;
   }
   let dayDiff = now.getDay() - baseTime.getDay();
   if(dayDiff < 0){
@@ -29,7 +29,7 @@ function formatTime(baseTime){
     dayDiff = Math.abs(dayDiff);
     if(mathDiff < 0){
       yearDiff -= 1;
-      monthDiff = Math.abs(monthDiff);
+      monthDiff = monthDiff + 12;
     }
   }
   return yearDiff + "年" + monthDiff + "ヶ月" + dayDiff + "日経過";
