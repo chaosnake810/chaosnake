@@ -13,13 +13,13 @@ function createClockM(){
   const texts = formatTime(mibaNeoCreatedDay);
   mibaNeo_clock_diff.innerText = texts[0];
   mibaNeoAnniversary.innerText = texts[1];
-  mibaNeo_clock_anniversary.innerText = texts[3];
+  mibaNeo_clock_anniversary.innerText = texts[2];
 }
 function createClockH(){
   const texts = formatTime(hamlanChangedDay);
   hamlan_clock_diff.innerText = texts[0];
   hamlanAnniversary.innerText = texts[1];
-  hamlan_clock_anniversary.innerText = texts[3];
+  hamlan_clock_anniversary.innerText = texts[2];
 }
 function formatTime(baseTime){
   const now = new Date();
