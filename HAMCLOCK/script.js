@@ -27,7 +27,7 @@ function formatTime(baseTime){
   if(dayDiff < 0){
     monthDiff -= 1;
     dayDiff = Math.abs(dayDiff);
-    if(mathDiff < 0){
+    if(monthDiff < 0){
       yearDiff -= 1;
       monthDiff = monthDiff + 12;
     }
