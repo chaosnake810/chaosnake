@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "number";
+  src:
+    local("number"),
+    url("fonts/7barP.TTF") 
+}
 html{
   min-height:100%;
 }
@@ -41,4 +47,7 @@ body {
   text-shadow:none;
   -webkit-text-stroke:1px #333;
   color:rgba(0,0,0,0);
+}
+#mibaNeo_clock_diff,#mibaNeo_clock_anniversary,#hamlan_clock_diff,#hamlan_clock_anniversary{
+  font-family:'number',sans-serif;
 }
