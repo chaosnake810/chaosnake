@@ -6,6 +6,8 @@ window.addEventListener("load",() => {
   createClock();
 });
 function createClock(){
+  createClockM();
+  createClockH();
   intervalM = setInterval('createClockM()',1000);
   intervalH = setInterval('createClockH()',1000);
 }
