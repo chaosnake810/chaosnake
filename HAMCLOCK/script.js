@@ -43,7 +43,7 @@ function formatTime(baseTime){
   }
 const nowDay = new Date(now.getFullYear() + "/" + (now.getMonth() + 1) + "/" + now.getDate());
 dayDiff = (nowDay - dayBaseTime) / (1000 * 60 * 60 * 24);
-  const diffText = yearDiff + "年" + monthDiff + "ヶ月" + dayDiff + "日経過";
+  const diffText = yearDiff + " 年 " + monthDiff + " ヶ月 " + dayDiff + " 日経過";
   const anniversary = yearDiff + 1;
   let anniversaryDay = new Date(now.getFullYear() + "/" + (baseTime.getMonth() + 1) + "/" + baseTime.getDate() + " 00:00:00");
   if(anniversaryDay < now){
@@ -57,6 +57,6 @@ dayDiff = (nowDay - dayBaseTime) / (1000 * 60 * 60 * 24);
   const diffAnniversaryMinute = Math.floor((diffAnniversary - temp) / (1000 * 60));
   temp += (diffAnniversaryMinute * (1000 * 60))
   const diffAnniversarySecond = Math.floor((diffAnniversary - temp) / 1000);
-  const anniversaryText = diffAnniversaryDay + "日" + diffAnniversaryHour + "時間" + diffAnniversaryMinute + "分" + diffAnniversarySecond + "秒";
+  const anniversaryText = diffAnniversaryDay + " 日 " + diffAnniversaryHour + " 時間 " + diffAnniversaryMinute + " 分 " + diffAnniversarySecond + " 秒";
   return [diffText,anniversary,anniversaryText];
 }
