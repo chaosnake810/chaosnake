@@ -16,7 +16,7 @@ function createClockH(){
   hamlan_clock.innerText = formatTime(hamlanChangedDay);
 }
 function formatTime(baseTime){
-  const now = new Date();
+  const now = new Date("2026/1/1");
   let yearDiff = now.getFullYear() - baseTime.getFullYear();
   let monthDiff = (now.getMonth() + 1) - (baseTime.getMonth() + 1);
   if(monthDiff < 0){
