@@ -12,8 +12,8 @@ window.addEventListener("load",() => {
   }
 });
 function createClock(){
-  intervalM = setInterval('createClockM',1000);
-  intervalH = setInterval('createClockH',1000);
+  intervalM = setInterval(createClockM,1000);
+  intervalH = setInterval(createClockH,1000);
 }
 function createClockM{
   const now = new Date();
