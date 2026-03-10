@@ -11,7 +11,7 @@ body {
   background:linear-gradient(#faa,#afa);
   background-size:cover;
 }
-#hamlan,#mibaNeo{
+#hamlan,#mibaNeo,#info{
   font-weight:900;
   text-shadow:0 0 1px #fff;
   width:90vw;
