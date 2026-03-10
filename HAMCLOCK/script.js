@@ -26,7 +26,7 @@ function formatTime(baseTime){
   let dayBaseTime;
   let dayDiff = now.getDay() - baseTime.getDay();
   if(dayDiff < 0){
-    if(now.getMonth() === 0)
+    if(now.getMonth() === 0){
       dayBaseTime = new Date((now.getFullYear() - 1) + "/12/" + baseTime.getDay());
     }else{
       dayBaseTime = new Date(now.getFullYear() + "/" + now.getMonth() + "/" + baseTime.getDay());
