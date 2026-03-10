@@ -3,11 +3,7 @@ const hamlanChangedDay = new Date("2018/05/24 00:00:00");
 let intervalM;
 let intervalH;
 window.addEventListener("load",() => {
-  try{
   createClock();
-  }catch(e){
-    alert(e);
-  }
 });
 function createClock(){
   intervalM = setInterval('createClockM()',1000);
@@ -20,6 +16,7 @@ function createClockH(){
   hamlan_clock.innerText = formatTime(hamlanChangedDay);
 }
 function formatTime(baseTime){
+  try{
   const now = new Date();
   let yearDiff = now.getFullYear() - baseTime.getFullYear();
   let monthDiff = (now.getMonth() + 1) - (baseTime.getMonth() + 1);
@@ -53,5 +50,8 @@ dayDiff = (nowDay - dayBaseTime) / (1000 * 60 * 60 * 24);
   const diffAnniversaryMinute = (diffAnniversary - (diffAnniversaryDay * (1000 * 60 * 60 * 24)) - (diffAnniversaryHour * (1000 * 60 * 60))) / (1000 * 60);
   const diffAnniversarySecond = (diffAnniversary - (diffAnniversaryDay * (1000 * 60 * 60 * 24)) - (diffAnniversaryHour * (1000 * 60 * 60)) - (diffAnniversaryMinute * (1000 * 60))) / 1000;
   const anniversaryText = anniversary + "周年まであと" + diffAnniversaryDay + "日" + diffAnniversaryHour + "時間" + diffAnniversaryMinute + "分" + diffAnniversarySecond + "秒";
-    return anniversaryText;
+  return anniversaryText;
+  }catch(e){
+    alert(e);
+  }
 }
