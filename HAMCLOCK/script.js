@@ -4,7 +4,9 @@ let intervalM;
 let intervalH;
 window.addEventListener("load", (event) => {
   try{
+  alert(1);
   createClock();
+  alert(2);
   }catch(e){
     alert(e);
   }
