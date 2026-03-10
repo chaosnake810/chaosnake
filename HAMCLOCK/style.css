@@ -51,3 +51,7 @@ body {
 #mibaNeo_clock_diff,#mibaNeo_clock_anniversary,#hamlan_clock_diff,#hamlan_clock_anniversary{
   font-family:'number',sans-serif;
 }
+#info{
+  font-size:20px;
+  background:linear-gradient(#888,#ccc);
+}
