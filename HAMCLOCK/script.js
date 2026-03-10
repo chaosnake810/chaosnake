@@ -24,18 +24,18 @@ function formatTime(baseTime){
     monthDiff += 12;
   }
   let dayBaseTime;
-  let dayDiff = now.getDay() - baseTime.getDay();
+  let dayDiff = now.getDate() - baseTime.getDate();
   if(dayDiff < 0){
     if(now.getMonth() === 0){
-      dayBaseTime = new Date((now.getFullYear() - 1) + "/12/" + baseTime.getDay());
+      dayBaseTime = new Date((now.getFullYear() - 1) + "/12/" + baseTime.getDate());
     }else{
-      dayBaseTime = new Date(now.getFullYear() + "/" + now.getMonth() + "/" + baseTime.getDay());
+      dayBaseTime = new Date(now.getFullYear() + "/" + now.getMonth() + "/" + baseTime.getDate());
     }
   monthDiff -= 1;
   }else{
-    dayBaseTime = new Date(now.getFullYear() + "/" + (now.getMonth() + 1) + "/" + baseTime.getDay());
+    dayBaseTime = new Date(now.getFullYear() + "/" + (now.getMonth() + 1) + "/" + baseTime.getDate());
   }
-const nowDay = new Date(now.getFullYear() + "/" + (now.getMonth() + 1) + "/" + now.getDay());
+const nowDay = new Date(now.getFullYear() + "/" + (now.getMonth() + 1) + "/" + now.getDate());
 dayDiff = (nowDay - dayBaseTime) / (1000 * 60 * 60 * 24);
   
   return yearDiff + "年" + monthDiff + "ヶ月" + dayDiff + "日経過";
