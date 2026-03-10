@@ -15,17 +15,17 @@ body {
   box-shadow:0 0 1px 1px #333;
   border-radius:10px;
   text-align:center;
-  font-size:20px;
+  font-size:22px;
 }
 .title{
   border-top-left-radius:10px;
   border-top-right-radius:10px;
   padding:3px;
-  font-size:24px;
+  font-size:20px;
   border-bottom:solid 1px
 }
 .anniversary_title{
-  font-size:22px;
+  font-size:20px;
 }
 #mibaNeo{
   background:linear-gradient(#8f8,#cfc);
@@ -34,8 +34,8 @@ body {
   background:linear-gradient(#f88,#fcc);
 }
 #mibaNeoAnniversary, #hamlanAnniversary{
-  font-size:25px;
+  font-size:28px;
   color:transparent;
-  background:linear-gradient(#caa906,#fff,#caa906);
+  background:linear-gradient(#caa906,#fff);
   -webkit-background-clip: text;
 }
