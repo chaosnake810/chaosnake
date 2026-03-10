@@ -3,24 +3,22 @@ const hamlanChangedDay = new Date("2018/05/24 00:00:00");
 let intervalM;
 let intervalH;
 window.addEventListener("load",() => {
-  try{
-  alert(1);
   createClock();
-  alert(2);
-  }catch(e){
-    alert(e);
-  }
 });
 function createClock(){
   intervalM = setInterval('createClockM()',1000);
   intervalH = setInterval('createClockH()',1000);
 }
 function createClockM(){
-  const now = new Date();
-  mibaNeo_clock.innerText = (now - mibaNeoCreatedDay);
+  mibaNeo_clock.innerText = formatTime(mibaNeoCreatedDay);
 }
 function createClockH(){
-  const now = new Date();
-  hamlan_clock.innerText = (now - hamlanChangedDay);
+  hamlan_clock.innerText = formatTime(hamlanChangedDay);
 }
-
+function formatTime(baseTime){
+  const now = new Date();
+  const yearDiff = now.getFullYear() - baseTime.getFullYear();
+  const monthDiff = Math.abs(now.getMonth() - baseTime.getMonth());
+  const dayDiff = Math.abs(now.getDay() - baseTime.getDay());
+  return yearDiff + "年" + monthDiff + "ヶ月" + dayDiff + "日経過";
+}
