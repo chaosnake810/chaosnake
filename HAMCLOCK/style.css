@@ -8,9 +8,9 @@ body {
 #hamlan,#mibaNeo{
   font-weight:900;
   text-shadow:0 0 1px #fff;
-  width:80vw;
+  width:90vw;
   padding:5px;
-  margin: 10px 10vw;
+  margin: 10px 5vw;
   box-sizing:border-box;
   box-shadow:0 0 1px 1px #333;
   border-radius:10px;
@@ -20,9 +20,21 @@ body {
   border-top-left-radius:10px;
   border-top-right-radius:10px;
   padding:3px;
-  font-size:28px;
+  font-size:26px;
   border-bottom:solid 1px
 }
 .anniversaryTitle{
-  font-size:22px;
+  font-size:23px;
+}
+#mibaNeo{
+  background:linear-gradient(#8f8,#cfc);
+}
+#hamlan{
+  background:linear-gradient(#f88,#fcc);
+}
+#mibaNeo .title{
+  background-color:#5f5;
+}
+#hamlan .title{
+  background-color:#f55;
 }
