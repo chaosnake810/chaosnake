@@ -15,11 +15,11 @@ function createClock(){
   intervalM = setInterval('createClockM()',1000);
   intervalH = setInterval('createClockH()',1000);
 }
-function createClockM{
+function createClockM(){
   const now = new Date();
   mibaNeo_clock.innerText = (now - mibaNeoCreatedDay);
 }
-function createClockH{
+function createClockH(){
   const now = new Date();
   hamlan_clock.innerText = (now - hamlanChangedDay);
 }
