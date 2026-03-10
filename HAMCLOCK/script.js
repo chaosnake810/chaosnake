@@ -17,8 +17,20 @@ function createClockH(){
 }
 function formatTime(baseTime){
   const now = new Date();
-  const yearDiff = now.getFullYear() - baseTime.getFullYear();
-  const monthDiff = Math.abs(now.getMonth() - baseTime.getMonth());
-  const dayDiff = Math.abs(now.getDay() - baseTime.getDay());
+  let yearDiff = now.getFullYear() - baseTime.getFullYear();
+  let monthDiff = now.getMonth() - baseTime.getMonth();
+  if(monthDiff < 0){
+    yearDiff -= 1;
+    monthDiff = Math.abs(monthDiff);
+  }
+  let dayDiff = now.getDay() - baseTime.getDay();
+  if(dayDiff < 0){
+    monthDiff -= 1;
+    dayDiff = Math.abs(dayDiff);
+    if(mathDiff < 0){
+      yearDiff -= 1;
+      monthDiff = Math.abs(monthDiff);
+    }
+  }
   return yearDiff + "年" + monthDiff + "ヶ月" + dayDiff + "日経過";
 }
