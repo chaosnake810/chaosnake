@@ -38,5 +38,6 @@ body {
   background:linear-gradient(#caa906,#fff,#caa906);
   -webkit-background-clip: text;
   background-clip: text;
+  text-shadow:none;
   color:rgba(0,0,0,0);
 }
