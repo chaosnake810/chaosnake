@@ -39,9 +39,9 @@ const nowDay = new Date(now.getFullYear() + "/" + (now.getMonth() + 1) + "/" + n
 dayDiff = (nowDay - dayBaseTime) / (1000 * 60 * 60 * 24);
   const diffText = yearDiff + "年" + monthDiff + "ヶ月" + dayDiff + "日経過";
   const anniversary = yearDiff + 1;
-  let anniversaryDay = new Date(now.getFullYear() + "/" + (baseTime.getMonth() + 1) + "/" + baseTime.getDate() + "00:00:00");
+  let anniversaryDay = new Date(now.getFullYear() + "/" + (baseTime.getMonth() + 1) + "/" + baseTime.getDate() + " 00:00:00");
   if(anniversaryDay < now){
-    anniversaryDay = new Date((now.getFullYear() + 1) + "/" + (baseTime.getMonth() + 1) + "/" + baseTime.getDate() + "00:00:00");
+    anniversaryDay = new Date((now.getFullYear() + 1) + "/" + (baseTime.getMonth() + 1) + "/" + baseTime.getDate() + " 00:00:00");
   }
   const diffAnniversary = anniversaryDay - now;
   const diffAnniversaryDay = Math.floor(diffAnniversary / (1000 * 60 * 60 * 24));
