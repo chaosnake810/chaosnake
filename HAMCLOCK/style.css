@@ -10,7 +10,9 @@ body {
   text-shadow:0 0 1px #fff;
   width:80vw;
   padding:5px;
-  margin: 5px 20vw;
+  margin: 5px 10vw;
   box-sizing:border-box;
   box-shadow:0 0 1px 1px #000;
+  border-radius:10px;
+  text-align:center;
 }
