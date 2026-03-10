@@ -3,6 +3,7 @@ const hamlanChangedDay = new Date("2018/05/24 00:00:00");
 let intervalM;
 let intervalH;
 window.addEventListener("load",() => {
+  alert("a");
   createClock();
 });
 function createClock(){
