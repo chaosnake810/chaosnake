@@ -36,7 +36,6 @@ body {
 #mibaNeoAnniversary, #hamlanAnniversary{
   font-size:28px;
   color:transparent;
-  background:linear-gradient(#caa906,#fff);
-  background-size:cover;
+  background-image:linear-gradient(#caa906,#fff);
   -webkit-background-clip: text;
 }
