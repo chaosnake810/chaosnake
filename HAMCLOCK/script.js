@@ -17,9 +17,9 @@ function createClock(){
 }
 function createClockM{
   const now = new Date();
-  mibaNeo_clock.innerText = (now - mibaNeoCreatedDay);
+  //mibaNeo_clock.innerText = (now - mibaNeoCreatedDay);
 }
 function createClockH{
   const now = new Date();
-  hamlan_clock.innerText = (now - hamlanChangedDay);
+  //hamlan_clock.innerText = (now - hamlanChangedDay);
 }
