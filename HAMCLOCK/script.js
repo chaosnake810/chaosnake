@@ -37,6 +37,17 @@ function formatTime(baseTime){
   }
 const nowDay = new Date(now.getFullYear() + "/" + (now.getMonth() + 1) + "/" + now.getDate());
 dayDiff = (nowDay - dayBaseTime) / (1000 * 60 * 60 * 24);
-  
-  return yearDiff + "年" + monthDiff + "ヶ月" + dayDiff + "日経過";
+  const diffText = yearDiff + "年" + monthDiff + "ヶ月" + dayDiff + "日経過";
+  const anniversary = yearDiff + 1;
+  let anniversaryDay = new Date(now.getFullYear() + "/" + (baseTime.getMonth() + 1) + "/" + baseTime.getDate() + "00:00:00");
+  if(anniversaryDay < now){
+    anniversaryDay = new Date((now.getFullYear() + 1) + "/" + (baseTime.getMonth() + 1) + "/" + baseTime.getDate() + "00:00:00");
+  }
+  const diffAnniversary = anniversaryDay - now;
+  const diffAnniversaryDay = diffAnniversaryDay / (1000 * 60 * 60 * 24);
+  const diffAnniversaryHour = (diffAnniversary - (diffAnniversaryDay * (1000 * 60 * 60 * 24))) / (1000 * 60 * 60);
+  const diffAnniversaryMinute = (diffAnniversary - (diffAnniversaryDay * (1000 * 60 * 60 * 24)) - (diffAnniversaryHour * (1000 * 60 * 60))) / (1000 * 60);
+  const diffAnniversarySecond = (diffAnniversary - (diffAnniversaryDay * (1000 * 60 * 60 * 24)) - (diffAnniversaryHour * (1000 * 60 * 60)) - (diffAnniversaryMinute * (1000 * 60))) / 1000;
+  const anniversaryText = anniversary + "周年まであと" + diffAnniversaryDay + "日" + diffAnniversaryHour + "時間" + diffAnniversaryMinute + "分" + diffAnniversarySecond + "秒";
+    return anniversaryText;
 }
