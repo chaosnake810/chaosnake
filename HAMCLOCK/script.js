@@ -10,10 +10,16 @@ function createClock(){
   intervalH = setInterval('createClockH()',1000);
 }
 function createClockM(){
-  mibaNeo_clock.innerText = formatTime(mibaNeoCreatedDay);
+  const texts = formatTime(mibaNeoCreatedDay);
+  mibaNeo_clock_diff.innerText = texts[0];
+  mibaNeoAnniversary.innerText = texts[1];
+  mibaNeo_clock_anniversary.innerText = texts[3];
 }
 function createClockH(){
-  hamlan_clock.innerText = formatTime(hamlanChangedDay);
+  const texts = formatTime(hamlanChangedDay);
+  hamlan_clock_diff.innerText = texts[0];
+  hamlanAnniversary.innerText = texts[1];
+  hamlan_clock_anniversary.innerText = texts[3];
 }
 function formatTime(baseTime){
   const now = new Date();
@@ -51,6 +57,6 @@ dayDiff = (nowDay - dayBaseTime) / (1000 * 60 * 60 * 24);
   const diffAnniversaryMinute = Math.floor((diffAnniversary - temp) / (1000 * 60));
   temp += (diffAnniversaryMinute * (1000 * 60))
   const diffAnniversarySecond = Math.floor((diffAnniversary - temp) / 1000);
-  const anniversaryText = anniversary + "周年まであと" + diffAnniversaryDay + "日" + diffAnniversaryHour + "時間" + diffAnniversaryMinute + "分" + diffAnniversarySecond + "秒";
-  return anniversaryText;
+  const anniversaryText = diffAnniversaryDay + "日" + diffAnniversaryHour + "時間" + diffAnniversaryMinute + "分" + diffAnniversarySecond + "秒";
+  return [diffText,anniversary,anniversaryText];
 }
