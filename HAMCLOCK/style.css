@@ -37,5 +37,6 @@ body {
   font-size:28px;
   color:transparent;
   background:linear-gradient(#caa906,#fff);
+  background-size:cover;
   -webkit-background-clip: text;
 }
