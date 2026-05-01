@@ -27,7 +27,7 @@ function formatTime(baseTime){
   const now = new Date();
   let yearDiff = now.getFullYear() - baseTime.getFullYear();
   let monthDiff = (now.getMonth() + 1) - (baseTime.getMonth() + 1);
-  if(monthDiff < 0){
+  if(monthDiff <= 0){
     yearDiff -= 1;
     monthDiff += 12;
   }
