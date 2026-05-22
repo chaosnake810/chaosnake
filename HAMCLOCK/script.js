@@ -17,7 +17,7 @@ function createClockM(){
   mibaNeoAnniversary.innerText = texts[1];
   if(texts[2] === null){
     mibaNeo_clock_anniversary.style.display = "none";
-    mibaNeo_anniversary_text_before.style.display = "block";
+    mibaNeo_anniversary_text_before.style.display = "inline";
     mibaNeo_anniversary_text_after.innerText = "！！";
   } else {
   mibaNeo_anniversary_text_before.style.display = "none";
@@ -32,8 +32,8 @@ function createClockH(){
   hamlanAnniversary.innerText = texts[1];
   if(texts[2] === null){
     hamlan_clock_anniversary.style.display = "none";
-    hamlan_anniversary_text_before.style.display = "block";
-    hamlan_anniversary_text_after.innerText = "！";
+    hamlan_anniversary_text_before.style.display = "inline";
+    hamlan_anniversary_text_after.innerText = "！！";
   } else {
   hamlan_anniversary_text_before.style.display = "none";
   hamlan_clock_anniversary.style.display = "block";
@@ -60,6 +60,10 @@ function formatTime(baseTime){
   monthDiff -= 1;
   }else{
     dayBaseTime = new Date(now.getFullYear() + "/" + (now.getMonth() + 1) + "/" + baseTime.getDate());
+  }
+  if(monthDiff === 12){
+    yearDiff += 1;
+    monthDiff = 0;
   }
 const nowDay = new Date(now.getFullYear() + "/" + (now.getMonth() + 1) + "/" + now.getDate());
 dayDiff = (nowDay - dayBaseTime) / (1000 * 60 * 60 * 24);
