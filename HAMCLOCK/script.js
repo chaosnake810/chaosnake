@@ -1,7 +1,8 @@
 const mibaNeoCreatedDay = new Date("2017/09/01 00:00:00");
-const hamlanChangedDay = new Date("2018/05/24 00:00:00");
+const hamlanChangedDay = new Date("2018/05/23 00:00:00");
 let intervalM;
 let intervalH;
+let alertFlg = false;
 window.addEventListener("load",() => {
   createClock();
 });
@@ -16,6 +17,10 @@ function createClockM(){
   mibaNeo_clock_diff.innerText = texts[0];
   mibaNeoAnniversary.innerText = texts[1];
   if(texts[2] === null){
+    if(alertFlg === false){
+      alert("【祝】ミバネオ設立から" + texts[1] + "周年！！！！！");
+      alertFlg = true;
+    }
     mibaNeo_clock_anniversary.style.display = "none";
     mibaNeo_anniversary_text_before.style.display = "inline";
     mibaNeo_anniversary_text_after.innerText = "！！";
@@ -31,6 +36,10 @@ function createClockH(){
   hamlan_clock_diff.innerText = texts[0];
   hamlanAnniversary.innerText = texts[1];
   if(texts[2] === null){
+    if(alertFlg === false){
+      alert("【祝】ハムランに変わってから" + texts[1] + "周年！！！！！");
+      alertFlg = true;
+    }
     hamlan_clock_anniversary.style.display = "none";
     hamlan_anniversary_text_before.style.display = "inline";
     hamlan_anniversary_text_after.innerText = "！！";
