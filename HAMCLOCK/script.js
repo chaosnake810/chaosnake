@@ -18,7 +18,7 @@ function createClockM(){
   mibaNeoAnniversary.innerText = texts[1];
   if(texts[2] === null){
     if(alertFlg === false){
-      alert("【祝】ミバネオ設立から" + texts[1] + "周年！！！！！");
+      alert("【祝】ミバネオ設立から、" + texts[1] + "周年！！");
       alertFlg = true;
     }
     mibaNeo_clock_anniversary.style.display = "none";
@@ -37,7 +37,7 @@ function createClockH(){
   hamlanAnniversary.innerText = texts[1];
   if(texts[2] === null){
     if(alertFlg === false){
-      alert("【祝】ハムランに変わってから" + texts[1] + "周年！！！！！");
+      alert("【祝】ハムランに変わってから、" + texts[1] + "周年！！");
       alertFlg = true;
     }
     hamlan_clock_anniversary.style.display = "none";
