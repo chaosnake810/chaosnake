@@ -33,6 +33,12 @@ body {
 .anniversary_title{
   font-size:20px;
 }
+#mibaNeo_anniversary_text_before{
+  display:none;
+}
+#hamlan_anniversary_text_before{
+  display:none;
+}
 #mibaNeo{
   background:linear-gradient(#8f8,#cfc);
 }
