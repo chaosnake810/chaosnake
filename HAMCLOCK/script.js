@@ -17,13 +17,13 @@ function createClockM(){
   mibaNeoAnniversary.innerText = texts[1];
   if(texts[2] === null){
     mibaNeo_clock_anniversary.style.display = "none";
-    mibaNeo_aniversary_text_before.style.display = "block";
-    mibaNeo_aniversary_text_after.innerText = "！！";
+    mibaNeo_anniversary_text_before.style.display = "block";
+    mibaNeo_anniversary_text_after.innerText = "！！";
   } else {
-  mibaNeo_aniversary_text_before.style.display = "none";
+  mibaNeo_anniversary_text_before.style.display = "none";
   mibaNeo_clock_anniversary.style.display = "block";
   mibaNeo_clock_anniversary.innerText = texts[2];
-  mibaNeo_aniversary_text_after.innerText = "まであと";
+  mibaNeo_anniversary_text_after.innerText = "まであと";
   }
 }
 function createClockH(){
@@ -32,13 +32,13 @@ function createClockH(){
   hamlanAnniversary.innerText = texts[1];
   if(texts[2] === null){
     hamlan_clock_anniversary.style.display = "none";
-    hamlan_aniversary_text_before.style.display = "block";
-    hamlan_aniversary_text_after.innerText = "！";
+    hamlan_anniversary_text_before.style.display = "block";
+    hamlan_anniversary_text_after.innerText = "！";
   } else {
-  hamlan_aniversary_text_before.style.display = "none";
+  hamlan_anniversary_text_before.style.display = "none";
   hamlan_clock_anniversary.style.display = "block";
   hamlan_clock_anniversary.innerText = texts[2];
-  hamlan_aniversary_text_after.innerText = "まであと";
+  hamlan_anniversary_text_after.innerText = "まであと";
   }
 }
 function formatTime(baseTime){
