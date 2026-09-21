@@ -5,7 +5,7 @@ let requestTime = String(new Date());
 let responseTime;
 let fetchUrl = 'https://script.google.com/macros/s/AKfycbw4vQEha63oNlJzkNkgU3QmDK4PWqNqNRA9MXAeUAPJEKPlR5s2nL4sSOS5pvUX4ZaOTQ/exec';
 return fetch(fetchUrl, {
-method: 'POST'
+method: 'GET'
 }).then((response) => {
   responseTime = String(new Date());
   return response.text();
