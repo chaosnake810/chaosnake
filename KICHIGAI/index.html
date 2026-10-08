@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="script.js" type="text/javascript"></script>
+<meta name="viewport" content="user-scalable=no"/>
+<meta charset="UTF-8">
+</head>
+<body onload ="loading()" id="body">
+<div id ="score_area">SCORE：0</div>
+<div id="message">見て‼️キチガイ風車だよ‼️</div>
+	
+<div id="display">
+<table id="face_table">
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td id="face"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<table id="hands">
+<tr>
+<td></td>
+<td id="top_hand"></td>
+<td></td>
+</tr>
+<tr>
+<td id="left_hand"></td>
+<td></td>
+<td id="right_hand"></td>
+</tr>
+<tr>
+<td></td>
+<td id="bottom_hand"></td>
+<td></td>
+</tr>
+</table>
+</div>
+</div>
+<div id="button" onpointerdown="hide(true)" onpointerup="hide(false)">PLAY</div>
+<div id="footer">
+<hr>
+<center>
+  <font color=blue size=1px>&#169;CSGame</font>
+</center>
+</div>
+<div id=load><img src="images/load.gif" width="100px"></div>
+</body>
+</html>
