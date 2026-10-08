@@ -13,6 +13,9 @@ width:100%;
 height:100%;
 z-index:30;
 }
+html {
+ min-height:100%;
+}
 body{
 -webkit-user-select:none;
 }
@@ -73,7 +76,7 @@ align-items:center;
 
 #message{
 position:absolute;
-height:20px;
+height:25px;
 top:10%;
 left:0;
 width:100%;
@@ -85,7 +88,7 @@ text-align:center;
 
 #score_area{
 position:absolute;
-height:20px;
+height:25px;
 top:5%;
 right:10px;
 width:60%;
