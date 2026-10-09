@@ -14,10 +14,14 @@ let pushed = false;
 let buttonDisabled = false;
 
 function loading(){
+if(localStorage.hiscoreCrazy === undefined){
+localStorage.hiscoreCrazy="0";
+}
 createDisplay();
 }
 
 function createDisplay(){
+score_area.innerText = "HI-SCORE：" + localStorage.hiscoreCrazy;
 face.innerHTML = SAFE_FACE;
 left_hand.innerHTML = SAFE_HANDS[0];
 top_hand.innerHTML = SAFE_HANDS[1];
@@ -27,9 +31,9 @@ bottom_hand.innerHTML = SAFE_HANDS[3];
 function start(){
 status = 0;
 score = 0;
-score_area.innerText = "SCORE：" + score;
 message.innerText = "";
 createDisplay();
+score_area.innerText = "SCORE：" + score;
 body.style.background = "#fff";
 rotateInterval = setInterval((() => {
 deg += 90;
@@ -71,7 +75,11 @@ message.innerText = "まずい“認識”された逃げろ逃げろ逃げろ�
 buttonDisabled = true;
 button.style.background = "#777";
 status = 3;
+if(score > Number(localStorage.hiscoreCrazy)) {
+  localStorage.hiscoreCrazy = score;
+}
 setTimeout((() => {
+score_area.innerText = "HI-SCORE：" + localStorage.hiscoreCrazy;
 button.style.background = "linear-gradient(#33f, #33a)";
 buttonDisabled = false;
 button.innerText = "もう一度";
