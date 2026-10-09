@@ -36,9 +36,9 @@ message.innerText = "";
 createDisplay();
 body.style.background = "#fff";
 rotateInterval = setInterval((() => {
-deg += 5;
+deg += 90;
 hands.style.transform = "rotate(" + deg + "deg)";
-}),20);
+}),100);
 crazyInterval = setInterval((() => {
 crazy();
 }), 100);
