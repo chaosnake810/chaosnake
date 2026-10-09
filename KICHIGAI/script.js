@@ -92,6 +92,11 @@ bottom_hand.innerHTML = SAFE_HANDS[3];
 
 function hide(isHide) {
 if(buttonDisabled === false){
+if(isHide === true) {
+  button.style.background = "linear-gradient(#00d, #008)";
+} else {
+  button.style.background = "linear-gradient(#33f, #33a)";
+}
 if(status !== 3){
 hided = isHide;
 if(isHide === true) {
