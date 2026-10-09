@@ -1,5 +1,5 @@
 const SAFE_FACE = "😁";
-const WARN_FACE = "😬";
+const WARN_FACE = "😃";
 const OUT_FACE = "🫪";
 const SAFE_HANDS = ["👈","👆","👉","👇"];
 const OUT_HAND = "🫵";
