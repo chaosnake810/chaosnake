@@ -75,7 +75,7 @@ setTimeout(() => {
 button.style.background = "linear-gradient(#33f, #33a)";
 buttonDisabled = false;
 button.innerText = "もう一度";
-},1000);
+}),1000);
 } else {
 status = 2;
 }
