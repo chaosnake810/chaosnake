@@ -34,7 +34,7 @@ table-layout: fixed;
 position:absolute;
 top:0;
 left:calc(50% - 150px);
-transition:0.02s;
+transition:0.05s;
 }
 td {
 vertical-align: middle;
