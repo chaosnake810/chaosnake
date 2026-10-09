@@ -10,6 +10,8 @@ let status = 3;
 let count = 0;
 let hided = false;
 let score = 0;
+let pushed = false;
+let buttonDisabled = false;
 
 function loading(){
 createDisplay();
@@ -66,8 +68,14 @@ deg = 0;
 hands.style.transform = "rotate(" + deg + "deg)";
 body.style.background = "linear-gradient(#f00, #000)";
 message.innerText = "まずい“認識”された逃げろ逃げろ逃げろ逃げ";
-button.innerText = "もう一度";
+buttonDisabled = true;
+button.style.background = "#777";
 status = 3;
+setTimeout(() => {
+button.style.background = "linear-gradient(#33f, #33a)";
+buttonDisabled = false;
+button.innerText = "もう一度";
+},1000);
 } else {
 status = 2;
 }
@@ -83,6 +91,7 @@ bottom_hand.innerHTML = SAFE_HANDS[3];
 }
 
 function hide(isHide) {
+if(buttonDisabled === false){
 if(status !== 3){
 hided = isHide;
 if(isHide === true) {
@@ -93,8 +102,15 @@ message.innerText = "";
 body.style.background = "#fff";
 }
 }else{
-if(isHide === false) {
+if(isHide === true) {
+pushed = true;
+} else {
+if(pushed === true) {
 start();
+pushed = false;
+}
+}
+}
 }
 }
 }
