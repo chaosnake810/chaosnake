@@ -58,7 +58,7 @@ status = 1;
 }
 } else if (status === 1) {
 count++;
-if (count === 5){
+if (count === 3){
 count = 0;
 if(hided === false) {
 face.innerHTML = OUT_FACE;
