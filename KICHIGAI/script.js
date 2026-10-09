@@ -12,13 +12,7 @@ let hided = false;
 let score = 0;
 
 function loading(){
-var images = [];
-for (i = 0; i < images.length; i++){
-        var img = document.createElement('img');
-        img.src = images[i];
-    }
 createDisplay();
-load.style.display="none";
 }
 
 function createDisplay(){
